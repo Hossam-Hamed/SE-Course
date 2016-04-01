@@ -1,0 +1,123 @@
+<DOCTYPE <!DOCTYPE html>
+<html ng-app="app" >
+<head>
+    <script src="http://code.angularjs.org/1.2.10/angular.js" data-semver="1.2.10"></script>
+    <script type="text/javascript" src="controller.js"></script>
+        <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls.min-1.2.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+</head>
+<style >
+
+</style>
+<head>
+	<h1>Ticket</h1>
+
+</head>
+<body>
+<br><br>
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Search input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="searchinput">From :</label>
+  <div class="col-md-5">
+    <input id="searchinput" name="searchinput" placeholder="Departing from" class="form-control input-md" required="" type="search">
+    
+  </div>
+</div>
+
+<!-- Search input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="searchinput">To :</label>
+  <div class="col-md-5">
+    <input id="searchinput" name="searchinput" placeholder="Arriving at " class="form-control input-md" required="" type="search">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Cabin:</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Economy</option>
+      <option value="2">Business</option>
+      <option value="3">First</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="searchinput">Departure Date :</label>
+  <div class="col-md-5">
+    <input id="searchinput" name="searchinput"  class="form-control input-md" required="" type="date">
+  </div>
+</div>
+
+
+<div class="form-group" id="1">
+  <label class="col-md-4 control-label" for="searchinput" >Arriving Date :</label>
+  <div class="col-md-5">
+    <input  name="searchinput" class="form-control input-md" type="date">
+  </div>
+</div>
+
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes"></label>
+  <div class="col-md-4">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input name="checkboxes" id="checkboxes-0" onclick="toggle_visibility('1')" value="1" type="checkbox">
+      One Way
+    </label>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Search</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+<script>
+// 	$("#checkboxes-0").click(function() {
+//      $('#searchinput1').hide();
+//      $('#1').hide();
+
+
+// });
+
+	function toggle_visibility(id) 
+{
+    var e = document.getElementById(id);
+    if (e.style.display == 'block' || e.style.display=='')
+    {
+        e.style.display = 'none';
+    }
+    else 
+    {
+        e.style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>
+
