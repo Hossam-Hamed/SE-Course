@@ -1,0 +1,21 @@
+.rightDiv {
+    width: 49.3%;
+    background: black;
+    height: 200px;
+    overflow: hidden;
+    float: right;
+    white-space: nowrap;
+}
+
+.leftDiv {
+    width: 49.3%;
+    background: yellow;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    white-space: nowrap;
+}
+.mainDiv {
+    width: 90%;
+    margin: 40px auto;
+}
