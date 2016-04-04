@@ -1,0 +1,281 @@
+
+<!-- <!doctype html> -->
+<!-- <html ng-app="app"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../styles/confirm.css"> -->
+    <!-- <script src="angular.min.js"></script> -->
+    <!-- <script src="./cofirm.js"></script> -->
+    <!-- <script src="./dummy data/flight.json"></script> -->
+    <!-- <script src="./dummy data/reservation.json"></script> -->
+
+	<!-- <body class="main" ng-controller="MainController"> -->
+	<!-- 	<h1>Confirm your flight</h1>
+    	<h2> {{ flight.depature }} - {{ flight.arrival }}</h2>
+    	<div id="one">  <h3> {{ flight.date }}</h3> </div>
+    	<div id="two">
+			<h4> FROM : {{ flight.arrival }} AT: {{ flight.arrivalTime }} </h4>
+			<h5> TO : {{ reservation.depature }}  AT: {{ reservation.depatureTime }} </h5>
+			<h6> SEATS </h6>
+			<h7> {{ flight.areoplan }} | {{ flight.class }}  </h7>
+    	</div> -->
+    	
+    	
+		
+       
+  
+	<!-- </body> -->
+<!-- </html> -->
+
+<div class="container" style="padding-top: 100px;" >
+<!--   <h2 >Confirm your flight</h2>
+ -->  <h3>{{depature}} - {{arrival}}</h3>            
+  <table class="table" class="well">
+<thead>
+     <tr>
+        <th>Emirates airline</th>
+      </tr>
+    </thead>
+    <thead>
+     <tr>
+        <th>Date</th>
+        <th>{{ date }}</th>
+      </tr>
+    </thead>
+<tbody>
+<tr>
+        <td>From</td>
+        <td>{{ arrival }}</td>
+      </tr>
+      <tr>
+      <td>At</td>
+        <td>{{ arrivalTime }}</td>
+      </tr>
+
+      <tr>
+        <td>To</td>
+        <td>{{depature}}</td>
+      </tr>
+      <tr>
+      <td>Estimated Time</td>
+        <td>{{ depatureTime }}</td>
+      </tr>
+      <tr>
+        <td>Seat</td>
+        <td>{{ seat }}</td>
+      </tr>
+      <tr>
+        <td>Class</td>
+        <td>{{ class }}</td>
+      </tr>
+      <tr>
+        <td>Snaks</td>
+        <td>{{ snaks }}</td>
+      </tr>
+ <tr>
+        <td>Total Distance</td>
+        <td>{{ distance }}</td>
+      </tr>
+ <tr>
+        <td>Aircraft</td>
+        <td>{{ areoplane }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div> <h4> The seat map </h4> </div>
+<div id="seatmap">
+    <div id="plane">
+        <table class="rows">
+            <tr>
+                <td>J</td>
+            </tr>
+            <tr>
+                <td>G</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>A</td>
+            </tr>
+        </table>
+        
+        <div id="cabin" >        
+            <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wingSeat"></td>
+                <td class="wingSeat"></td>
+                <td class="wingSeat"></td>
+                <td class="wingSeat"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td title="1J" class="seatAvailable" ></td>
+                <td title="2J" class="seatUnavailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4J" class="ExtraPay"></td>
+                <td title="5J" class="seatAvailable wingSeat"></td>
+                <td title="6J" class="seatUnavailable wingSeat"></td>
+                <td title="7J" class="seatAvailable wingSeat"></td>
+                <td title="8J" class="noSeatStorage wingSeat"></td>
+                <td title="9J" class="seatAvailable"></td>
+                <td title="10J" class="seatAvailable"></td>
+                <td title="11J" class="seatAvailable LargeSeat"></td>
+            </tr>
+            <tr>
+                <td title="1G" class="seatAvailable"></td>
+                <td title="2G" class="seatUnavailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4G" class="ExtraPay"></td>
+                <td title="5G" class="seatAvailable"></td>
+                <td title="6G" class="seatUnavailable"></td>
+                <td title="7G" class="seatAvailable"></td>
+                <td title="8G" class="noSeatStorage"></td>
+                <td title="9G" class="seatAvailable"></td>
+                <td title="10G" class="seatAvailable"></td>
+                <td title="11G" class="seatAvailable ExtraPay LargeSeat"></td>
+            </tr>
+            <tr>
+                <td class="noSeatGalley">1</td>
+                <td class="noSeatGalley">2</td>
+                <td class="noSeatGalley"></td>
+                <td class="noSeatGalley">4</td>
+                <td class="noSeatGalley">5</td>
+                <td class="noSeatGalley">6</td>
+                <td class="noSeatGalley">7</td>
+                <td class="noSeatGalley">8</td>
+                <td class="noSeatGalley">9</td>
+                <td class="noSeatGalley">10</td>
+                <td class="noSeatGalley">11</td>
+            </tr>
+            <tr>
+                <td title="1F" class="seatAvailable"></td>
+                <td title="2F" class="seatAvailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4F" class="ExtraPay"></td>
+                <td title="5F" class="seatUnavailable"></td>
+                <td title="6F" class="seatAvailable"></td>
+                <td title="7F" class="seatAvailable"></td>
+                <td title="8F" class="noSeatLavatory"></td>
+                <td title="9F" class="seatAvailable"></td>
+                <td title="10F" class="seatAvailable"></td>
+                <td title="11F" class="seatAvailable ExtraPay LargeSeat"></td>
+            </tr>
+            <tr>
+                <td title="1E" class="seatAvailable"></td>
+                <td title="2E" class="seatAvailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4E" class="ExtraPay"></td>
+                <td title="5E" class="seatUnavailable wingSeat"></td>
+                <td title="6E" class="seatAvailable wingSeat"></td>
+                <td title="7E" class="seatAvailable wingSeat"></td>
+                <td title="8E" class="noSeatLavatory wingSeat"></td>
+                <td title="9E" class="seatAvailable"></td>
+                <td title="10E" class="seatAvailable"></td>
+                <td title="11E" class="seatUnavailable ExtraPay LargeSeat"></td>
+            </tr>
+            <tr>
+                <td title="1D" class="seatAvailable"></td>
+                <td title="2D" class="seatAvailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4D" class="ExtraPay"></td>
+                <td title="5D" class="seatUnavailable"></td>
+                <td title="6D" class="seatAvailable"></td>
+                <td title="7D" class="seatAvailable"></td>
+                <td title="8D" class="noSeatLavatory"></td>
+                <td title="9D" class="seatAvailable"></td>
+                <td title="10D" class="seatAvailable"></td>
+                <td title="11D" class="seatAvailable ExtraPay LargeSeat"></td>
+            </tr>
+            <tr>
+                <td class="noSeatGalley">1</td>
+                <td class="noSeatGalley">2</td>
+                <td class="noSeatGalley"></td>
+                <td class="noSeatGalley">4</td>
+                <td class="noSeatGalley">5</td>
+                <td class="noSeatGalley">6</td>
+                <td class="noSeatGalley">7</td>
+                <td class="noSeatGalley">8</td>
+                <td class="noSeatGalley">9</td>
+                <td class="noSeatGalley">10</td>
+                <td class="noSeatGalley">11</td>
+            </tr>
+            <tr>
+                <td title="1C" class="seatAvailable"></td>
+                <td title="2C" class="seatAvailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4C" class="ExtraPay"></td>
+                <td title="5C" class="seatUnavailable"></td>
+                <td title="6C" class="seatAvailable"></td>
+                <td title="7C" class="seatAvailable"></td>
+                <td title="8C" class="noSeatLavatory"></td>
+                <td title="9C" class="seatAvailable"></td>
+                <td title="10C" class="seatAvailable"></td>
+                <td title="11C" class="seatAvailable ExtraPay LargeSeat"></td>
+            </tr>
+            <tr>
+                <td title="1A" class="seatAvailable"></td>
+                <td title="2A" class="seatAvailable"></td>
+                <td title="" class="noSeatGalley"></td>
+                <td title="4A" class="ExtraPay"></td>
+                <td title="5A" class="seatUnavailable wingSeat"></td>
+                <td title="6A" class="seatAvailable wingSeat"></td>
+                <td title="7A" class="seatAvailable wingSeat"></td>
+                <td title="8A" class="noSeatLavatory wingSeat"></td>
+                <td title="9A" class="seatAvailable"></td>
+                <td title="10A" class="seatAvailable"></td>
+                <td title="11A" class="seatUnavailable ExtraPay LargeSeat"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="wingSeat"></td>
+                <td class="wingSeat"></td>
+                <td class="wingSeat"></td>
+                <td class="wingSeat"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>            
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+</br></br>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+  <a href="#back">
+    <div id="singlebutton" name="singlebutton" class="btn btn-primary"> Back
+    </div>
+    </a>
+    <a href="#pay">
+     <div id="singlebutton" name="singlebutton" class="btn btn-primary"> BOOK NOW!
+    </div>
+    </a>
+  </div>
+</div>
+
