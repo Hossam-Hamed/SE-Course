@@ -103,6 +103,7 @@
     <div class="container">
 
   <h3>Passenger information</h3>
+  </br><hr/>
                     
   <div >
   <label class="control-label col-sm-2" for="fn" >First Name:</label>
@@ -133,10 +134,12 @@
   </div>
 
   <div  >
+  </br><hr/>
 
   <h3>Cardholder's information</h3>
+  </br><hr/>
 
-  <div  >
+  <div  style="float: left;">
   <label class="control-label" for="cfn">Cardholder's first name:</label>
   <input type="text" ng-mouseleave="check()" id="fn" name="cfn" ng-model="cfn" required>
       <span ng-show="myForm.cfn.$touched && myForm.cfn.$invalid" class="text-danger">Cardholder's first name is required.</span>
@@ -150,8 +153,11 @@
         <span ng-show="myForm.cln.$touched && myForm.cln.$invalid" class="text-danger">Cardholder's last name is required.</span>
 
   </div>
+  </br><hr/>
 
   <h3>Billing address</h3>
+    </br><hr/>
+
 
   <div >
   <label class="control-label col-sm-2" for="cn">Country:</label>
@@ -171,7 +177,10 @@
 
   <br>
   </div>
+    </br><hr/>
+
     <h3>Card information</h3>
+  </br><hr/>
 
     <div>
       We accept the following cards :
@@ -210,9 +219,9 @@
   <label class="control-label col-sm-2" for="a2">Address 2:</label>
   <input type="text"  id="a2" name="a2" ng-model="a2">
   </div>
-  
+  </br></br>
   <div class="clo-sm-4">
-  <p><strong>Expiry date :</strong></p>
+  <p ><strong style="float: left;">Expiry date :</strong></p>
     
 
                 <div class="row">
@@ -271,3 +280,8 @@
 
 
 </div> 
+<style >
+  h3{
+    float: left;
+  }
+</style>
