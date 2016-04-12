@@ -1,14 +1,26 @@
- h2 {
+/*<<<<<<< HEAD
+ h2 {*/
+=======
+/* h2 {
+>>>>>>> ccbf03d8fb5e839272630b5e6895d5800085e713
 	font-weight: bold;
 	font-size: 40px;
 	color: black;
 	align-self: center;
+<<<<<<< HEAD
 }
  h3{
 	font-weight: bold;
 	font-size: 30px;
 	color: black;
-	align-self: center;
+=======
+}*/
+ h3{
+	font-weight: bold;
+	font-size: 30px;
+	/*color: black;*/
+/*>>>>>>> ccbf03d8fb5e839272630b5e6895d5800085e713
+*/	align-self: center;
 }
 
  h4{

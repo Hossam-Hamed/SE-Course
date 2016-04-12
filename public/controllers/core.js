@@ -3,18 +3,30 @@ App = angular.module('App',['ui.bootstrap','ngRoute']);
 App.config(function($routeProvider) {
 	$routeProvider
    		.when('/', {
+// <<<<<<< HEAD
             redirectTo: '/home'
    		})
 
-         .when('/home', {
-            templateUrl: '../partials/home.html'
-         })
+//          .when('/home', {
+//             templateUrl: '../partials/home.html'
+//          })
 
-         .when('/book', {
-         templateUrl:'../partials/landing.html',
+//          .when('/book', {
+//          templateUrl:'../partials/landing.html',
+//             controller:'landingCtrl'
+//          })
+
+// =======
+            templateUrl: '../partials/landing.html',
             controller:'landingCtrl'
-         })
+   		}
 
+         .when('/home', {
+            templateUrl: '../partials/landing.html',
+            controller:'landingCtrl'
+
+         })
+// >>>>>>> ccbf03d8fb5e839272630b5e6895d5800085e713
          .when('/about', {
          templateUrl:'../partials/about.html'
             //controller:'ConfirmationController'

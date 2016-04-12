@@ -4,10 +4,16 @@
 	font-size: 40px;
 	color: black;
 }
+/*<<<<<<< HEAD
 body h2{
 	font-style: 30px;
-}
-body  h4 , h5 , h6{
+}*/
+=======
+/*body h2{
+	font-style: 30px;
+}*//*
+>>>>>>> ccbf03d8fb5e839272630b5e6895d5800085e713
+*/body  h4 , h5 , h6{
 	font-size: 20px;
 	color: black;
 }
