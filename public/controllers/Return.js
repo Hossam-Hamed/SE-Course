@@ -1,4 +1,4 @@
-angular.module('appctrl',[])
+App
 .controller('out',function($scope,Return){
  Return.getinfo().success(function(outs){
  $scope.out = outs;

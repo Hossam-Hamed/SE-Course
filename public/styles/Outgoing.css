@@ -1,18 +1,10 @@
-/*<<<<<<< HEAD*/
-body h2 {
-  font-weight: bold;
-  font-size: 40px;
-  color: black;
-}
-=======
 /*body h2 {
   font-weight: bold;
   font-size: 40px;
   color: black;
 }*/
-/*>>>>>>> ccbf03d8fb5e839272630b5e6895d5800085e713
-*/
-/*@media (min-width: 768px){
+
+@media (min-width: 768px){
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
   .seven-cols .col-lg-1  {
@@ -20,7 +12,7 @@ body h2 {
     *width: 100%;
   }
 }
-*/
+
 @media (min-width: 992px) {
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
@@ -28,55 +20,4 @@ body h2 {
     width: 14.285714285714285714285714285714%;
     *width: 14.285714285714285714285714285714%;
   }
-/*<<<<<<< HEAD*/
 }
-
-/**
- *  The following is not really needed in this case
- *  Only to demonstrate the usage of @media for large screens
- */    
-/*@media (min-width: 1200px) {
-  .seven-cols-1 .col-md-1,
-  .seven-cols-1 .col-sm-1,
-  .seven-cols-1 .col-lg-1 {
-    width: 14.285714285714285714285714285714%;
-    *width: 14.285714285714285714285714285714%;
-  }
-
-}
-@media (min-width: 768px){
-  .seven-cols-1 .col-md-2,
-  .seven-cols-1 .col-sm-2,
-  .seven-cols-1 .col-lg-2  {
-    width: 100%;
-    *width: 100%;
-  }
-}
-
-@media (min-width: 992px) {
-  .seven-cols-1 .col-md-2,
-  .seven-cols-1 .col-sm-2,
-  .seven-cols-1 .col-lg-2 {
-    width: 14.285714285714285714285714285714%;
-    *width: 14.285714285714285714285714285714%;
-  }
-}
-
-/**
- *  The following is not really needed in this case
- *  Only to demonstrate the usage of @media for large screens
- */    
-/*@media (min-width: 1200px) {
-  .seven-cols .col-md-1,
-  .seven-cols .col-sm-1,
-  .seven-cols .col-lg-1 {
-    width: 14.285714285714285714285714285714%;
-    *width: 14.285714285714285714285714285714%;
-  }   */  
-/*
-  body h2{
-    margin-left: 700px;
-  }*/
-=======
-}
-/*>>>>>>> ccbf03d8fb5e839272630b5e6895d5800085e713*/
