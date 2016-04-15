@@ -18,15 +18,6 @@
   },
   "homepage": "https://github.com/secourse2016/balabezoo#readme",
   "dependencies": {
- 
-     "body-parser" : "*", 
-     "express"     : "*",
-     "dotenv"      : "*",
-     "mongodb"     : "*",
-     "jsonwebtoken": "*",
-     "underscore"  : "*",
-     "moment"      : "*"
-     }
- }
-  
-
+    "express": "^4.13.4"
+  }
+}
