@@ -1,9 +1,24 @@
 
-App.controller('landingCtrl',function($scope ,landingServ)
+
+angular.module('App').controller('landingCtrl', function($scope ,mainSrv , landingServ)
 {
 
+
+  // alert('aa');
+  mainSrv.init();
   $scope.selected = undefined;
   $scope.states =landingServ;
+  $scope.landing = mainSrv.getx();
+
+  // console.log($scope.landing);
+  // $scope.landing = {
+  //   origin :"",
+  //  destination : "" ,
+  //  depaturedate : "",
+  //  returnDate : "" ,
+  //  cabinet : ""
+
+  // }
 
 /*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
@@ -31,18 +46,12 @@ App.controller('landingCtrl',function($scope ,landingServ)
   $scope.doSubmit = function(){
         if($scope.myForm.$pristine){alert('menna');}
     };
-    var _name = 'Brian';
-  $scope.user = {
-    name: function(newName) {
-     // Note that newName can be undefined for two reasons:
-     // 1. Because it is called as a getter and thus called with no arguments
-     // 2. Because the property should actually be set to undefined. This happens e.g. if the
-     //    input is invalid
-     return arguments.length ? (_name = newName) : _name;
-    }
-  };
+    $scope.next = function(){
 
-})
+      mainSrv.setx($scope.landing);
+    };
+   
+});
 
 
 
