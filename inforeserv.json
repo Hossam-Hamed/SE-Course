@@ -1,0 +1,30 @@
+{
+    "_id": "kasgfeiy234" ,
+    "firstName": "mohammed",
+    "lastName": "nasser",
+    "email" :"mohammed.nasser@gmail.com",
+    "passport": "Egypt24432r",
+    "issueDate" :"12/2/2014",
+    "expiryDate" :"12/2/2020",
+    "receipt_number": "i34ygu34",
+    "bookingRefNumber": "vi4ueqv",  
+    "from":"Cairo",
+    "to":"Jeddah",
+    "flightDate ":"12/4/2016",
+    "departureTime":"12:00",
+    "arrivalTime":"3:00",
+    "seatNumber":"1A",
+    "duration":"3",
+    "cabin":"First",
+    "gate" : "2",
+    "iata":"kjdewpf",
+    "filghtNO":"qiwnie",
+    "amount":"200",
+    "country" :"Cairo",
+    "paymentMethod":
+                    {
+                        "creditCard":{"password":"ghewoi","address1":"Taher el tanahy st","address2":"El tagamoa El Khames","code":"54747", "expiryDate" :"12/08"},
+                        "cash":[{"place":"CIB abnk","date":"12/5/2016","deadline":"19/5/2016"}]
+
+                    }}
+

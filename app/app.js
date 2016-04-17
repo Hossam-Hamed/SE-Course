@@ -1,25 +1,26 @@
 var express       = require('express');
 var app           = express();
-var bodyParser    = require('body-parser');
-var mongo 	= require('./db');
-
-// Export environment vars first thing
-// require('dotenv').load();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
+var db = require('./db.js');
 
 app.use(express.static('public'));
-// require('./routes')(app);
 
-// app.get('/', function(req, res) {
-// 	res.sendFile('index.html');
-// });
-require('./routes')(app);
+db.init("mongodb://localhost:27017/balabezoo", function(err, db) {
+    console.log('connected to db');
+});
+
+app.get('/', function(req, res) {
+	res.sendFile('index.html');
+});
 
 app.listen(3000, function () {
 	console.log('up');
 	// mongo.init('mongodb://localhost:27017/flights_db');
 
 });
-module.exports = app;
+// module.exports = app;
+
+/* SEED DB */
+app.get('/db/seed', function(req, res) {
+	db.seed();
+	res.send("seeded");
+}); 

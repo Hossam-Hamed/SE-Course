@@ -31,12 +31,13 @@ App.controller('landingCtrl',function($scope ,state)
 
 
   $scope.check = function() {
-    if (!$scope.Selected1 || !$scope.Selected) {
-      alert('you forgot to enter an airport');
-    }else if (!$scope.dt) {
-      alert('you forgot to enter a Date');
+    if($scope.OutOnly && $scope.Selected1 && $scope.Selected &&$scope.dt){
+      $scope.ref="#single";
+    }else if($scope.Selected1 && $scope.Selected &&$scope.dt){
+      $scope.ref="#2ways";
+
     }else{
-      $scope.ref="#home";
+      $scope.preventDefault();
     }
   };
 

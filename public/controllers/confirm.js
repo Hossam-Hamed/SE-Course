@@ -12,5 +12,12 @@ App.controller('confctrl',function($scope){
     $scope.class = "economy";
     $scope.distance = "100 mile";
     $scope.date ="22/3/2015";
+
+
+
+    $scope.goBack = function() {
+         $window.history.back();
+
+  };
      
   });
