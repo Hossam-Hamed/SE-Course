@@ -19,7 +19,7 @@ require('./routes')(app);
 
 app.listen(3000, function () {
 	console.log('up');
-	mongo.init('mongodb://localhost:27017/flights_db');
+	// mongo.init('mongodb://localhost:27017/flights_db');
 
 });
 module.exports = app;

@@ -5,7 +5,7 @@ App.controller('landingCtrl',function($scope ,state)
   $scope.selected = undefined;
   $scope.states =state;
 
-/*----------- Angular Bootstrap Datepicker -----------*/
+  /*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
@@ -28,9 +28,17 @@ App.controller('landingCtrl',function($scope ,state)
   $scope.popup2 = {
     opened: false
   };
-  $scope.doSubmit = function(){
-        if($scope.myForm.$pristine){alert('menna');}
+
+
+  $scope.check = function() {
+    if (!$scope.Selected1 || !$scope.Selected) {
+      alert('you forgot to enter an airport');
+    }else if (!$scope.dt) {
+      alert('you forgot to enter a Date');
+    }else{
+      $scope.ref="#home";
     }
+  };
 
 })
 
@@ -38,4 +46,5 @@ App.controller('landingCtrl',function($scope ,state)
   var state =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
   return state;
 })
+
 
