@@ -14,10 +14,7 @@ module.exports = function(app,mongo) {
 */
 
 
-module.exports = function(app) {
 
-    var mongo   = require('db.js');
-    var moment  = require('moment');
 
 
     /**
@@ -39,7 +36,37 @@ module.exports = function(app) {
 
     // });
 
+module.exports = function(app) {
+
+    var mongo   = require('./db.js');
+    var moment  = require('moment');
 
     
 
-};
+app.get('/', function(req, res) {
+res.sendFile('index.html');
+}
+);
+
+app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class' 
+  ,function(req,res){
+
+   mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination})
+   .toArray().then(function (flights) {
+   console.log("heloo");
+   res.send(flights);
+ });
+})
+
+
+app.get('/api/flights/search/:origin/:destination/:departingDate/:class'
+  ,function(req,res){
+  mongo.db.collection('Flights').find({'origin' :  req.origin,'destination' :req.destination})
+   .toArray().then(function (flights){
+  console.log("heloo");
+   res.send(flights);
+ });
+})
+
+
+}

@@ -1,9 +1,9 @@
 
-App.controller('landingCtrl',function($scope ,state)
+App.controller('landingCtrl',function($scope ,landingServ)
 {
 
   $scope.selected = undefined;
-  $scope.states =state;
+  $scope.states =landingServ;
 
 /*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
@@ -30,12 +30,19 @@ App.controller('landingCtrl',function($scope ,state)
   };
   $scope.doSubmit = function(){
         if($scope.myForm.$pristine){alert('menna');}
+    };
+    var _name = 'Brian';
+  $scope.user = {
+    name: function(newName) {
+     // Note that newName can be undefined for two reasons:
+     // 1. Because it is called as a getter and thus called with no arguments
+     // 2. Because the property should actually be set to undefined. This happens e.g. if the
+     //    input is invalid
+     return arguments.length ? (_name = newName) : _name;
     }
+  };
 
 })
 
-.factory("state",function(){
-  var state =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-  return state;
-})
+
 

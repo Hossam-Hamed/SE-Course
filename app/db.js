@@ -18,26 +18,29 @@
             close: function() {
                 db.close();
             },
-            seed: function(callback) {
+            seed: function(done) {
 
                 db.collection('Flights').count(function(err, count) {
                         if (count == 0) {
                             var routes = JSON.parse(fs.readFileSync('flights.json', 'utf8'));
+                            var flights = [];
                             for (var i = 0; i < routes.length; i++) {
                                 var route = routes[i];
-                                seedFlights(route, route.origin, route.destination);
+                                flights = flights.concat(seedFlights(route, route.origin, route.destination));
                             }
 
                             // insert returning flights
                             for (var i = 0; i < routes.length; i++) {
                                 var route = routes[i];
-                                seedFlights(route, route.destination, route.origin);
+                                flights = flights.concat(seedFlights(route, route.destination, route.origin));
                             }
+                            db.collection('Flights').insertMany(flights, callback);
 
                             function seedFlights(flight, _origin, _destination) {
+                                docs = []
                                 // loop until May 31 2016 starting today April-15-2016
                                 for (var i = 1; i <= 46; i++) {
-                                    doc = {
+                                    docs.push({
                                         "flightNumber": flight.flightNumber,
                                         "aircraft": flight.aircraft,
                                         "capacity": flight.capacity,
@@ -47,16 +50,15 @@
                                         "origin": _origin,
                                         "destination": _destination,
                                         "seatmap": []
-                                    };
-
-                                    db.collection('Flights').insert(doc, function(err, data) {
-                                        if (err) console.log('error');
-                                        else console.log('insert successful');
                                     });
 
                                 }
-
+                                return docs;
                             }
+                            done();
+                        }
+                         else {
+                            done();
                         }
                     });
 
