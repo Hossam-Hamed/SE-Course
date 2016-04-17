@@ -1,13 +1,9 @@
-
-<!-- <body ng-app='myApp' ng-controller = 'myCtrl'> -->
 <div class="container"style="/*float: right;*/ width: 40%;padding-top: 50px">
 <div class="panel panel-default" >
 <div class="panel-body">
 <form class="form-horizontal" name="myForm"  ng-submit="doSubmit()">
 <fieldset style="padding-top: 50px">
- <!--  <h1 style=" font-size: 50px; color: black;
-    font-family: "Courier New", Courier, monospace;">Ticket</h1>
- -->
+
 <!-- Search input-->
 <div class="form-group" >
   <label class="col-md-4 control-label" for="searchinput">From :</label>
@@ -40,10 +36,6 @@
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="searchinput">Departure Date :</label>
-  <!-- <div class="col-md-5">
-    <input id="searchinput" name="searchinput"  class="form-control input-md"  type="date">
-  </div> -->
-
  <div class="row">
                   <div class="col-md-6">
                     <p class="input-group">
@@ -116,7 +108,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <div id="singlebutton" name="singlebutton" class="btn btn-primary"> Search
+    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="next()"> Search
     </div>
   </div>
 </div>
