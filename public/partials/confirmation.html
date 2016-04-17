@@ -27,7 +27,7 @@
 
 <div class="container" style="padding-top: 100px;" >
 <!--   <h2 >Confirm your flight</h2>
- -->  <h3>{{depature}} - {{arrival}}</h3>            
+ -->  <h3>{{flight.from}} - {{flight.to}}</h3>            
   <table class="table" class="well">
 <thead>
      <tr>
@@ -37,13 +37,13 @@
     <thead>
      <tr>
         <th>Date</th>
-        <th>{{ date }}</th>
+        <th>{{ flight.depaturedate }}</th>
       </tr>
     </thead>
 <tbody>
 <tr>
         <td>From</td>
-        <td>{{ arrival }}</td>
+        <td>{{ flight.from }}</td>
       </tr>
       <tr>
       <td>At</td>
@@ -52,7 +52,7 @@
 
       <tr>
         <td>To</td>
-        <td>{{depature}}</td>
+        <td>{{ flight.to }}</td>
       </tr>
       <tr>
       <td>Estimated Time</td>
@@ -64,11 +64,7 @@
       </tr>
       <tr>
         <td>Class</td>
-        <td>{{ class }}</td>
-      </tr>
-      <tr>
-        <td>Snaks</td>
-        <td>{{ snaks }}</td>
+        <td>{{ flight.cabin }}</td>
       </tr>
  <tr>
         <td>Total Distance</td>

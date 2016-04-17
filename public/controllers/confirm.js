@@ -1,4 +1,4 @@
-App.controller('confctrl',function($scope){
+App.controller('confctrl',function($scope , mainSrv){
  //  $scope.fromData= {};
  // // var data = require('../../dummydata/flight.json');
  //  confctrlsrv.getinfo().then(function(data){
@@ -19,5 +19,6 @@ App.controller('confctrl',function($scope){
          $window.history.back();
 
   };
-     
-  });
+    $scope.flight =mainSrv.getx();
+    });
+
