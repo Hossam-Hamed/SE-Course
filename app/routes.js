@@ -12,9 +12,7 @@ app.get('/', function(req, res) {
 res.sendFile('index.html');
 });
 
- // app.post('/api/postReserv',data,function(data){
- // 		mongo.db().collection('reservation').insert(data);
- // });
+
 
 
 };
