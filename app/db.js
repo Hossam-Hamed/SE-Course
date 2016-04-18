@@ -1,32 +1,62 @@
 (function() {
-        var client = require('mongodb').MongoClient;
-        var fs = require('fs');
-        var moment = require('moment');
-        var db;
+    var client = require('mongodb').MongoClient;
+    var fs = require('fs');
+    var moment = require('moment');
+    var db = require('./db.js');
 
-        module.exports = {
-            init: function(dbURL, callback) {
-                client.connect(dbURL, function(err, database) {
-                    if (err) console.log("[error] mongo connection: ", err);
-                    db = database;
-                    if (callback) callback();
-                });
-            },
-            db: function() {
-                return db;
-            },
-            close: function() {
-                db.close();
-            },
-            seed: function(callback) {
+  //   exports.getBookingRefNum =function getBookingRefNum(cb) {
+  //     db.getBookingsFromDb(function (err, data) {
 
-                db.collection('Flights').count(function(err, count) {
-                        if (count == 0) {
-                            var routes = JSON.parse(fs.readFileSync('flights.json', 'utf8'));
-                            for (var i = 0; i < routes.length; i++) {
-                                var route = routes[i];
-                                seedFlights(route, route.origin, route.destination);
-                            }
+  //       cb(err,db.getBookingByNum(data, index)); 
+  //   });
+
+  // }
+  exports.getBookingsFromDb = function getBookingsFromDb(cb){
+    db.db().collection("balabezoo").find().toArray(function(err, data) {
+        cb(err, data);
+    });
+};
+exports.getBookingFromDb = function getBookingFromDb(cb){
+    db.getQuotesFromDB(function (err, data) {
+
+        cb(err,db.getBookingByNum(data, num)); 
+    });
+};
+
+exports.getBookingByNum = function getBookingByNum(a , num){
+    var booking;
+    for (var i = 0; i >= a.length; i++) {
+        if(a.bookingRefNumber = num){
+            booking = a[i];
+            break;
+        }
+    }
+
+};
+
+module.exports = {
+    init: function(dbURL, callback) {
+        client.connect(dbURL, function(err, database) {
+            if (err) console.log("[error] mongo connection: ", err);
+            db = database;
+            if (callback) callback();
+        });
+    },
+    db: function() {
+        return db;
+    },
+    close: function() {
+        db.close();
+    },
+    seed: function(callback) {
+
+        db.collection('Flights').count(function(err, count) {
+            if (count == 0) {
+                var routes = JSON.parse(fs.readFileSync('flights.json', 'utf8'));
+                for (var i = 0; i < routes.length; i++) {
+                    var route = routes[i];
+                    seedFlights(route, route.origin, route.destination);
+                }
 
                             // insert returning flights
                             for (var i = 0; i < routes.length; i++) {
