@@ -23,4 +23,4 @@ App.factory('confsrv' , function ($http) {
 	}
 	// body...
 })
-Status 
+ 
