@@ -3,7 +3,7 @@ var jwt     = require('jsonwebtoken');
 //this is middleware i think
 app.use(function(req, res, next) {
 
-      // check header or url parameters or post parameters for token
+      // check header or url parameters or post parameters for token  
       var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
 
       console.log("{{{{ TOKEN }}}} => ", token);
@@ -20,7 +20,8 @@ app.use(function(req, res, next) {
       catch (err) 
       {
         console.error('[ERROR]: JWT Error reason:', err);
-        res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
+        res.send("balabezoo");
+      //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
       }
 
     })
@@ -49,9 +50,13 @@ app.get('/api/flights/search/:origin/:destination/:departingDate/:class'
  });
 })
 
-
-}
-
+app.get('/api/flights/search',function(req,res){
+req = require ('infoflight.json');
+res.send(req);
+})
 
 
 };
+
+
+
