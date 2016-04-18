@@ -23,25 +23,35 @@ app.use(function(req, res, next) {
         res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
       }
 
-    });
+    })
+app.all('*',function(req,res,next){
+  res.header('Access-Control-Allow-Origin','*');
+  res.header('Access-Control-Allow-Headers','X-Requested-with');
+  next();
+})
+app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class' 
+  ,function(req,res){
+
+   mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination})
+   .toArray().then(function (flights) {
+   console.log("heloo");
+   res.send(flights);
+ });
+})
+
+
+app.get('/api/flights/search/:origin/:destination/:departingDate/:class'
+  ,function(req,res){
+  mongo.db.collection('Flights').find({'origin' :  req.origin,'destination' :req.destination})
+   .toArray().then(function (flights){
+  console.log("heloo");
+   res.send(flights);
+ });
+})
+
 
 }
-/*
-App.factory('API', function($http) {
-  return {
-    get : function() {
-      return $http.get('/api/blogs');
-    },
-    getSecure : function() {
-      return $http.get('/api/secure/blogs', {
-        "headers" : { 'x-access-token' : 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE0NjA3MTg4NTUsImV4cCI6MTQ5MjI1NDg1NSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSJ9.joYKQcvKRu50OWJgFT24qS13pjXLqFoQ9aPc8N1zxNo'},
-      });
-    },
-    postSecure : function() {
-      return $http.post('/api/secure/blogs', {        
-        "wt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE0NjA3MTg4NTUsImV4cCI6MTQ5MjI1NDg1NSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSJ9.joYKQcvKRu50OWJgFT24qS13pjXLqFoQ9aPc8N1zxNo"
-      });
-    }       
-  }
-});
-*/
+
+
+
+};
