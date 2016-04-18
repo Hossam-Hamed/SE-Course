@@ -1,14 +1,76 @@
-[
-      {"origin": "Mumbai", "destination": "Delhi", "duration": "2 hours", "capacity": "100",
-       "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Cairo", "destination": "Jeddah", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Hong Kong", "destination": "Taiwan", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Johannesburg", "destination": "Cape Town", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Riyadh", "destination": "Jeddah", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "London Heathrew", "destination": "New York-John F. Kennedy", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Las Vegas", "destination": "Las Angeles", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Las Angeles", "destination": "San Francisco", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Frankfurt", "destination": "Berlin", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Rome", "destination": "Milan", "duration": "2 hours", "capacity": "100", 
-      "aircraft": "Airbus a318", "flightNumber": "SE2804"}
+// [
+//       {"origin": "Mumbai", "destination": "Delhi","cost":"1500" ,"duration": "2 hours",
+//       "currency":"USD", "capacity": "100",
+//        "aircraftModel":"A320", "aircraft": "Airbus a318","flightNumber":"1234cd55", 
+
+
+     [
+     {  "aeroplaneID": "12333","flightNumber":"1234cd55","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"4","origin": "Mumbai","destination": "Delhi"
+
+
+
+},{
+      "aeroplaneID": "344433","flightNumber":"1334cd55","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"4","origin": "Cairo","destination": "Jeddah" 
+},{
+       "aeroplaneID": "233344","flightNumber":"11550CB","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"2","origin": "Hong Kong","destination": "Taiwan" 
+},
+{
+       "aeroplaneID": "748645","flightNumber":"14350CB","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Johannesburg","destination": "Cape Town" 
+},{
+
+       "aeroplaneID": "6363992","flightNumber":"10300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"2","origin": "Riyadh","destination": "Jeddah" 
+},
+
+{
+
+       "aeroplaneID": "3763488","flightNumber":"10300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Riyadh","destination": "Jeddah"      
+},{
+ "aeroplaneID": "328389","flightNumber":"55300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"2","origin": "London Heathrew","destination": "New York-John F. Kennedy"   
+},{
+"aeroplaneID": "3738299","flightNumber":"6432EN3","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Las Vegas","destination": "Las Angeles"   
+
+},{
+"aeroplaneID": "6490999","flightNumber":"10300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Las Angeles","destination": "San Francisco" 
+
+},{
+      "aeroplaneID": "437999","flightNumber":"2633BV6","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"1","origin": "Frankfurt","destination": "Berlin" 
+}
 ]
+
+      // {"origin": "Cairo", "destination": "Jeddah","cost":"1750" , "duration": "2 hours",
+      // "currency":"USD", "capacity": "100", "aircraftModel":"A320","aircraftType": "Airbus a318",
+      //  "flightNumber": "SE2804"},
+      // {"origin": "Hong Kong", "destination": "Taiwan",
+      // "currency":"USD","cost":"1440" , "duration": "2 hours", "capacity": "100",
+      // "aircraftModel":"A320","aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "Johannesburg", "destination": "Cape Town",
+      // "currency":"USD","cost":"1320" , "duration": "2 hours", 
+      // "capacity": "100","aircraftModel":"A320", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "Riyadh", "destination": "Jeddah","cost":"1100" ,
+      // "currency":"USD", "duration": "2 hours", 
+      // "capacity": "100", "aircraftModel":"A320", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "London Heathrew", "destination": "New York-John F. Kennedy",
+      // "currency":"USD","cost":"2000" , "duration": "2 hours",
+      //  "capacity": "100", "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "Las Vegas", "destination": "Las Angeles",
+      // "currency":"USD","cost":"1800" , "duration": "2 hours", "capacity": "100","aircraftModel":"A320", 
+      // "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "Las Angeles", "destination": "San Francisco",
+      // "currency":"USD","cost":"1100" , "duration": "2 hours",
+      //  "capacity": "100", "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "Frankfurt", "destination": "Berlin",
+      // "currency":"USD","cost":"1220" , "duration": "2 hours", "capacity": "100",
+      //  "aircraftModel":"A320", 
+      // "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+      // {"origin": "Rome", "destination": "Milan","cost":"1800", "currency":"USD" , "duration": "2 hours", "capacity": "100",
+      //  "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"}
