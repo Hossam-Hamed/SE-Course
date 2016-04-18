@@ -17,7 +17,7 @@
     });
 };
 exports.getBookingFromDb = function getBookingFromDb(cb){
-    db.getQuotesFromDB(function (err, data) {
+    db.getBookingsFromDb(function (err, data) {
 
         cb(err,db.getBookingByNum(data, num)); 
     });
