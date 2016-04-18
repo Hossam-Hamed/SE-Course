@@ -35,7 +35,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="searchinput">Departure Date :</label>
+  <label class="col-md-4 control-label" for="searchinput" ng-model = "landing.date">Departure Date :</label>
  <div class="row">
                   <div class="col-md-6">
                     <p class="input-group">
@@ -62,7 +62,7 @@
 </div>
 
 <div class="form-group" id="1"  ng-show="!showDiv">
-  <label class="col-md-4 control-label" for="searchinput" >Return Date :</label>
+  <label class="col-md-4 control-label" for="searchinput" ng-model="landing.returndate" >Return Date :</label>
   <!-- <div class="col-md-5">
     <input  name="searchinput" class="form-control input-md" type="text">
   </div> -->
@@ -110,7 +110,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="check()"> Search
+    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="next()"> Search
     </div>
   </div>
 </div>

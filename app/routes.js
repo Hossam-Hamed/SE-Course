@@ -1,8 +1,22 @@
-
 module.exports = function(app) {
 
     var mongo   = require('./db.js');
     var moment  = require('moment');
+
+    var seats;
+
+
+    app.get('/', function(req, res) {
+        res.sendFile('index.html');
+    });
+
+
+    app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
+       seats = mongo.db().collection('balbezoo').find().toArray(function(err, docs) {
+        cb(err, docs);
+    })
+   });
+
      /**
      * Seed Flights Collection:
      */
@@ -27,11 +41,29 @@ module.exports = function(app) {
 
     });
     });
+    exports.seats;
+
+}
+    // =======
+    // module.exports = function(app) {
+
+    //     var seats;
+
+    //     >>>>>>> 04c6c26af0fb30cde0e1e56b84f26080ff2d5d5e
 
 
-    app.get('/', function(req, res) {
-        res.sendFile('index.html');
-    });
+    //     app.get('/', function(req, res) {
+    //         res.sendFile('index.html');
+    //     });
 
 
-};
+    //     app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
+    //        seats = mongo.db().collection('balbezoo').find().toArray(function(err, docs) {
+    //           cb(err, docs);
+    //       })
+    //    });
+
+    //     exports.seats;
+
+    // };
+
