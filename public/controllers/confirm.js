@@ -13,4 +13,8 @@ App.controller('confctrl',function($scope , mainSrv){
     // $scope.distance = "100 mile";
     // $scope.date ="22/3/2015";
     $scope.flight =mainSrv.getx();
+     $scope.onclick = function(){
+
+      mainSrv.setx($scope.flight);
+    };
     });
