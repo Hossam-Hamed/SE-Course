@@ -1,33 +1,5 @@
-
-<!-- <!doctype html> -->
-<!-- <html ng-app="app"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="../styles/confirm.css"> -->
-    <!-- <script src="angular.min.js"></script> -->
-    <!-- <script src="./cofirm.js"></script> -->
-    <!-- <script src="./dummy data/flight.json"></script> -->
-    <!-- <script src="./dummy data/reservation.json"></script> -->
-
-	<!-- <body class="main" ng-controller="MainController"> -->
-	<!-- 	<h1>Confirm your flight</h1>
-    	<h2> {{ flight.depature }} - {{ flight.arrival }}</h2>
-    	<div id="one">  <h3> {{ flight.date }}</h3> </div>
-    	<div id="two">
-			<h4> FROM : {{ flight.arrival }} AT: {{ flight.arrivalTime }} </h4>
-			<h5> TO : {{ reservation.depature }}  AT: {{ reservation.depatureTime }} </h5>
-			<h6> SEATS </h6>
-			<h7> {{ flight.areoplan }} | {{ flight.class }}  </h7>
-    	</div> -->
-    	
-    	
-		
-       
-  
-	<!-- </body> -->
-<!-- </html> -->
-
 <div class="container" style="padding-top: 100px;" >
-<!--   <h2 >Confirm your flight</h2>
- -->  <h3>{{flight.from}} - {{flight.to}}</h3>            
+  <h3>{{flight.from}} - {{flight.to}}</h3>            
   <table class="table" class="well">
 <thead>
      <tr>
@@ -37,7 +9,7 @@
     <thead>
      <tr>
         <th>Date</th>
-        <th>{{ flight.depaturedate }}</th>
+        <th>{{ flight.date }}</th>
       </tr>
     </thead>
 <tbody>
@@ -47,7 +19,7 @@
       </tr>
       <tr>
       <td>At</td>
-        <td>{{ arrivalTime }}</td>
+        <td>{{ flight.arrivalTime }}</td>
       </tr>
 
       <tr>
@@ -56,23 +28,23 @@
       </tr>
       <tr>
       <td>Estimated Time</td>
-        <td>{{ depatureTime }}</td>
+        <td>{{ flight.departureTime }}</td>
       </tr>
       <tr>
         <td>Seat</td>
-        <td>{{ seat }}</td>
+        <td><div class="dropdown"<st>
+  <button onclick="populate()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+      <a> </a>
+  </div>
+  </div>
+  </td>
+
+</body></td>
       </tr>
       <tr>
         <td>Class</td>
         <td>{{ flight.cabin }}</td>
-      </tr>
- <tr>
-        <td>Total Distance</td>
-        <td>{{ distance }}</td>
-      </tr>
- <tr>
-        <td>Aircraft</td>
-        <td>{{ areoplane }}</td>
       </tr>
     </tbody>
   </table>

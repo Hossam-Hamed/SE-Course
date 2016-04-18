@@ -1,11 +1,7 @@
-module.exports = function(app) {
+ module.exports = function(app) {
 
+var seats;
 
-app.get('/api/sum/:x/:y', function(req, res) {
-	var x = parseInt(req.params.x);
-	var y = parseInt(req.params.y);
-	res.send((x + y) + '');
-});
 
 
 app.get('/', function(req, res) {
@@ -13,4 +9,13 @@ res.sendFile('index.html');
 });
 
 
+app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
+ seats = mongo.db().collection('balbezoo').find().toArray(function(err, docs) {
+		cb(err, docs);
+	})
+  });
+
+exports.seats;
+
 };
+
