@@ -12,8 +12,42 @@ module.exports = function(app,mongo) {
     }); 
 }
 */
+    var mongo   = require('db.js');
 
+module.exports = function(app) {
 
+    var mongo   = require('db.js');
+    var moment  = require('moment');
+
+    // app.get('/api/data/codes', function(req, res) {
+    //    var codes =  require('./dummy data/flights.json');
+    //    res.json( codes );
+    // });
+
+        app.get('/db/delete',function(req,res){
+        
+        mongo.db().collection('Flights').deleteMany(function(err,data){
+          if (err) {
+                  res.send("Couldn't delete");
+            throw error('flights delete faild');
+          }
+          else {
+                  res.send("flights deleted");
+            console.log("flighs delete many succesful");
+          }
+        });
+        mongo.db().collection('Airports').deleteMany(function(err,data){
+          if (err) {
+                  res.send("Couldn't delete");
+            throw error('airports delete faild');
+          }
+          else {
+                  res.send("airports deleted");
+            console.log("airports delete many succesful");
+          }
+        });
+
+         });
 
 
 
@@ -36,37 +70,7 @@ module.exports = function(app,mongo) {
 
     // });
 
-module.exports = function(app) {
-
-    var mongo   = require('./db.js');
-    var moment  = require('moment');
 
     
 
-app.get('/', function(req, res) {
-res.sendFile('index.html');
-}
-);
-
-app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class' 
-  ,function(req,res){
-
-   mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination})
-   .toArray().then(function (flights) {
-   console.log("heloo");
-   res.send(flights);
- });
-})
-
-
-app.get('/api/flights/search/:origin/:destination/:departingDate/:class'
-  ,function(req,res){
-  mongo.db.collection('Flights').find({'origin' :  req.origin,'destination' :req.destination})
-   .toArray().then(function (flights){
-  console.log("heloo");
-   res.send(flights);
- });
-})
-
-
-}
+};

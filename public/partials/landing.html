@@ -1,14 +1,18 @@
+
+<!-- <body ng-app='myApp' ng-controller = 'myCtrl'> -->
 <div class="container"style="/*float: right;*/ width: 40%;padding-top: 50px">
 <div class="panel panel-default" >
 <div class="panel-body">
 <form class="form-horizontal" name="myForm"  ng-submit="doSubmit()">
 <fieldset style="padding-top: 50px">
-
+ <!--  <h1 style=" font-size: 50px; color: black;
+    font-family: "Courier New", Courier, monospace;">Ticket</h1>
+ -->
 <!-- Search input-->
 <div class="form-group" >
   <label class="col-md-4 control-label" for="searchinput">From :</label>
   <div class="col-md-5">
-    <input type="text" ng-model="landing.from" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Departing from" required="" name = "departure"> 
+    <input type="text" ng-model="Selected1" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Departing from" required="" name = "departure"> 
     <span ng-show="myForm.departure.$touched &&myForm.departure.$invalid " class="text-danger">Enter a valid value.</span>
   </div>
 </div>
@@ -17,7 +21,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="searchinput">To :</label>
   <div class="col-md-5">
-       <input type="text" ng-model="landing.to" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Arriving at"required="" name = "arrival">
+       <input type="text" ng-model="Selected" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Arriving at"required="" name = "arrival">
      <span ng-show="myForm.arrival.$touched &&myForm.arrival.$invalid " class="text-danger">Enter a valid value.</span>
   </div>
 </div>
@@ -26,23 +30,27 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Cabin:</label>
   <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control" ng-model= "landing.cabin">
-      <option value="Economy">Economy</option>
-      <option value="Business">Business</option>
-      <option value="First">First</option>
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1"EA>Economy</option>
+      <option value="2">Business</option>
+      <option value="3">First</option>
     </select>
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="searchinput">Departure Date :</label>
+  <!-- <div class="col-md-5">
+    <input id="searchinput" name="searchinput"  class="form-control input-md"  type="date">
+  </div> -->
+
  <div class="row">
                   <div class="col-md-6">
                     <p class="input-group">
                       <input type="text"
                              class="form-control"
                              uib-datepicker-popup="{{format}}"
-                             ng-model="landing.depatutreDate"
+                             ng-model="dt"
                              is-open="popup1.opened"
                              ng-required="true"
                              close-text="Close"
@@ -72,7 +80,7 @@
                       <input type="text"
                              class="form-control"
                              uib-datepicker-popup="{{format}}"
-                             ng-model="landing.returnDate"
+                             ng-model="dt"
                              is-open="popup2.opened"
                              ng-required="true"
                              close-text="Close"
@@ -108,7 +116,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="next()"> Search
+    <div id="singlebutton" name="singlebutton" class="btn btn-primary"> Search
     </div>
   </div>
 </div>

@@ -8,8 +8,7 @@
       {"origin": "London Heathrew", "destination": "New York-John F. Kennedy", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
       {"origin": "Las Vegas", "destination": "Las Angeles", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
       {"origin": "Las Angeles", "destination": "San Francisco", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-      {"origin": "Frankfurt", "destination": "Berlin", "duration": "2 hours", "capacity": "100",
-       "aircraft": "Airbus a318", "flightNumber": "SE2804"},
+      {"origin": "Frankfurt", "destination": "Berlin", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
       {"origin": "Rome", "destination": "Milan", "duration": "2 hours", "capacity": "100", 
       "aircraft": "Airbus a318", "flightNumber": "SE2804"}
 ]

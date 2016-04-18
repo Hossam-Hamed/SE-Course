@@ -1,24 +1,9 @@
 
-
-angular.module('App').controller('landingCtrl', function($scope ,mainSrv , landingServ)
+App.controller('landingCtrl',function($scope ,state)
 {
 
-
-  // alert('aa');
-  mainSrv.init();
   $scope.selected = undefined;
-  $scope.states =landingServ;
-  $scope.landing = mainSrv.getx();
-
-  // console.log($scope.landing);
-  // $scope.landing = {
-  //   origin :"",
-  //  destination : "" ,
-  //  depaturedate : "",
-  //  returnDate : "" ,
-  //  cabinet : ""
-
-  // }
+  $scope.states =state;
 
 /*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
@@ -45,10 +30,12 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv , landi
   };
   $scope.doSubmit = function(){
         if($scope.myForm.$pristine){alert('menna');}
-    };
-    $scope.next = function(){
+    }
 
-      mainSrv.setx($scope.landing);
-    };
-   
-});
+})
+
+.factory("state",function(){
+  var state =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+  return state;
+})
+

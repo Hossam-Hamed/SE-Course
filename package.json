@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha tests",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -18,15 +18,13 @@
   },
   "homepage": "https://github.com/secourse2016/balabezoo#readme",
   "dependencies": {
+    "express": "^4.13.4",
+    "mongodb"     : "~1.4",
     "body-parser": "~1.13.2",
-    "chai": "^3.5.0",
-    "dotenv": "*",
-    "express": "*",
+    "express"     : "*",
+    "dotenv"      : "*",
     "jsonwebtoken": "*",
-    "mocha": "^2.4.5",
-    "moment": "*",
-    "mongodb": "^2.1.16",
-    "supertest": "^1.2.0",
-    "underscore": "*"
+    "underscore"  : "*",
+    "moment"      : "*"
   }
 }
