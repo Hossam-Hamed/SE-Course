@@ -7,15 +7,8 @@ return{
     },
     getx : function(){
       return this.x;
-    },
-    init: function() {
-      var y = $http.get('Reservation.json').success(function(data){
-        var x = y;
-        console.log('schema');
-        // this.x = 'a';
-        console.log(x);
-      }).error(console.log);
-    }
+    }   
+
 
 }
-})
+}) 
