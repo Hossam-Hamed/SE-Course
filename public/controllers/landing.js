@@ -3,9 +3,23 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
   mainSrv.init();
   $scope.selected = undefined;
   $scope.states =landingServ;
-  $scope.landing = mainSrv.getx();
+  $scope.landing = {paymentMethod : { creditCard : {}}};
+
 
   /*----------- Angular Bootstrap Datepicker -----------*/
+
+  
+  // console.log($scope.landing);
+  // $scope.landing = {
+  //   origin :"",
+  //  destination : "" ,
+  //  depaturedate : "",
+  //  returnDate : "" ,
+  //  cabinet : ""
+
+  // }
+
+/*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 

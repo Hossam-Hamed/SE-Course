@@ -1,44 +1,57 @@
 App	.controller("summaryCtrl",function($scope,countries,mainSrv){
 
+  $scope.data = mainSrv.getx();
+  console.log($scope.data);
+
+  // mainSrv.init(function(){
+  //   $scope.data=mainSrv.getx();
+  //   // console.log($scope.data);  
+  // });+
   $scope.selected=undefined;
   $scope.country=countries;
   $scope.isCollapsed2 = true;    
   $scope.cont=false;
-  $scope.isActive1 = true;
+  $scope.isActive1 = false;
   $scope.isActive2 = true;
   $scope.show=false;
   $scope.isCollapsed = true;    
 
-  $scope.data=mainSrv.getx();
   
 
   $scope.check= function(){
       //   
-      if ( $scope.dt.length<=0 || $scope.CNo.length<12|| $scope.CVC.length<3|| $scope.selected.length<=0 || 
-        $scope.fn.length<=0 ||
-        $scope.ln.length<=0 ||
-        $scope.email.length<=0 ||
-        $scope.no.length<=0 ||
-        $scope.cfn.length<=0 ||
-        $scope.cln.length<=0 ||
-        $scope.selected.length<=0 ||
-        $scope.ct.length<=0 ||
-        $scope.a1.length<=0 ||
-        $scope.ct.length<=0      ) {
+      if (
+        ($scope.data.paymentMethod.creditCard.expiryDate!=undefined && $scope.myForm.date.$valid)  && 
+        ($scope.data.paymentMethod.creditCard.code!=undefined &&$scope.myForm.CNo.$valid)  && 
+        ($scope.data.paymentMethod.creditCard.CVC!=undefined && $scope.myForm.CVC.$valid)  && 
+        ($scope.data.country!=undefined && $scope.data.country.length>0)  &&
+        ($scope.data.firstName!=undefined && $scope.data.firstName.length>0)  &&
+        ($scope.data.lastName!=undefined && $scope.data.lastName.length>0)  &&
+        ($scope.data.email!=undefined && $scope.data.email.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.phone!=undefined && $scope.myForm.no.$valid)  &&
+        ($scope.data.paymentMethod.creditCard.cardholderFN!=undefined && $scope.data.paymentMethod.creditCard.cardholderFN.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.cardholderLN!=undefined && $scope.data.paymentMethod.creditCard.cardholderLN.length>0)  &&  
+        ($scope.data.paymentMethod.creditCard.city!=undefined &&$scope.data.paymentMethod.creditCard.city.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.address1!=undefined && $scope.data.paymentMethod.creditCard.address1.length>0) 
+        ) {
             // addAlert();
-          $scope.cont=false;
+            $scope.cont=true;
 
-        }
-        else{
-          $scope.cont=true;
-
-        }
-
-      };
-
-      $scope.Cont= function(){
+          }
+          else{
 
 
+
+
+           $scope.cont=false;
+
+         }
+         console.log($scope.data)
+         console.log($scope.cont)
+
+       };
+
+       $scope.Cont= function(){
 
         if ($scope.cont) {
          $scope.show=false;
@@ -46,16 +59,17 @@ App	.controller("summaryCtrl",function($scope,countries,mainSrv){
        }
        else{
          $scope.show=true;
-
-
        }
-
-
-
+       
 
      };
 
-     $scope.toggleActive1 = function() {
+
+     $scope.set=function(){
+      mainSrv.setx($scope.data);
+    }
+
+    $scope.toggleActive1 = function() {
       $scope.isActive1 = !$scope.isActive1;
 
     };
@@ -77,7 +91,7 @@ App	.controller("summaryCtrl",function($scope,countries,mainSrv){
     };
 
     $scope.setDate = function(year, month, day) {
-      $scope.dt = new Date(year, month, day);
+      $scope.data.paymentMethod.creditCard.expiryDate = new Date(year, month, day);
     };
 
     $scope.popup1 = {

@@ -18,13 +18,17 @@ App.controller('confctrl',function($scope , mainSrv){
 
 
 $scope.goBack = function() {
-   $window.history.back();
+ $window.history.back();
 
 };
 
 
 $scope.flight =mainSrv.getx();
 var x    = require('routes.js');
+$scope.onclick = function(){
+
+  mainSrv.setx($scope.flight);
+};
 
 });
 
@@ -37,4 +41,4 @@ function populate() {
         sel.appendChild(opt);
     }
 }
-// }
+

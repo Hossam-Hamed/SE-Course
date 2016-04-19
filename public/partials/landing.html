@@ -1,38 +1,38 @@
 <div class="container"style="/*float: right;*/ width: 40%;padding-top: 50px">
-<div class="panel panel-default" >
-<div class="panel-body">
-<form class="form-horizontal" name="myForm"  ng-submit="doSubmit()">
-<fieldset style="padding-top: 50px">
+  <div class="panel panel-default" >
+    <div class="panel-body">
+      <form class="form-horizontal" name="myForm"  ng-submit="doSubmit()">
+        <fieldset style="padding-top: 50px">
 
-<!-- Search input-->
-<div class="form-group" >
-  <label class="col-md-4 control-label" for="searchinput">From :</label>
-  <div class="col-md-5">
-    <input type="text" ng-model="landing.from" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Departing from" required="" name = "departure"> 
-    <span ng-show="myForm.departure.$touched &&myForm.departure.$invalid " class="text-danger">Enter a valid value.</span>
-  </div>
-</div>
+          <!-- Search input-->
+          <div class="form-group" >
+            <label class="col-md-4 control-label" for="searchinput">From :</label>
+            <div class="col-md-5">
+              <input type="text" ng-model="landing.from" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Departing from" required="" name = "departure"> 
+              <span ng-show="myForm.departure.$touched &&myForm.departure.$invalid " class="text-danger">Enter a valid value.</span>
+            </div>
+          </div>
 
-<!-- Search input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="searchinput">To :</label>
-  <div class="col-md-5">
-       <input type="text" ng-model="landing.to" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Arriving at"required="" name = "arrival">
-     <span ng-show="myForm.arrival.$touched &&myForm.arrival.$invalid " class="text-danger">Enter a valid value.</span>
-  </div>
-</div>
+          <!-- Search input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="searchinput">To :</label>
+            <div class="col-md-5">
+             <input type="text" ng-model="landing.to" uib-typeahead="states for states in states| filter:$viewValue|limitTo:8" class="form-control" placeholder="Arriving at"required="" name = "arrival">
+             <span ng-show="myForm.arrival.$touched &&myForm.arrival.$invalid " class="text-danger">Enter a valid value.</span>
+           </div>
+         </div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Cabin:</label>
-  <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control" ng-model= "landing.cabin">
-      <option value="Economy">Economy</option>
-      <option value="Business">Business</option>
-      <option value="First">First</option>
-    </select>
-  </div>
-</div>
+         <!-- Select Basic -->
+         <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic">Cabin:</label>
+          <div class="col-md-4">
+            <select id="selectbasic" name="selectbasic" class="form-control" ng-model= "landing.cabin">
+              <option value="Economy">Economy</option>
+              <option value="Business">Business</option>
+              <option value="First">First</option>
+            </select>
+          </div>
+        </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="searchinput" ng-model = "landing.date">Departure Date :</label>
@@ -61,34 +61,63 @@
                   </div>
 </div>
 
-<div class="form-group" id="1"  ng-show="!showDiv">
+<!-- <div class="form-group" id="1"  ng-show="!showDiv">
   <label class="col-md-4 control-label" for="searchinput" ng-model="landing.returndate" >Return Date :</label>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="searchinput">Departure Date :</label>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="input-group">
+                <input type="text"
+                class="form-control"
+                uib-datepicker-popup="{{format}}"
+                ng-model="landing.depatutreDate"
+                is-open="popup1.opened"
+                ng-required="true"
+                close-text="Close"
+                name = "hi"
+                alt-input-formats="altInputFormats" required="" />
+                <span ng-show="myForm.hi.$touched &&myForm.hi.$invalid " class="text-danger">Enter a valid value.</span>
+                <span class="input-group-btn">
+                  <button type="button"
+                  class="btn btn-default"
+                  ng-click="open1()" >
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="form-group" id="1"  ng-show="!showDiv">
+        <label class="col-md-4 control-label" for="searchinput" >Return Date :</label>
   <!-- <div class="col-md-5">
     <input  name="searchinput" class="form-control input-md" type="text">
   </div> -->
   <div class="row">
-                  <div class="col-md-6">
-                    <p class="input-group">
-                      <input type="text"
-                             class="form-control"
-                             uib-datepicker-popup="{{format}}"
-                             ng-model="landing.returnDate"
-                             is-open="popup2.opened"
-                             ng-required="true"
-                             close-text="Close"
-                             name="hi2" 
-                             alt-input-formats="altInputFormats" />
-                               <span ng-show="myForm.hi2.$touched &&myForm.hi2.$invalid " class="text-danger">Enter a valid value.</span>
-                      <span class="input-group-btn">
-                        <button type="button"
-                                class="btn btn-default"
-                                ng-click="open2()">
-                                <i class="glyphicon glyphicon-calendar"></i>
-                       </button>
-                      </span>
-                    </p>
-                  </div>
-                  </div>
+    <div class="col-md-6">
+      <p class="input-group">
+        <input type="text"
+        class="form-control"
+        uib-datepicker-popup="{{format}}"
+        ng-model="landing.returnDate"
+        is-open="popup2.opened"
+        ng-required="true"
+        close-text="Close"
+        name="hi2" 
+        alt-input-formats="altInputFormats" />
+        <span ng-show="myForm.hi2.$touched &&myForm.hi2.$invalid " class="text-danger">Enter a valid value.</span>
+        <span class="input-group-btn">
+          <button type="button"
+          class="btn btn-default"
+          ng-click="open2()">
+          <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+      </span>
+    </p>
+  </div>
+</div>
 </div>
 
 
@@ -110,10 +139,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="next()"> Search
+    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="check()"> Search
+
     </div>
   </div>
-</div>
 </a>
 
 </div>
@@ -127,11 +156,11 @@
 </div>
 </div>
 <script>
-.btn btn-primary a {
+  .btn btn-primary a {
     display: block;
     width: 100%;
     line-height: 50px;
-}
+  }
 </script>
 <!-- </body> -->
 
