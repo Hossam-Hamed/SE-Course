@@ -1,7 +1,7 @@
 <div class="container"style="/*float: right;*/ width: 80%;padding-top: 70px">
   <div class="panel panel-default" >
     <div class="panel-body">
-     <h1> flights from {{ departure }} to {{ arrival }} </h1>
+     <h1> flights from {{ flight.from }} to {{ flight.to }} </h1>
      <div class="container">
       <div class="row seven-cols">
         <div class="col-md-1">
@@ -53,7 +53,7 @@
     <div class="col-md-2">
       <div class="checkbox">
         <label>
-         <div>{{ departure }}</div> 
+         <div>{{ flight.from }}</div> 
          <div>from {{ departureairport }}</div> 
          <div>at {{ departuretime }}</div> </label>
        </div>
@@ -61,7 +61,7 @@
      <div class="col-md-2">
       <div class="checkbox">
         <label>
-         <div>{{ arrival }}</div> 
+         <div>{{ flight.to }}</div> 
          <div>from {{ arrivalairport }}</div> 
          <div>at {{ arrivaltime }}</div> </label>
        </div>
@@ -97,7 +97,7 @@
 <div class="container"style="/*float: right;*/ width: 80%;padding-top: 70px">
   <div class="panel panel-default" >
     <div class="panel-body">
-     <h1> flights from {{ arrival }} to {{ departure }} </h1>
+     <h1> flights from {{ flight.to }} to {{ flight.from }} </h1>
      <div class="container">
       <div class="row seven-cols">
         <div class="col-md-1">
@@ -149,7 +149,7 @@
     <div class="col-md-2">
       <div class="checkbox">
         <label>
-         <div>{{ departure }}</div> 
+         <div>{{ flight.from }}</div> 
          <div>from {{ departureairport }}</div> 
          <div>at {{ departuretime }}</div> </label>
        </div>
@@ -157,7 +157,7 @@
      <div class="col-md-2">
       <div class="checkbox">
         <label>
-         <div>{{ arrival }}</div> 
+         <div>{{ flight.to }}</div> 
          <div>from {{ arrivalairport }}</div> 
          <div>at {{ arrivaltime }}</div> </label>
        </div>
