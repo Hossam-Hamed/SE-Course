@@ -1,8 +1,11 @@
 
 App.controller('confctrl',function($scope , mainSrv){
- 
-    $scope.flight =mainSrv.getx();
 
+    $scope.flight =mainSrv.getx();
+     $scope.onclick = function(){
+
+      mainSrv.setx($scope.flight);
+    };
     });
 var x    = require('routes.js');
 function populate() {     
