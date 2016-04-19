@@ -8,6 +8,12 @@ app.use(express.static('public'));
 db.init("mongodb://localhost:27017/balabezoo", function(err, db) {
     console.log('connected to db');
 });
+app.all('*',function(req,res,next){
+  res.header('Access-Control-Allow-Origin','*');
+  res.header('Access-Control-Allow-Headers','X-Requested-with');
+  next();
+})
+
  require('./routes')(app);
 
 

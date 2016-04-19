@@ -11,7 +11,7 @@ var jwt     = require('jsonwebtoken');
 app.use(function(req, res, next) {
 
       // check header or url parameters or post parameters for token  
-      var token = req.headers['x-access-token'];   
+      var token = req.query.wt || req.headers['x-access-token'];   
 
       console.log("{{{{ TOKEN }}}} => ", token);
 
@@ -27,16 +27,12 @@ app.use(function(req, res, next) {
       catch (err) 
       {
         console.error('[ERROR]: JWT Error reason:', err);
-        res.send("balabezoo");
+        res.send("403 Unathorized");
       //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
       }
 
     })
-app.all('*',function(req,res,next){
-  res.header('Access-Control-Allow-Origin','*');
-  res.header('Access-Control-Allow-Headers','X-Requested-with');
-  next();
-})
+
 app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class' 
   ,function(req,res){
    mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination})
