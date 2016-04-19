@@ -6,10 +6,12 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv , landi
 
   // alert('aa');
   // mainSrv.init();
+
   $scope.selected = undefined;
   $scope.states =landingServ;
   $scope.landing = {paymentMethod : { creditCard : {}}};
 
+  
   // console.log($scope.landing);
   // $scope.landing = {
   //   origin :"",
