@@ -12,10 +12,10 @@ module.exports = function(app) {
 
 
     app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
-       seats = mongo.db().collection('balbezoo').find().toArray(function(err, docs) {
+     seats = mongo.db().collection('balbezoo').find().toArray(function(err, docs) {
         cb(err, docs);
     })
-   });
+ });
 
      /**
      * Seed Flights Collection:
