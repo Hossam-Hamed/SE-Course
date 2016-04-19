@@ -1,7 +1,461 @@
-// [
-//       {"origin": "Mumbai", "destination": "Delhi","cost":"1500" ,"duration": "2 hours",
-//       "currency":"USD", "capacity": "100",
-//        "aircraftModel":"A320", "aircraft": "Airbus a318","flightNumber":"1234cd55", 
+  [
+       {"origin": "Mumbai", "destination": "Delhi","cost":"1500" ,"duration": "2 hours",
+      "currency":"USD", "capacity": "100",
+        "aircraftModel":"A320", "aircraft": "Airbus a318","flightNumber":"1234cd55",
+            "seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+} 
+
+
+     
+    }, {  "aeroplaneID": "12333","flightNumber":"1234cd55","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"4","origin": "Mumbai","destination": "Delhi","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}
+
+
+
+},{
+      "aeroplaneID": "344433","flightNumber":"1334cd55","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"4","origin": "Cairo","destination": "Jeddah","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+} 
+},{
+       "aeroplaneID": "233344","flightNumber":"11550CB","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"2","origin": "Hong Kong","destination": "Taiwan","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}
+},
+{
+       "aeroplaneID": "748645","flightNumber":"14350CB","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Johannesburg","destination": "Cape Town","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}
+},{
+
+       "aeroplaneID": "6363992","flightNumber":"10300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"2","origin": "Riyadh","destination": "Jeddah","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+} 
+},
+
+{
+
+       "aeroplaneID": "3763488","flightNumber":"10300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Riyadh","destination": "Jeddah","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}      
+},{
+ "aeroplaneID": "328389","flightNumber":"55300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"2","origin": "London Heathrew","destination": "New York-John F. Kennedy","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}   
+},{
+"aeroplaneID": "3738299","flightNumber":"6432EN3","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Las Vegas","destination": "Las Angeles","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}   
+
+},{
+"aeroplaneID": "6490999","flightNumber":"10300DF","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"3","origin": "Las Angeles","destination": "San Francisco","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+}
+
+},{
+      "aeroplaneID": "437999","flightNumber":"2633BV6","aircraft": "Airbus a318"
+, "capacity": "100", "duration":"1","origin": "Frankfurt","destination": "Berlin","seatmap" :{
+                "first" : {
+            "cost" :  "400",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"1","col":"A"}
+,{"type":"window","resID":"","row":"2","col":"A"},{"type":"window","resID":"","row":"3","col":"A"},{"type":"window","resID":"","row":"4","col":"A"},{"type":"window","resID":"","row":"5","col":"A"},{"type":"window","resID":"","row":"6","col":"A"},{"type":"window","resID":"","row":"7","col":"A"},
+{"type":"window","resID":"","row":"8","col":"A"},{"type":"window","resID":"","row":"9","col":"A"},{"type":"window","resID":"","row":"10","col":"A"},
+{"type":"window","resID":"","row":"1","col":"A"},{"type":"aisle","resID":"","row":"1","col":"B"}
+,{"type":"aisle","resID":"","row":"2","col":"B"},{"type":"aisle","resID":"","row":"3","col":"B"},{"type":"aisle","resID":"","row":"4","col":"B"},{"type":"aisle","resID":"","row":"5","col":"B"},{"type":"aisle","resID":"","row":"6","col":"B"},{"type":"aisle","resID":"","row":"7","col":"B"},
+{"type":"aisle","resID":"","row":"8","col":"B"},{"type":"aisle","resID":"","row":"9","col":"B"},{"type":"aisle","resID":"","row":"10","col":"B"},
+]
+},
+    "Business" : {
+"cost" :  "200",
+             "seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"11","col":"A"}
+,{"type":"window","resID":"","row":"12","col":"A"},{"type":"window","resID":"","row":"13","col":"A"},{"type":"window","resID":"","row":"14","col":"A"},{"type":"window","resID":"","row":"15","col":"A"},{"type":"window","resID":"","row":"16","col":"A"},{"type":"window","resID":"","row":"17","col":"A"},
+{"type":"window","resID":"","row":"18","col":"A"},{"type":"window","resID":"","row":"19","col":"A"},{"type":"window","resID":"","row":"20","col":"A"},
+{"type":"window","resID":"","row":"11","col":"A"},{"type":"aisle","resID":"","row":"12","col":"B"}
+,{"type":"aisle","resID":"","row":"13","col":"B"},{"type":"aisle","resID":"","row":"14","col":"B"},{"type":"aisle","resID":"","row":"15","col":"B"},{"type":"aisle","resID":"","row":"16","col":"B"},{"type":"aisle","resID":"","row":"17","col":"B"},
+{"type":"aisle","resID":"","row":"18","col":"B"},{"type":"aisle","resID":"","row":"19","col":"B"},{"type":"aisle","resID":"","row":"20","col":"B"},
+]
+},
+
+"Economy" : {
+  "cost"  : "100",
+"seat" : [{"type":"window","resID":"","row":"1","col":"A"},{"type":"window","resID":"","row":"21","col":"A"}
+,{"type":"window","resID":"","row":"22","col":"A"},{"type":"window","resID":"","row":"23","col":"A"},{"type":"window","resID":"","row":"24","col":"A"},{"type":"window","resID":"","row":"25","col":"A"},{"type":"window","resID":"","row":"26","col":"A"},{"type":"window","resID":"","row":"27","col":"A"},
+{"type":"window","resID":"","row":"28","col":"A"},{"type":"window","resID":"","row":"29","col":"A"},{"type":"window","resID":"","row":"30","col":"A"},
+{"type":"window","resID":"","row":"21","col":"A"},{"type":"aisle","resID":"","row":"22","col":"B"}
+,{"type":"aisle","resID":"","row":"23","col":"B"},{"type":"aisle","resID":"","row":"24","col":"B"},{"type":"aisle","resID":"","row":"25","col":"B"},{"type":"aisle","resID":"","row":"26","col":"B"},{"type":"aisle","resID":"","row":"27","col":"B"},
+{"type":"aisle","resID":"","row":"28","col":"B"},{"type":"aisle","resID":"","row":"29","col":"B"},{"type":"aisle","resID":"","row":"30","col":"B"},
+]
+}
+ 
+} 
+}
+]
+
+
+
+
+
+
+/*[
+       {"origin": "Mumbai", "destination": "Delhi","cost":"1500" ,"duration": "2 hours",
+       "currency":"USD", "capacity": "100",
+        "aircraftModel":"A320", "aircraft": "Airbus a318","flightNumber":"1234cd55"}, 
+        {"origin": "Cairo", "destination": "Jeddah","cost":"1750" , "duration": "2 hours",
+       "currency":"USD", "capacity": "100", "aircraftModel":"A320","aircraftType": "Airbus a318",
+       "flightNumber": "SE2804"},
+       {"origin": "Hong Kong", "destination": "Taiwan",
+       "currency":"USD","cost":"1440" , "duration": "2 hours", "capacity": "100",
+       "aircraftModel":"A320","aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "Johannesburg", "destination": "Cape Town",
+       "currency":"USD","cost":"1320" , "duration": "2 hours", 
+       "capacity": "100","aircraftModel":"A320", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "Riyadh", "destination": "Jeddah","cost":"1100" ,
+       "currency":"USD", "duration": "2 hours", 
+       "capacity": "100", "aircraftModel":"A320", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "London Heathrew", "destination": "New York-John F. Kennedy",
+       "currency":"USD","cost":"2000" , "duration": "2 hours",
+        "capacity": "100", "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "Las Vegas", "destination": "Las Angeles",
+       "currency":"USD","cost":"1800" , "duration": "2 hours", "capacity": "100","aircraftModel":"A320", 
+       "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "Las Angeles", "destination": "San Francisco",
+       "currency":"USD","cost":"1100" , "duration": "2 hours",
+        "capacity": "100", "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "Frankfurt", "destination": "Berlin",
+       "currency":"USD","cost":"1220" , "duration": "2 hours", "capacity": "100",
+        "aircraftModel":"A320", 
+       "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
+       {"origin": "Rome", "destination": "Milan","cost":"1800", "currency":"USD" , "duration": "2 hours", "capacity": "100",
+        "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"}
+        ]
+
+
+
+
+
+
+
+
 
 
      [
@@ -74,3 +528,6 @@
       // "aircraftType": "Airbus a318", "flightNumber": "SE2804"},
       // {"origin": "Rome", "destination": "Milan","cost":"1800", "currency":"USD" , "duration": "2 hours", "capacity": "100",
       //  "aircraftModel":"A320", "aircraftType": "Airbus a318", "flightNumber": "SE2804"}
+
+
+*/
