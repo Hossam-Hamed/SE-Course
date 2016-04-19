@@ -21,31 +21,6 @@
 
 
 
-    //this is middleware i think
-app.use(function(req, res, next) {
-
-      // check header or url parameters or post parameters for token  
-      var token = req.headers['x-access-token'];   
-
-      console.log("{{{{ TOKEN }}}} => ", token);
-
-      var jwtSecret = process.env.JWTSECRET;
-
-      // Get JWT contents:
-      try 
-      {
-        var payload = jwt.verify(token, jwtSecret);
-        req.payload = payload;
-        next();
-      } 
-      catch (err) 
-      {
-        console.error('[ERROR]: JWT Error reason:', err);
-        res.send("balabezoo");
-      //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
-      }
-
-    })
 
 
 
@@ -196,6 +171,33 @@ res.send(req);
 
     });
     });
+
+        //this is middleware i think
+app.use(function(req, res, next) {
+
+      // check header or url parameters or post parameters for token  
+      var token = req.headers['x-access-token'];   
+
+      console.log("{{{{ TOKEN }}}} => ", token);
+
+      var jwtSecret = process.env.JWTSECRET;
+
+      // Get JWT contents:
+      try 
+      {
+        var payload = jwt.verify(token, jwtSecret);
+        req.payload = payload;
+        next();
+      } 
+      catch (err) 
+      {
+        console.error('[ERROR]: JWT Error reason:', err);
+        res.send("balabezoo");
+      //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
+      }
+
+    })
+
 
 
 
