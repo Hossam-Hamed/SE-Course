@@ -6,7 +6,7 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv , landi
 
   // alert('aa');
   // mainSrv.init();
-  // $scope.data = 
+
   $scope.selected = undefined;
   $scope.states =landingServ;
   $scope.landing = {paymentMethod : { creditCard : {}}};
