@@ -1,6 +1,7 @@
 App	.controller("summaryCtrl",function($scope,countries,mainSrv){
 
-  $scope.data = { paymentMethod: { creditCard: {} } };
+  $scope.data = mainSrv.getx();
+  console.log($scope.data);
 
   // mainSrv.init(function(){
   //   $scope.data=mainSrv.getx();
@@ -20,34 +21,37 @@ App	.controller("summaryCtrl",function($scope,countries,mainSrv){
   $scope.check= function(){
       //   
       if (
-       ($scope.data.paymentMethod.creditCard.expiryDate!=undefined&&$scope.data.paymentMethod.creditCard.expiryDate.length>0)  && 
-        ($scope.data.paymentMethod.creditCard.code!=undefined&&$scope.data.paymentMethod.creditCard.code.length<12)  && 
-        ($scope.data.paymentMethod.creditCard.CVC!=undefined&&$scope.data.paymentMethod.creditCard.CVC.length<3)  && 
-        ($scope.data.country!=undefined&&$scope.data.country.length>0)  &&
-        ($scope.data.firstName!=undefined&&$scope.data.firstName.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.expiryDate!=undefined && $scope.myForm.date.$valid)  && 
+        ($scope.data.paymentMethod.creditCard.code!=undefined &&$scope.myForm.CNo.$valid)  && 
+        ($scope.data.paymentMethod.creditCard.CVC!=undefined && $scope.myForm.CVC.$valid)  && 
+        ($scope.data.country!=undefined && $scope.data.country.length>0)  &&
+        ($scope.data.firstName!=undefined && $scope.data.firstName.length>0)  &&
         ($scope.data.lastName!=undefined && $scope.data.lastName.length>0)  &&
-        ($scope.data.lastName!=undefined&&$scope.data.email.length>0)  &&
-        ($scope.data.paymentMethod.creditCard.phone!=undefined&&$scope.data.paymentMethod.creditCard.phone.length>0)  &&
-        ($scope.data.paymentMethod.creditCard.cardholderFN!=undefined&&$scope.data.paymentMethod.creditCard.cardholderFN.length>0)  &&
-        ($scope.data.paymentMethod.creditCard.cardholderLN!=undefined&&$scope.data.paymentMethod.creditCard.cardholderLN.length>0)  &&
-        ($scope.data.country!=undefined&&$scope.data.country.length>0)  &&
-        ($scope.data.paymentMethod.creditCard.city!=undefined&&$scope.data.paymentMethod.creditCard.city.length>0)  &&
-        ($scope.data.paymentMethod.creditCard.address1!=undefined&&$scope.data.paymentMethod.creditCard.address1.length>0) 
+        ($scope.data.email!=undefined && $scope.data.email.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.phone!=undefined && $scope.myForm.no.$valid)  &&
+        ($scope.data.paymentMethod.creditCard.cardholderFN!=undefined && $scope.data.paymentMethod.creditCard.cardholderFN.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.cardholderLN!=undefined && $scope.data.paymentMethod.creditCard.cardholderLN.length>0)  &&  
+        ($scope.data.paymentMethod.creditCard.city!=undefined &&$scope.data.paymentMethod.creditCard.city.length>0)  &&
+        ($scope.data.paymentMethod.creditCard.address1!=undefined && $scope.data.paymentMethod.creditCard.address1.length>0) 
         ) {
             // addAlert();
-          $scope.cont=true;
+            $scope.cont=true;
 
-        }
-        else{
-          $scope.cont=false;
-
-        }
-
-      };
-
-      $scope.Cont= function(cb){
+          }
+          else{
 
 
+
+
+           $scope.cont=false;
+
+         }
+         console.log($scope.data)
+         console.log($scope.cont)
+
+       };
+
+       $scope.Cont= function(){
 
         if ($scope.cont) {
          $scope.show=false;
@@ -55,18 +59,17 @@ App	.controller("summaryCtrl",function($scope,countries,mainSrv){
        }
        else{
          $scope.show=true;
-
-
-       }cb(function(){
-        mainSrv.setx($scope.data);
-       });
-
-
-
+       }
+       
 
      };
 
-     $scope.toggleActive1 = function() {
+
+     $scope.set=function(){
+      mainSrv.setx($scope.data);
+    }
+
+    $scope.toggleActive1 = function() {
       $scope.isActive1 = !$scope.isActive1;
 
     };
