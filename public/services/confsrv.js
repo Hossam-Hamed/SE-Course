@@ -7,7 +7,8 @@ App.factory('confsrv' , function ($http) {
 		getLanding : function(landing){
 			return this.landing;
 
-		},
+		}
 	}
-	
-})
+
+});
+

@@ -1,7 +1,7 @@
 App.controller('outgoingctrl',function($scope){
-		$scope.depature='Alex';
+		$scope.departure='Alex';
 		$scope.arrival = 'IAD';
-		$scope.depatureairport = 'Alex';
+		$scope.departureairport = 'Alex';
 		$scope.departuretime = '3:00';
 		$scope.arrivalairport = 'IAD';
 		$scope.arrivaltime = '4:00';

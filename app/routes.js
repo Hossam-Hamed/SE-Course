@@ -1,13 +1,12 @@
-//<<<<<<< HEAD
+
 module.exports = function(app) {
 var jwt     = require('jsonwebtoken');
-var seats;
-
-
-
-app.get('/', function(req, res) {
-res.sendFile('index.html');
-});
+    var mongo   = require('./db.js');
+    var moment  = require('moment');
+    var seats;
+    app.get('/', function(req, res) {
+        res.sendFile('index.html');
+    });
 //this is middleware i think
 app.use(function(req, res, next) {
 
@@ -40,7 +39,6 @@ app.all('*',function(req,res,next){
 })
 app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class' 
   ,function(req,res){
-
    mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination})
    .toArray().then(function (flights) {
    console.log("heloo");
@@ -69,14 +67,12 @@ app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
   })
   });
 
-exports.seats;
+    app.get('/api/baalabezoo/:bookingRefNumber', function(req, res) {
+        mongo.getBookingFromDb(function(err, data) {
+        res.send(data); //one random quote
 
-};
+    });
+    });
+    exports.seats;
 
-/*
-=======
- module.exports = function(app) {
-
-
-};*/
-
+}

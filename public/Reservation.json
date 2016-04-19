@@ -15,6 +15,7 @@
     "departureTime":"Number",
     "arrivalTime":"Number",
     "seatNumber":"String",
+    "aeroplane":"string",
     "duration":"Number",
     "cabin":"String",
     "gate" : "String",
@@ -24,7 +25,7 @@
     "country" :"String",
     "paymentMethod":
                     {
-                        "creditCard":{"password":"Number","address1":"String","address2":"String","code":"Number", "expiryDate" :"String"},
+                        "creditCard":{"CVC":"Number","address1":"String","city":"String","phone":"String","code":"Number", "expiryDate" :"String","cardholderFN":"String","cardholderLN":"String"},
                         "cash":[{"place":"String","date":"Date","deadline":"Date"}]
 
                     }}
