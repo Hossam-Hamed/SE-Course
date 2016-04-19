@@ -1,4 +1,4 @@
-angular.module('App').factory('mainSrv' , function ($http) {
+App.factory('mainSrv' , function ($http) {
 
 
 return{

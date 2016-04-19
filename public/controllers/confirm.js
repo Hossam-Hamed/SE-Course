@@ -17,24 +17,24 @@ App.controller('confctrl',function($scope , mainSrv){
 
 
 
-    $scope.goBack = function() {
-         $window.history.back();
+$scope.goBack = function() {
+   $window.history.back();
 
-  };
+};
 
- 
-// >>>>>>> 04c6c26af0fb30cde0e1e56b84f26080ff2d5d5e
-    $scope.flight =mainSrv.getx();
 
-    });
+$scope.flight =mainSrv.getx();
+var x    = require('routes.js');
 
-// var x    = require('routes.js');
-// function populate() {     
-// var sel = document.getElementById('myDropdown').classList.toggle("show");
-// for(var i = 0; i < cuisines.length; i++) {
-//     var opt = document.createElement('option');
-//     opt.innerHTML = seats[i];
-//     opt.value = seats[i];
-//     sel.appendChild(opt);
-// }
+});
+
+function populate() {     
+    var sel = document.getElementById('myDropdown').classList.toggle("show");
+    for(var i = 0; i < cuisines.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = seats[i];
+        opt.value = seats[i];
+        sel.appendChild(opt);
+    }
 }
+// }
