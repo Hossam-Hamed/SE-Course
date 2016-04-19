@@ -1,4 +1,5 @@
-angular.module('App').controller('landingCtrl', ["$scope", "mainSrv", "landingServ", function($scope ,mainSrv , landingServ)
+angular.module('App').controller('landingCtrl', ["$scope", "mainSrv", "landingServ",
+ function($scope ,mainSrv , landingServ)
 {
 
 

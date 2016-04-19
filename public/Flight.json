@@ -1,0 +1,29 @@
+{
+     "aeroplaneID":"Number",
+    "flightNumber": "String",
+    "aircraft": "String",
+    "capacity": "Number",
+    "date": "Date",
+    "duration": "Number",
+    "origin": "String",
+    "destination": "String",
+    "seatmap": {
+        "first": {
+                
+             "cost": "Number",
+             "seat":[{"type":"String","resID":"String","row":"Number","col":"String"}]
+                          
+           },                
+        "business": {
+
+             "cost": "Number",
+             "seat":[{"type":"String","resID":"String","row":"Number","col":"String"}]
+        },
+        "economy" : {
+             "cost": "Number",
+             "seat":[{"type":"String","resID":"String","row":"Number","col":"String"}]         
+        }
+
+}
+      
+  }

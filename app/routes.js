@@ -1,13 +1,54 @@
  module.exports = function(app) {
+
+  var jwt     = require('jsonwebtoken');
    var seats;
     var mongo = require('../db.js'); 
      var moment = require('moment');
     var fs = require('fs');
+        var client = require('mongodb').MongoClient;
+
+
+
+  app.get('/', function(req, res) {
+        res.sendFile('index.html');
+    });
+
 
     app.get('/api/data/codes', function(req, res) {
        var codes =  require('./dummy data/flight.json');
        res.json( codes );
     });
+
+
+
+    //this is middleware i think
+app.use(function(req, res, next) {
+
+      // check header or url parameters or post parameters for token  
+      var token = req.headers['x-access-token'];   
+
+      console.log("{{{{ TOKEN }}}} => ", token);
+
+      var jwtSecret = process.env.JWTSECRET;
+
+      // Get JWT contents:
+      try 
+      {
+        var payload = jwt.verify(token, jwtSecret);
+        req.payload = payload;
+        next();
+      } 
+      catch (err) 
+      {
+        console.error('[ERROR]: JWT Error reason:', err);
+        res.send("balabezoo");
+      //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
+      }
+
+    })
+
+
+
 
 
     app.get('/db/seed',function(callback) {
@@ -99,6 +140,20 @@
 
 
   })
+
+app.all('*',function(req,res,next){
+  res.header('Access-Control-Allow-Origin','*');
+  res.header('Access-Control-Allow-Headers','X-Requested-with');
+  next();
+})
+
+
+
+
+
+
+
+
     app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class' 
   ,function(req,res){
 
@@ -126,9 +181,25 @@ app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
     })
   });
 
+
+
+app.get('/api/flights/search',function(req,res){
+req = require ('infoflight.json');
+res.send(req);
+})
+
+
+
+    app.get('/api/baalabezoo/:bookingRefNumber', function(req, res) {
+        mongo.getBookingFromDb(function(err, data) {
+        res.send(data); //one random quote
+
+    });
+    });
+
+
+
 exports.seats;
-
-
 
 
 };
