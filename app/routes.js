@@ -1,10 +1,18 @@
+//<<<<<<< HEAD
 module.exports = function(app) {
 var jwt     = require('jsonwebtoken');
+var seats;
+
+
+
+app.get('/', function(req, res) {
+res.sendFile('index.html');
+});
 //this is middleware i think
 app.use(function(req, res, next) {
 
       // check header or url parameters or post parameters for token  
-      var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
+      var token = req.headers['x-access-token'];   
 
       console.log("{{{{ TOKEN }}}} => ", token);
 
@@ -55,8 +63,20 @@ req = require ('infoflight.json');
 res.send(req);
 })
 
+app.get('/api/baalabezoo/:from/:to/:flightDate/:cabin', function(req, res) {
+ seats = mongo.db().collection('balbezoo').find().toArray(function(err, docs) {
+    cb(err, docs);
+  })
+  });
+
+exports.seats;
 
 };
 
+/*
+=======
+ module.exports = function(app) {
 
+
+};*/
 
