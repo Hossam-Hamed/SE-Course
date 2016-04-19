@@ -60,9 +60,8 @@ App	.controller("summaryCtrl",function($scope,countries,mainSrv){
        else{
          $scope.show=true;
        }
-       
-
-     };
+       // app.post('/api/postReserv/',$scope.data);
+       }
 
 
      $scope.set=function(){

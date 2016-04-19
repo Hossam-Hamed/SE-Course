@@ -17,24 +17,6 @@ module.exports = function(app) {
     })
  });
 
-     /**
-     * Seed Flights Collection:
-     */
-    // app.get('/seed/flights', function (req, res) {
-
-    //   // insert outgoing flights
-    //   for (var i = 0; i < routes.length; i++) {
-    //     var route = routes[i];
-    //     seedFlights(route, route.origin, route.destination);
-    //   }
-
-    //   // insert returning flights
-    //   for (var i = 0; i < routes.length; i++) {
-    //     var route = routes[i];
-    //     seedFlights(route, route.destination, route.origin);
-    //   }
-
-    // });
     app.get('/api/baalabezoo/:bookingRefNumber', function(req, res) {
         mongo.getBookingFromDb(function(err, data) {
         res.send(data); //one random quote
@@ -66,5 +48,6 @@ module.exports = function(app) {
     //     exports.seats;
 
     // };
+
 
 

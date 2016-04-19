@@ -1,6 +1,7 @@
 App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 {
   mainSrv.init();
+
   $scope.selected = undefined;
   $scope.states =landingServ;
   $scope.landing = {paymentMethod : { creditCard : {}}};
@@ -19,7 +20,7 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
   // }
 
-/*----------- Angular Bootstrap Datepicker -----------*/
+  /*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
