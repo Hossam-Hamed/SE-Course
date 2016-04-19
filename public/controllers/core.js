@@ -1,4 +1,4 @@
-var App = angular.module('App',['ui.bootstrap','ngRoute']);
+App = angular.module('App',['ui.bootstrap','ngRoute']);
 
 App.config(function($routeProvider) {
 	$routeProvider
@@ -47,10 +47,6 @@ App.config(function($routeProvider) {
          .when('/pay', {
          templateUrl:'../partials/summary.html',
             controller:'summaryCtrl'
-         })
-          .when('/2ways', {
-         templateUrl:'../partials/Return.html',
-            controller:'return'
          })
          
          .otherwise({

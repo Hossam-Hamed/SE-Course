@@ -1,8 +1,8 @@
 var scotchApp = angular.module('scotchApp', []);
 
     
-    scotchApp.controller('mainController', function($scope) {
+    scotchApp.controller('mainController', ["$scope", function($scope) {
 
      
         $scope.message = 'Everyone come and see how good I look!';
-    });
+    }]);

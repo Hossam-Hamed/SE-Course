@@ -1,4 +1,3 @@
-
 App.controller('confctrl',function($scope , mainSrv){
 
   $scope.flight =mainSrv.getx();

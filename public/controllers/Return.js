@@ -40,10 +40,10 @@
 
 
 // return {
-// 	getinfo : function(){
+//  getinfo : function(){
 
-// 		return $http.get('../partials/out.json');
-// 	}
+//    return $http.get('../partials/out.json');
+//  }
 // }
 // })
 App.controller('return',function($scope,mainSrv){
@@ -55,6 +55,6 @@ App.controller('return',function($scope,mainSrv){
     // $scope.arrivaltime = '4:00';
     // $scope.stops = 0;
     // $scope.tranzit = 'no stops';
-	  $scope.flight =mainSrv.getx();
+    $scope.flight =mainSrv.getx();
 
 })
