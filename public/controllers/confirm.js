@@ -6,7 +6,7 @@ App.controller('confctrl',function($scope , mainSrv){
     mainSrv.setx($scope.flight);
   };
 });
-var x    = require('routes.js');
+// var x    = require('routes.js');
 function populate() {     
   var sel = document.getElementById('myDropdown').classList.toggle("show");
   for(var i = 0; i < cuisines.length; i++) {
