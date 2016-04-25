@@ -1,0 +1,115 @@
+body{
+    color: black;
+    font-weight: bold;
+}
+ h3{
+	font-weight: bold;
+	font-size: 30px;
+	/*color: black;*/
+	align-self: center;
+}
+
+ h4{
+	margin-left: 65px;
+}
+
+ test {
+  width:60%;
+  display:inline;
+  overflow: auto;
+  white-space: nowrap;
+  margin:0px auto;
+}
+#seatmap table {
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+
+
+#plane {
+	width: 800px;
+	height: auto;
+	background: #fff;
+    border: solid 1px #aaa;
+	border-radius: 80px 0 0 80px;
+    z-index: 1;
+}
+    #plane .rows {
+        width: 40px;
+        float: left;  
+        empty-cells: show;
+        margin-top: 6px;
+        margin-left: 30px;
+    }
+        #plane .rows td { 
+            height: 7px; 
+            text-align: right;
+        }
+
+#cabin { 
+    background-color: #dedede; 
+    border: none;
+    border-left: double 3px #aaa;
+    width: 727px; 
+    height: auto; 
+    padding: 2px 5px;
+    float: left;
+    margin-left: 0px;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#cabin td { width: 15px; height: 15px; border: solid 1px #666; border-radius: 7px 0 0 7px; text-align: center; cursor: pointer; }
+    #cabin td.row              { background-color: transparent; border: none; font-weight: bold; padding-right: 7px; }
+    #cabin td.seatAvailable    { background-color: #01B213; color: #fff; }
+    #cabin td.seatUnavailable  { background-color: #aaa !important; color: #ddd !important; }
+    #cabin td.ExtraPay         { background-color: navy; color: #fff !important; }
+    #cabin td.LargeSeat        { width: 23px; }
+    #cabin td.noSeatGalley     { background-color: transparent; border: none; width: 10px; height: 10px;  }
+    #cabin td.noSeatStorage    { background-color: #aaa; }
+    #cabin td.noSeatLavatory   { background-color: #aaa; }
+
+#cabin tr:first-child td,
+#cabin tr:last-child td { height: 2px; border: none; border-radius: 0; }
+#cabin tr:first-child td.wingSeat { border-top: solid 2px #333; }
+#cabin tr:last-child td.wingSeat { border-bottom: solid 2px #333; }

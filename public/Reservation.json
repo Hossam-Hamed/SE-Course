@@ -1,0 +1,34 @@
+{
+    "_id": "String" ,
+    "firstName": "String",
+    "lastName": "String",
+    "email" :"String",
+    "passport": "String",
+    "issueDate" :"Date",
+    "expiryDate" :"Date",
+    "receipt_number": "String",
+    "bookingRefNumber": "String",  
+    "from":"String",
+    "to":"String",
+    "date ":"Date",
+    "returndate":"Date",
+    "departureTime":"Number",
+    "arrivalTime":"Number",
+    "seatNumber":"String",
+    "aeroplane":"string",
+    "duration":"Number",
+    "cabin":"String",
+    "gate" : "String",
+    "iata":"String",
+    "filghtNO":"String",
+    "amount":"Number",
+    "country" :"String",
+    "paymentMethod":
+                    {
+                        "creditCard":{"CVC":"Number","address1":"String","city":"String","phone":"String","code":"Number", "expiryDate" :"String","cardholderFN":"String","cardholderLN":"String"},
+                        "cash":[{"place":"String","date":"Date","deadline":"Date"}]
+
+                    }}
+
+
+
