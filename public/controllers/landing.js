@@ -47,8 +47,10 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
   $scope.check = function() {
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      $scope.ref="#single";
+      mainSrv.init();
       mainSrv.setx($scope.landing);
+      mainSrv.process();
+      $scope.ref="#single";
     }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       $scope.ref="#2ways";
       mainSrv.setx($scope.landing);
@@ -56,7 +58,6 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
     }else{
       alert("you forgot to enter some data");
       $scope.ref="#/team";
-
     }
   };
   // };

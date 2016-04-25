@@ -48,21 +48,22 @@ module.exports = function(app) {
             seedFlights(route,route.origin, route.destination);
         }
         function seedFlights(flight, _origin, _destination) {
-          doc = {
+          for (var i = 1; i <= 46; i++) {
+            doc = {
               "flightNumber": flight.flightNumber,
               "aircraft": flight.aircraft,
               "capacity": flight.capacity,
               "date": moment().add(i, 'days').calendar(),
-              //"date"          : new Date(),
               "duration": flight.duration,
               "origin": _origin,
               "destination": _destination,
               "seatmap": []
-          };
-          mongo.db().collection('Flights').insert(doc, function(err, data) {
+            };
+            mongo.db().collection('Flights').insert(doc, function(err, data) {
               if (err) console.log('error');
               else console.log('insert successful');
-          });
+            });
+          }
         }
       } else {
         console.log("# of Flights was: " + count);
@@ -84,7 +85,6 @@ module.exports = function(app) {
     res.send("BalaBeezo");
   });
 
-    
   app.get('/db/delete',function(req,res){
     mongo.db().collection('Flights').deleteMany(function(err,data){
       if (err) {
@@ -108,11 +108,11 @@ module.exports = function(app) {
     });
   });
 
-  app.all('*',function(req,res,next){
-    res.header('Access-Control-Allow-Origin','*');
-    res.header('Access-Control-Allow-Headers','X-Requested-with');
-    next();
-  });
+  // app.all('*',function(req,res,next){
+  //   res.header('Access-Control-Allow-Origin','*');
+  //   res.header('Access-Control-Allow-Headers','X-Requested-with');
+  //   next();
+  // });
 
   app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class',function(req,res){
    mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination,'departingDate' : req.departingDate,'returningDate' : req.returningDate, 'cabin': req.cabin}).toArray().then(function (flights) {
@@ -121,9 +121,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/api/flights/search/:origin/:destination/:departingDate/:class', function(req,res){
-    mongo.db.collection('Flights').find({'origin' :  req.origin,'destination' :req.destination, 'departingDate' : req.departingDate,'cabin' : req.cabin}).toArray().then(function (flights){
-      console.log("heloo");
+  app.get('/api/flights/search/:origin/:destination/:month/:day/:year/:class', function(req,res){
+    var date = req.params.month + '/' + req.params.day + '/' + req.params.year
+    mongo.db().collection('Flights').find({'origin' :  req.params.origin,'destination' :req.params.destination, 'date' : date}).toArray().then(function (flights){
       res.send(flights);
     });
   });
