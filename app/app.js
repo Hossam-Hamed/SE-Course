@@ -4,7 +4,7 @@ var bodyparse = require('body-parser');
 var db = require('./db.js');
 
 app.use(express.static('public'));
-//require('dotenv').load();
+require('dotenv').load();
 require('./routes')(app);
 
 
