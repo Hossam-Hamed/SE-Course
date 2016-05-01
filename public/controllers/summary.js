@@ -52,7 +52,7 @@ App .controller("summaryCtrl",function($scope,countries,mainSrv){
        };
 
        $scope.Cont= function(){
-
+        alert("dtj");
         if ($scope.cont) {
          $scope.show=false;
 

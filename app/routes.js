@@ -6,36 +6,9 @@ module.exports = function(app) {
   var moment = require('moment');
   var fs = require('fs');
   var client = require('mongodb').MongoClient;
-
-  // app.use(function(req, res, next) {
-  //   // check header or url parameters or post parameters for token
-  //   var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
-  //   console.log("{{{{ TOKEN }}}} => ", token);
-  //   var jwtSecret = process.env.JWTSECRET;
-  //   // Get JWT contents:
-  //   try 
-  //   {
-  //     var origin = jwt.verify(token, origin);
-  //     var destination = jwt.verify(token,destination);
-  //     var departingDate = jwt.verify(token,departingDate);
-  //     var returningDate = jwt.veriy(token,returningDate);
-  //     var Class = jwt.verify(token,class);
-  //     req.origin = origin;
-  //     req.destination = destination;
-  //     req.departingDate = departingDate;
-  //     req.returningDate = returningDate;
-  //     req.class = Class;
-  //     next();
-  //   } 
-  //   catch (err) 
-  //   {
-  //     console.error('[ERROR]: JWT Error reason:', err);
-  //     //res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
-  //   }
-  // });
-
+  
   app.get('/', function(req, res) {
-        res.sendFile('index.html');
+    res.sendFile('index.html');
   });
 
   app.get('/db/seed',function(req, res) {
@@ -44,8 +17,8 @@ module.exports = function(app) {
         var routes = JSON.parse(fs.readFileSync('flights.json', 'utf8'));
         // insert returning flights
         for (var i = 0; i < routes.length; i++) {
-            var route = routes[i];
-            seedFlights(route,route.origin, route.destination);
+          var route = routes[i];
+          seedFlights(route,route.origin, route.destination);
         }
         function seedFlights(flight, _origin, _destination) {
           for (var i = 1; i <= 46; i++) {
@@ -57,6 +30,8 @@ module.exports = function(app) {
               "duration": flight.duration,
               "origin": _origin,
               "destination": _destination,
+              "cost":5000,
+              "currency" : "USD",
               "seatmap": []
             };
             mongo.db().collection('Flights').insert(doc, function(err, data) {
@@ -113,13 +88,18 @@ module.exports = function(app) {
   //   res.header('Access-Control-Allow-Headers','X-Requested-with');
   //   next();
   // });
+  app.get('/api/Airports',function(req,res){
+    mongo.db().collection('Airports').find().toArray().then(function (AirportsIata) {
+      res.send(AirportsIata);
+    });
+  });
 
   app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class',function(req,res){
    mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination,'departingDate' : req.departingDate,'returningDate' : req.returningDate, 'cabin': req.cabin}).toArray().then(function (flights) {
     console.log("heloo");
     res.send(flights);
-    });
   });
+ });
 
   app.get('/api/flights/search/:origin/:destination/:month/:day/:year/:class', function(req,res){
     var date = req.params.month + '/' + req.params.day + '/' + req.params.year
@@ -144,6 +124,8 @@ module.exports = function(app) {
       res.send(data); //one random quote
     });
   });
+
+
 
   exports.seats;
 
