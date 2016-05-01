@@ -48,10 +48,11 @@ App.config(function($routeProvider) {
             templateUrl:'../partials/summary.html',
             controller:'summaryCtrl'
          })
+
           .when('/2ways', {
-           templateUrl:'../partials/Return.html',
-          controller:'returnctrl'
-}        )
+             templateUrl:'../partials/Return.html',
+             controller:'returnctrl'
+         })
          
          .otherwise({
             redirectTo: '/'
