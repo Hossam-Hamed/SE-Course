@@ -1,6 +1,6 @@
 
 angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landingServ) {
-  console.log("hii");
+ 
   mainSrv.init();
 
   $scope.selected = undefined;
