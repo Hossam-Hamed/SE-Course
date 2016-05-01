@@ -1,189 +1,253 @@
-<div class="container"style="/*float: right;*/ width: 80%;padding-top: 70px">
-  <div class="panel panel-default" >
-    <div class="panel-body">
-     <h1> flights from {{ flight.from }} to {{ flight.to }} </h1>
-     <div class="container">
-      <div class="row seven-cols">
-        <div class="col-md-1">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> 4/4/2016 </label>
-            </div>
-          </div>
-          <div class="col-md-1">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> 5/4/2016 </label>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> 6/4/2016 </label>
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 7/4/2016 </label>
-                  </div>
-                </div>
-                <div class="col-md-1">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> 8/4/2016 </label>
-                    </div>
-                  </div>
-                  <div class="col-md-1">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> 9/4/2016 </label>
-                      </div>
-                    </div>
-    <!-- <div class="col-md-1">
-    <div class="checkbox">
-      <label>
-      <input type="checkbox"> 10/4/2016</label>
-    </div></div> -->
-  </div>
-</div>
+ <!DOCTYPE html>
+<html ng-app="appctrl">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 
-<div class="container">
-  <div class="row seven-cols-1">
-    <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.from }}</div> 
-         <div>from {{ departureairport }}</div> 
-         <div>at {{ departuretime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.to }}</div> 
-         <div>from {{ arrivalairport }}</div> 
-         <div>at {{ arrivaltime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>STOPS: {{ stops }}</div> 
-         <div>Tranzit {{ tranzit }}</div> 
-       </label>
-     </div>
-   </div>
-   <div class="col-md-2">
-    <div class="checkbox">
-      <label>
-       <button type="button" class="btn btn-link"> more details</button>
-     </label>
-   </div>
- </div>
-</div>
-</div>
-<h2>
-  <a href="#/choose">
-    <button type="button" class="btn btn-primary" >choose</button>
-  </a>
-</h2>
-</div>
-</div>
-</div>
+<!-- <script src="../js/angular.min.js"></script> -->
+<script src="../controllers/Return.js"></script>
+<link rel="stylesheet" type="text/css" href="../styles/Return.css">
+
+  <title>Return</title>
+</head>
+
+<body ng-controller = "out">
+
+<style>
+h1{
+   color: blue;
+    font-size: 20px;
+}
+</style>
+<h1> Flights from {{arr}} to {{depature}}</h1>
+
+</body>
+<head>
+<style>
+table, th, td {
+    border: 3px solid blue;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+  <tr>
+    <TD>
+  <div class="dd/mm/yyy">{{date8}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+    
+    
+
+     <TD>
+  <div class="dd/mm/yyy">{{date9}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+
+ <TD>
+  <div class="dd/mm/yyy">{{date10}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+
+     <TD>
+  <div class="dd/mm/yyy">{{date11}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+
+     <TD>
+  <div class="dd/mm/yyy">{{date12}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+
+    <TD>
+  <div class="dd/mm/yyy">{{date13}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+
+     <TD>
+  <div class="dd/mm/yyy">{{date14}}</div>
+  <div class=<label><input type="radio" name="optradio"></label> </div>
+ 
+</TD> 
+  </tr>
+ 
+</table>
 
 
 
-<div class="container"style="/*float: right;*/ width: 80%;padding-top: 70px">
-  <div class="panel panel-default" >
-    <div class="panel-body">
-     <h1> flights from {{ flight.to }} to {{ flight.from }} </h1>
-     <div class="container">
-      <div class="row seven-cols">
-        <div class="col-md-1">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> 4/4/2016 </label>
-            </div>
-          </div>
-          <div class="col-md-1">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> 5/8/2016 </label>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> 6/4/2016 </label>
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 7/4/2016 </label>
-                  </div>
-                </div>
-                <div class="col-md-1">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> 8/4/2016 </label>
-                    </div>
-                  </div>
-                  <div class="col-md-1">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> 9/4/2016 </label>
-                      </div>
-                    </div>
-    <!-- <div class="col-md-1">
-    <div class="checkbox">
-      <label>
-      <input type="checkbox"> 10/4/2016</label>
-    </div></div> -->
-  </div>
-</div>
+<head>
+<style>
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 25px;
+    text-align: left;    
+}
+</style>
+</head>
+<body>
 
-<div class="container">
-  <div class="row seven-cols-1">
-    <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.from }}</div> 
-         <div>from {{ departureairport }}</div> 
-         <div>at {{ departuretime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.to }}</div> 
-         <div>from {{ arrivalairport }}</div> 
-         <div>at {{ arrivaltime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>STOPS: {{ stops }}</div> 
-         <div>Tranzit {{ tranzit }}</div> 
-       </label>
-     </div>
-   </div>
-   <div class="col-md-2">
-    <div class="checkbox">
-      <label>
-       <button type="button" class="btn btn-link"> more details</button>
-     </label>
-   </div>
- </div>
+<table style="width:100%">
+  <tr>
+    <th>
+<div class="row">
+  <left> 
+<TABLE BORDER= 20 CELLSPACING=20 CELLPADDING=20> 
+<TR> 
+<TD><div class="row">
+  <div class="Departure:">Departure:</div>
+  <div class="(xxx) Airport">{{arr}} Airport</div>
+  <div class="HH:MM">{{hours5}}:{{minutes}}</div>
+</div></TD> 
+<TD><div class="row">
+  <div class="Departure:">Arrival:</div>
+  <div class="(xxx) Airport">{{depature}} Airport</div>
+  <div class="HH:MM">{{hours10}}:{{minutes}}</div>
+</div></TD> 
+<TD><div class="row">
+  <div class="Departure:">Stops:</div>
+  <div class="(xxx) Airport">{{stop}} Airport</div>
+  <div class="HH:MM">{{hours9}}:{{minutes}}</div>
+</div></TD> 
+
+</TR> 
+</TABLE> 
+</left> 
+
 </div>
+  <th colspan="2">{{cost1 |currency}}
+  <div class="radio">
+  <label><input type="radio" name="optradio">Economy</label>
 </div>
-<h2>
-  <a href="#/choose">
-    <button type="button" class="btn btn-primary" >choose</button>
-  </a>
-</h2>
+  </th>
+   <th colspan="3">{{cost2|currency}}
+   <div class="radio">
+  <label><input type="radio" name="optradio">Business</label>
 </div>
+   </th>
+    <th colspan="4">{{cost3 |currency}}
+    <div class="radio">
+  <label><input type="radio" name="optradio">First Class</label>
 </div>
+    </th>
+     <th colspan="5"><button type="button" class="btn btn-danger">Details</button>
+     </th>
+     
+  </tr>
+
+   <tr>
+    <th>
+<div class="row">
+  <left> 
+<TABLE BORDER= 20 CELLSPACING=20 CELLPADDING=20> 
+<TR> 
+<TD><div class="row">
+  <div class="Departure:">Departure:</div>
+  <div class="(xxx) Airport">{{arr}} Airport</div>
+  <div class="HH:MM">{{hours3}}:{{minutes}}</div>
+</div></TD> 
+<TD><div class="row">
+  <div class="Departure:">Arrival:</div>
+  <div class="(xxx) Airport">{{depature}} Airport</div>
+  <div class="HH:MM">{{hours9}}:{{minutes}}</div>
+</div></TD> 
+<TD><div class="row">
+  <div class="Departure:">Stops:</div>
+  <div class="(xxx) Airport">{{}} Airport</div>
+  <div class="HH:MM">{{hours6}}:{{minutes}}</div>
+</div></TD> 
+
+</TR> 
+</TABLE> 
+</left> 
+
 </div>
+  <th colspan="2">{{cost4 |currency}}
+  <div class="radio">
+  <label><input type="radio" name="optradio">Economy</label>
+</div>
+  </th>
+   <th colspan="3">{{cost5 |currency}}
+   <div class="radio">
+  <label><input type="radio" name="optradio">Business</label>
+</div>
+   </th>
+    <th colspan="4">{{cost6 |currency}}
+    <div class="radio">
+  <label><input type="radio" name="optradio">First Class</label>
+</div>
+    </th>
+     <th colspan="5"><button type="button" class="btn btn-danger">Details</button>
+     </th>
+     
+  <tr>
+    <th>
+<div class="row">
+  <left> 
+<TABLE BORDER= 20 CELLSPACING=20 CELLPADDING=20> 
+<TR> 
+<TD><div class="row">
+  <div class="Departure:">Departure:</div>
+  <div class="(xxx) Airport">{{arr}} Airport</div>
+  <div class="HH:MM">{{hours7}}:{{minutes}}</div>
+</div></TD> 
+<TD><div class="row">
+  <div class="Departure:">Arrival:</div>
+  <div class="(xxx) Airport">{{depature}} Airport</div>
+  <div class="HH:MM">{{hours9}}:{{minutes}}</div>
+</div></TD> 
+<TD><div class="row">
+  <div class="Departure:">Stops:</div>
+  <div class="(xxx) Airport">{{stop1}} Airport</div>
+  <div class="HH:MM">{{hours5}}:{{minutes}}</div>
+</div></TD> 
+
+</TR> 
+</TABLE> 
+</left> 
+
+</div>
+  <th colspan="2">{{cost7 |currency}}
+  <div class="radio">
+  <label><input type="radio" name="optradio">Economy</label>
+</div>
+  </th>
+   <th colspan="3">{{cost8 |currency}}
+   <div class="radio">
+  <label><input type="radio" name="optradio">Business</label>
+</div>
+   </th>
+    <th colspan="4">{{cost9 |currency}}
+    <div class="radio">
+  <label><input type="radio" name="optradio">First Class</label>
+</div>
+    </th>
+     <th colspan="5"><button type="button" class="btn btn-danger">Details</button>
+     </th>
+     
+  </tr>
+  
+</table>
+
+
+
+</body>
+
+</body>
+</html> 
+
+
+

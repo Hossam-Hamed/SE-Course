@@ -1,26 +1,19 @@
-<style >
-  .panel { background: rgba(245, 245, 245, 0.6);color:black;border:0;}
-  .form-control{width: 20%;display: inline;}
-  .control-label{display: inline;}
-  h3{float: left;}
-</style>
-</style>
-<br>
-<br>
-<br>
-<div class="container" style="padding-top: 100px;">
 
+<br>
+<br>
+<br>
+ <div class="container" style="padding-top: 100px;">
+  
 
-  <div ng-model="alert" class="alert alert-danger" ng-show="show">
+    <div ng-model="alert" class="alert alert-danger" ng-show="show">
     <strong> Oh snap!</strong> Change a few things up and try submitting again.
   </div>
-  <br>
-  <br>
 
-  <div class="panel panel-default ">
+
+      <div class="panel panel-default ">
 
 <!-- ++++++++++++++++++++++-summary-++++++++++++++++++++++++++++++++++
--->
+ -->
 
 <div >
 
@@ -28,264 +21,238 @@
 
   <button type="button" 
   class="btn"
-  ng-class="{true: 'btn btn-info btn-block', false: 'btn btn-danger btn-block'}[isActive1]" ng-click="toggleActive1(); isCollapsed = !isCollapsed"
-  >
-  <span  ng-class="{true: 'glyphicon glyphicon-plus-sign', false: 'glyphicon glyphicon-minus-sign'}[isActive1]"></span>
-  Trip summary
-</button>
+   ng-class="{true: 'btn btn-info btn-block', false: 'btn btn-danger btn-block'}[isActive1]" ng-click="toggleActive1(); isCollapsed = !isCollapsed"
+    >
+    <span  ng-class="{true: 'glyphicon glyphicon-plus-sign', false: 'glyphicon glyphicon-minus-sign'}[isActive1]"></span>
+    Trip summary
+    </button>
 
-<div uib-collapse="isActive1">
-  <div>
+  <div uib-collapse="isCollapsed">
+<div>
+    
 
-
-   <table class="table">
-
+ <table class="table">
+   
     <tbody>
       <tr>
         <td class="text-center">
+        <br>
+         <br>
+            <p class="text-center"><strong>Flight number:</strong><em> {{f}}</em>
+       <br>
+        <em>{{p}}</em>
+       <br>
+       <strong>From </strong><em> {{p1}} </em> <strong>to</strong> <em>{{p2}}</em>
+        </p>
+
+         </td>
+<td class="text-center">
+
+          <p id='max' class="text-center ">
+
+        <img src="../images/B.png" class="img-rounded" width="40" height="40" >
+        <img src="../images/B.png" class="img-rounded" width="40" height="40" >
           <br>
-          <br>
-          <p class="text-center">
-           <strong>From </strong> <em> {{data.from}}</em> <strong>to</strong> <em>{{data.to}}</em>
-           <br>
-           <strong>Flight number: </strong><em> {{data.flightNO}}</em>
-           <br>
-           <strong>Flight date: </strong><em>{{data.depatutreDate}}</em>
-           <br>
-           <strong>Plane: <em></strong>{{data.aeroplane}}</em>
-             <br>
-             <strong>Class: <em></strong>{{data.cabin}}</em>
-               <br>
-               <strong>seat: <em></strong>{{data.seatNumber}}</em>
-                 <br>
+                    <br>
 
+         <em>max weight is 23Kg per bag</em>
+         <br>
+         <em>overweight charge is 3$ per Kg</em>
+     </p>
 
-               </p>
+</td>
+      </tr>
+      
+    </tbody>
+  </table>
 
-             </td>
-             <td class="text-center">
-               <br>
-               <br>
-               <p id='max' class="text-center ">
-
-                <img src="../images/B.png" class="img-rounded" width="40" height="40" >
-                <img src="../images/B.png" class="img-rounded" width="40" height="40" >
-                <br>
-                <br>
-
-                <em>max weight is 23Kg per bag</em>
-                <br>
-                <em>overweight charge is 3$ per Kg</em>
-              </p>
-
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-
-    </div>
-
+	
+	</div>
+	
 
 
   </div>
 </div>
-</div>
+ </div>
 <!-- <h2><em><strong>Choose a payment method</strong></em></h2>
---></div>
+ --></div>
 
 
 
     <!-- ++++++++++++++++++++++-credit-++++++++++++++++++++++++++++++++++
-  -->
-  <div class="container"  >
-    <div class="panel panel-default">
+ -->
+<div class="container"  >
+      <div class="panel panel-default">
 
 
-      <form name="myForm">
+<form name="myForm">
 
 
-       <button type="button" 
-       name="btn" 
-       class="btn"
-       ng-class="{true:'btn btn-info btn-block', false: 'btn btn-danger btn-block'}[isActive2]" 
-       ng-click="toggleActive2(); isCollapsed2 = !isCollapsed2"  >
+ <button type="button" 
+ name="btn" 
+ class="btn"
+  ng-class="{true:'btn btn-info btn-block', false: 'btn btn-danger btn-block'}[isActive2]" 
+  ng-click="toggleActive2(); isCollapsed2 = !isCollapsed2"  >
 
-       <span ng-class="{true: 'glyphicon glyphicon-plus-sign', false: 'glyphicon glyphicon-minus-sign'}[isActive2]"></span> 
-       Credit card 
+  <span ng-class="{true: 'glyphicon glyphicon-plus-sign', false: 'glyphicon glyphicon-minus-sign'}[isActive2]"></span> 
+    Credit card 
 
-     </button> 
+  </button> 
 
-     <div uib-collapse="isActive2">
-      <div class="container">
+  <div uib-collapse="isCollapsed2">
+    <div class="container">
 
-        <div class="row"><h3>   Passenger information</h3></div>
+  <h3>Passenger information</h3>
+  </br><hr/>
+                    
+  <div >
+  <label class="control-label col-sm-2" for="fn" >First Name:</label>
+  <input type="text" ng-mouseleave="check()" name="fn" id="fn" ng-model="fn" required>
+  <span ng-show="myForm.fn.$touched && myForm.fn.$invalid" class="text-danger">First name is required.</span>
+  </div>
 
+  <div  >
+  <label class="control-label col-sm-2" for="ln">Last Name:</label>
+  <input type="text" ng-mouseleave="check()" id="ln" name="ln" ng-model="ln" required>
+    <span ng-show="myForm.ln.$touched && myForm.ln.$invalid" class="text-danger">Last name is required.</span>
 
-        <div >
-          <label class="control-label col-sm-2" for="fn" >First Name:</label>
-          <input type="text"  class="form-control" ng-minlength=3 ng-mouseleave="check();set()" name="fn" id="fn" ng-model="data.firstName" required>
-          <span ng-show="myForm.fn.$touched && myForm.fn.$invalid" class="text-danger">First name is required.</span>
-        </div>
-        <br>
-        <div  >
-          <label class="control-label col-sm-2" for="ln">Last Name:</label>
-          <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="ln" name="ln" ng-model="data.lastName" required>
-          <span ng-show="myForm.ln.$touched && myForm.ln.$invalid" class="text-danger">Last name is required.</span>
+  </div>
 
-        </div>
-        <br>
+  <div  >
+  <label class="control-label col-sm-2" for="email">Email:</label>
+  <input type="email" ng-mouseleave="check()" id="email" name="email" ng-model="email" required>
+    <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild Email </span>
 
-        <div  >
-          <label class="control-label col-sm-2" for="email">Email:</label>
-          <input type="email" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="email" name="email" ng-model="data.email" required>
-          <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild Email </span>
+  </div>  
+          
 
-        </div>  
-        <br>
+  <div  >
+  <label class="control-label col-sm-2" for="no">Phone Number:</label>
+  <input type="number" ng-mouseleave="check()" id="no" name="no" ng-model="no" required>
+    <span ng-show="myForm.no.$touched && myForm.no.$invalid" class="text-danger">Enter a vaild phone number.</span>
 
+  </div>
 
-        <div  >
-          <label class="control-label col-sm-2" for="no">Phone Number:</label>
-          <input type="number" class="form-control" ng-minlength=5 ng-mouseleave="check();set()" id="no" name="no" ng-model="data.paymentMethod.creditCard.phone" required>
-          <span ng-show="myForm.no.$touched && myForm.no.$invalid" class="text-danger">Enter a vaild phone number.</span>
+  <div  >
+  </br><hr/>
 
-        </div>
-        <br>
-        <hr>
+  <h3>Cardholder's information</h3>
+  </br><hr/>
 
-        <div  >
-
-
-         <div class="row"> <h3>   Cardholder's information</h3></div>
-         <br>
-
-         <div class="row">
-           <div  >
-            <label class="control-label col-sm-3" for="cfn">Cardholder's first name:</label>
-            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="fn" name="cfn" ng-model="data.paymentMethod.creditCard.cardholderFN" required>
-            <span ng-show="myForm.cfn.$touched && myForm.cfn.$invalid" class="text-danger">Cardholder's first name is required.</span>
+  <div  style="float: left;">
+  <label class="control-label" for="cfn">Cardholder's first name:</label>
+  <input type="text" ng-mouseleave="check()" id="fn" name="cfn" ng-model="cfn" required>
+      <span ng-show="myForm.cfn.$touched && myForm.cfn.$invalid" class="text-danger">Cardholder's first name is required.</span>
 
 
-          </div>
-          <br>
+  </div>
 
-          <div  >
-            <label class="control-label col-sm-3" for="ln">Cardholder's last name:</label>
-            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="ln" name="cln" ng-model="data.paymentMethod.creditCard.cardholderLN" required>
-            <span ng-show="myForm.cln.$touched && myForm.cln.$invalid" class="text-danger">Cardholder's last name is required.</span>
+  <div  >
+  <label class="control-label" for="ln">Cardholder's last name:</label>
+  <input type="text" ng-mouseleave="check()" id="ln" name="cln" ng-model="cln" required>
+        <span ng-show="myForm.cln.$touched && myForm.cln.$invalid" class="text-danger">Cardholder's last name is required.</span>
 
-          </div></div>
+  </div>
+  </br><hr/>
 
-          <br>
-          <hr>
-
-          <div class="row"><h3>   Billing address</h3></div>  
-
-          <br>
+  <h3>Billing address</h3>
+    </br><hr/>
 
 
-          <div >
-            <label class="control-label col-sm-2" for="cn">Country:</label>
-            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="country" name="country" ng-model="data.country" 
-            uib-typeahead="country for country in country | filter:$viewValue | limitTo:8"
-            required>
-            <span ng-show="myForm.country.$touched && myForm.country.$invalid" class="text-danger">Choose a valid country.</span>
+  <div >
+  <label class="control-label col-sm-2" for="cn">Country:</label>
+  <input type="text" ng-mouseleave="check()" id="country" name="country" ng-model="selected" 
+  uib-typeahead="country for country in country | filter:$viewValue | limitTo:8"
+  required>
+        <span ng-show="myForm.country.$touched && myForm.country.$invalid" class="text-danger">Choose a valid country.</span>
 
 
 
-          </div>
-          <br>
+  </div>
 
-          <div >
-            <label class="control-label col-sm-2" for="ct">City:</label>
-            <input type="text" class="form-control" ng-minlength=2 ng-mouseleave="check();set()" id="ct" name="city" ng-model="data.paymentMethod.creditCard.city" required>
-            <span ng-show="myForm.city.$touched && myForm.city.$invalid" class="text-danger">Enter a valid city.</span>
+  <div >
+  <label class="control-label col-sm-2" for="ct">City:</label>
+  <input type="text" ng-mouseleave="check()" id="ct" name="city" ng-model="ct" required>
+        <span ng-show="myForm.city.$touched && myForm.city.$invalid" class="text-danger">Enter a valid city.</span>
 
-          </div>
-          <br>
-          <div  >
-            <label class="control-label col-sm-2" for="a1">Address 1:</label>
-            <input type="text" class="form-control" ng-minlength=5 id="a1" name="a1" ng-model="data.paymentMethod.creditCard.address1" required ng-mouseleave="check();set()">
-            <span ng-show="myForm.a1.$touched && myForm.a1.$invalid" class="text-danger">Address is required.</span>
+  <br>
+  </div>
+    </br><hr/>
 
-          </div>
-          <br>
+    <h3>Card information</h3>
+  </br><hr/>
 
-          <div  >
-            <label class="control-label col-sm-2" for="a2">Address 2:</label>
-            <input type="text" class="form-control"  id="a2" name="a2" ng-model="data.paymentMethod.creditCard.address2">
-          </div>
+    <div>
+      We accept the following cards :
+        <img src="../images/D.png" class="img-rounded" title="Diners">   
+        <img src="../images/V.png" class="img-rounded" title="Visa">   
+        <img src="../images/VE.png" class="img-rounded" title="Visa electron"> 
+        <img src="../images/MC.png" class="img-rounded" title="Master Card"> 
+        <img src="../images/A.png" class="img-rounded" title="American Express"> 
+    </div><br>
+  
+    <div  >
+      <label class="control-label col-sm-2" for="ct">Card number:</label>
+  <input type="number" ng-mouseleave="check()" id="CNo" placeholder="Card number" name="CNo" ng-model="CNo" required>
+        <span ng-show="myForm.CNo.$touched && myForm.CNo.$invalid"  class="text-danger">A valid card number is required.</span>
 
-          <br>
-          <hr>
-          <div class="row"><h3>   Card information</h3></div>  
-          <br>
+  </div>
 
-          <div class="row" style="text-align: left;">
-          <div class="col-sm-1"></div>
-            We accept the following cards :
-            <img src="../images/D.png" class="img-rounded" title="Diners">   
-            <img src="../images/V.png" class="img-rounded" title="Visa">   
-            <img src="../images/VE.png" class="img-rounded" title="Visa electron"> 
-            <img src="../images/MC.png" class="img-rounded" title="Master Card"> 
-            <img src="../images/A.png" class="img-rounded" title="American Express"> 
-          </div>
-          <br>
+    <div  >
+          <label class="control-label col-sm-2" for="ct">CVC code:</label>
 
-          <div  >
-            <label class="control-label col-sm-2" for="ct">Card number:</label>
-            <input type="number"  class="form-control" ng-minlength=10 ng-mouseleave="check();set()" id="CNo" placeholder="Card number" name="CNo" ng-model="data.paymentMethod.creditCard.code" required>
-            <span ng-show="myForm.CNo.$touched && myForm.CNo.$invalid"  class="text-danger">A valid card number is required.</span>
+  <input type="number" id="CVC" placeholder="CVC code" name="CVC" ng-model="CVC" required ng-mouseleave="check()">
 
-          </div>
-          <br>
+  <img src="../images/CVC.jpg" class="img-rounded" placeholder="CVC code" data-toggle="tooltip" title="Your security code is the last three numbers located on the back of your card. For American Express cards, it's the four digits located on the right of your card just above the main card number."> 
 
-          <div  >
-            <label class="control-label col-sm-2" for="ct">CVC code:</label>
+        <span ng-show="myForm.CVC.$touched && myForm.CVC.$invalid" class="text-danger">A valid CVC code is required.</span>
 
-            <input type="number" class="form-control" id="CVC" placeholder="CVC code" name="CVC" ng-model="data.paymentMethod.creditCard.CVC" required ng-minlength=3 ng-mouseleave="check();set()">
+  </div>
+  <div  >
+  <label class="control-label col-sm-2" for="a1">Address 1:</label>
+  <input type="text"  id="a1" name="a1" ng-model="a1" required ng-mouseleave="check()">
+          <span ng-show="myForm.a1.$touched && myForm.a1.$invalid" class="text-danger">Address is required.</span>
 
-            <img src="../images/CVC.jpg" class="img-rounded" placeholder="CVC code" data-toggle="tooltip" title= 
-            "Your security code is the last three numbers located on the back of your card. For American Express cards, it's the four digits located on the right of your card just above the main card number."> 
+  </div>
 
-            <span ng-show="myForm.CVC.$touched && myForm.CVC.$invalid" class="text-danger">A valid CVC code is required.</span>
+   <div  >
+  <label class="control-label col-sm-2" for="a2">Address 2:</label>
+  <input type="text"  id="a2" name="a2" ng-model="a2">
+  </div>
+  </br></br>
+  <div class="clo-sm-4">
+  <p ><strong style="float: left;">Expiry date :</strong></p>
+    
 
-          </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <p class="input-group">
+                      <input type="text"
+                             class="form-control"
+                             uib-datepicker-popup="{{format}}"
+                             ng-model="dt"
+                             is-open="popup1.opened"
+                             ng-required="true"
+                             close-text="Close"
+                             alt-input-formats="altInputFormats" 
+                             name="date" 
+                             ng-mouseleave="check()"/>
+                      <span class="input-group-btn">
+                        <button type="button"
+                                class="btn btn-default"
+                                ng-click="open1()"
+                                ng-mouseleave="check()" >
+                                <i class="glyphicon glyphicon-calendar"></i>
+                       </button>
+                      </span>
+                      </p>     
 
-          <br>
-          <div class="row">
-          <div class="col-sm-2"><label class="control-label " for="ed">Expiry date :</label></div>
-           <div class="col-md-4"></div>
-           <div class="col-md-3">
-            <p class="input-group">
-              <input type="text"
-              class="form-control"
-              id="ed" 
-              name="date" 
-              uib-datepicker-popup="{{format}}"
-              ng-model="data.paymentMethod.creditCard.expiryDate"
-              ng-mouseleave="check();set()"
-              is-open="popup1.opened"
-              ng-required="true"
-              close-text="Close"
-              alt-input-formats="altInputFormats" />
-              <span class="input-group-btn">
-                <button type="button"
-                class="btn btn-default"
-                ng-click="open1()"
-               ng-minlength=4
-                ng-mouseleave="check();set()">
-                <i class="glyphicon glyphicon-calendar"></i>
-              </button>
-            </span>
-          </p>
-        </div>
-        <span ng-show="myForm.date.$touched && myForm.date.$invalid" class="text-danger">Date is required.</span>
+                  </div>
+                  <span ng-show="myForm.date.$touched && myForm.date.$invalid" class="text-danger">Date is required.</span>
 
-      </div>
-    </div>
+
+ </div>
+  </div>
 
 
 
@@ -294,19 +261,27 @@
   <div class="col-md-4">  </div>
 
   <button type="button" 
-  ng-mouseleave="check();set()"
-  ng-class="{true:'btn btn-primary col-md-3', false: 'btn btn-warning col-md-3'}[cont]" 
+  ng-mouseleave="check()"
+ ng-class="{true:'btn btn-primary col-md-3', false: 'btn btn-warning col-md-3'}[cont]" 
   ng-click="Cont()" 
-  > 
-  Continue
-</button> 
-<br>
-<br>
-</div>
+   > 
+      Continue
+  </button> 
+  <br>
+  <br>
+  </div>
 
-</form>
+  </form>
   <!--  cont:{{cont}}
   <br>
-  show : {{show}} -->
-</div>
-</div>
+ show : {{show}} -->
+  </div>
+  </div>
+
+
+</div> 
+<style >
+  h3{
+    float: left;
+  }
+</style>
