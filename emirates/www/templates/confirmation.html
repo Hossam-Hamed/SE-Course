@@ -1,1 +1,19 @@
-<h> confimation</h>
+<ion-view view-title="Emirates airlines">
+  <ion-content class="padding">
+  <body ng-controller="confctrl">
+  <h1> {{flight.from}} - {{flight.to}} </h1>
+<h2> Date: {{ flight.date }} </h2>
+<div class="row responsive-sm">
+  <div class="col">FROM: {{ flight.from }}</div>
+  <div class="col">AT: {{ flight.arrivalTime }}</div>
+  <div class="col">TO: {{ flight.to }}</div>
+  <div class="col">Estimated Time: {{ flight.departureTime }}</div>
+
+  <div>CLASS: {{ flight.cabin }}</div>
+</div>
+ <button class="button button-positive">confirm</button> 
+
+
+
+ </ion-content>
+</ion-view>

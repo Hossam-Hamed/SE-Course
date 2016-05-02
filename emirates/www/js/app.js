@@ -58,6 +58,17 @@ App.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+
+
+  .state('tab.offers', {
+      url: '/offers',
+      views: {
+        'offers': {
+          templateUrl: 'templates/offers.html',
+          // controller: 'ChatsCtrl'
+        }
+      }
+    })
   //   .state('tab.chat-detail', {
   //     url: '/chats/:chatId',
   //     views: {
