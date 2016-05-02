@@ -1,7 +1,46 @@
-<ion-view view-title="book a flight">
+<ion-view view-title="Emirates airlines">
   <ion-content class="padding">
   <body ng-controller="landingCtrl">
-         jdhkdhkfdhkfhkjhfkjhfkjfskf
-    </body>
-  </ion-content>
+      <h1> Book your flight </h1>
+      <div class="list">
+          <label class="item item-input item-floating-label">
+          <span class="input-label">From</span>
+          <input type="text" placeholder="From"></label>
+
+          <label class="item item-input item-floating-label">
+          <span class="input-label">To</span>
+          <input type="text" placeholder="To"></label>
+      </div>
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label"></div>
+          Cabin:
+          <select>
+          <option selected> </option>
+          <option>Economy</option>
+          <option >Business</option>
+          <option>First</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label class="item item-input">
+          <span class="input-label">Depature Date</span>
+          <input type="date">
+        </label>
+      </div>
+      <div>
+        <label class="item item-input">
+           <span class="input-label">Return Date:</span>
+           <input type="date">
+        </label>
+      </div>
+      <ion-list>
+            <ion-checkbox ng-model="filter.blue">one way</ion-checkbox>
+      </ion-list>
+      <ion-list>
+            <ion-checkbox ng-model="filter.green">search other airlines</ion-checkbox>
+      </ion-list>
+      <button class="button button-positive">search</button> 
+ </ion-content>
 </ion-view>
