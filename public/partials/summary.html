@@ -48,15 +48,15 @@
           <p class="text-center">
            <strong>From </strong> <em> {{data.from}}</em> <strong>to</strong> <em>{{data.to}}</em>
            <br>
-           <strong>Flight number: </strong><em> {{data.flightNO}}</em>
+           <strong>Flight number: </strong><em> {{data.flightNumber}}</em>
            <br>
            <strong>Flight date: </strong><em>{{data.depatutreDate}}</em>
            <br>
-           <strong>Plane: <em></strong>{{data.aeroplane}}</em>
+           <strong>Plane: </strong><em>{{data.aircraft}}</em>
              <br>
-             <strong>Class: <em></strong>{{data.cabin}}</em>
+             <strong>Class: </strong><em>{{data.class}}</em>
                <br>
-               <strong>seat: <em></strong>{{data.seatNumber}}</em>
+               <strong>seat: </strong><em>{{data.seatNumber}}</em>
                  <br>
 
 
@@ -125,13 +125,13 @@
 
         <div >
           <label class="control-label col-sm-2" for="fn" >First Name:</label>
-          <input type="text"  class="form-control" ng-minlength=3 ng-mouseleave="check();set()" name="fn" id="fn" ng-model="data.firstName" required>
+          <input type="text"  class="form-control" ng-minlength=3 ng-mouseleave="check();set()" name="fn" id="fn" ng-model="data.passengerDetails.firstName" required>
           <span ng-show="myForm.fn.$touched && myForm.fn.$invalid" class="text-danger">First name is required.</span>
         </div>
         <br>
         <div  >
           <label class="control-label col-sm-2" for="ln">Last Name:</label>
-          <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="ln" name="ln" ng-model="data.lastName" required>
+          <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="ln" name="ln" ng-model="data.passengerDetails.lastName" required>
           <span ng-show="myForm.ln.$touched && myForm.ln.$invalid" class="text-danger">Last name is required.</span>
 
         </div>
@@ -139,16 +139,61 @@
 
         <div  >
           <label class="control-label col-sm-2" for="email">Email:</label>
-          <input type="email" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="email" name="email" ng-model="data.email" required>
+          <input type="email" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="email" name="email" ng-model="data.passengerDetails.email" required>
           <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild Email </span>
 
         </div>  
         <br>
+<div  >
+          <label class="control-label col-sm-2" for="passport">Passport:</label>
+          <input type="text" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="passport" name="passport" ng-model="data.passengerDetails.passportNum" required>
+          <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild Passport number </span>
+
+        </div>
+        <br>
+      <!--   <div  >
+          <label class="control-label col-sm-2" for="birth">Date of birth:</label>
+          <input type="text" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="birth" name="birth" ng-model="data.birth" required>
+          <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild date of birth </span>
+
+        </div> -->
+
+          <div class="row">
+          <div class="col-sm-2"><label class="control-label " for="dob">Date of birth:</label></div>
+           <div class="col-md-4"></div>
+           <div class="col-md-3">
+            <p class="input-group">
+              <input type="text"
+              class="form-control"
+              id="dob" 
+              name="dob" 
+              uib-datepicker-popup="{{format}}"
+              ng-model="data.passengerDetails.birth"
+              ng-mouseleave="check();set()"
+              is-open="popup2.opened"
+              ng-required="true"
+              close-text="Close"
+              alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button"
+                class="btn btn-default"
+                ng-click="open2()"
+               ng-minlength=4
+                ng-mouseleave="check();set()">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <span ng-show="myForm.dob.$touched && myForm.dob.$invalid" class="text-danger">Date is required.</span>
+
+      </div>
 
 
+        <br>
         <div  >
           <label class="control-label col-sm-2" for="no">Phone Number:</label>
-          <input type="number" class="form-control" ng-minlength=5 ng-mouseleave="check();set()" id="no" name="no" ng-model="data.paymentMethod.creditCard.phone" required>
+          <input type="number" class="form-control" ng-minlength=5 ng-mouseleave="check();set()" id="no" name="no" ng-model="data.passengerDetails.phone" required>
           <span ng-show="myForm.no.$touched && myForm.no.$invalid" class="text-danger">Enter a vaild phone number.</span>
 
         </div>
@@ -164,7 +209,7 @@
          <div class="row">
            <div  >
             <label class="control-label col-sm-3" for="cfn">Cardholder's first name:</label>
-            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="fn" name="cfn" ng-model="data.paymentMethod.creditCard.cardholderFN" required>
+            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="fn" name="cfn" ng-model="data.cardholderFN" required>
             <span ng-show="myForm.cfn.$touched && myForm.cfn.$invalid" class="text-danger">Cardholder's first name is required.</span>
 
 
@@ -173,7 +218,7 @@
 
           <div  >
             <label class="control-label col-sm-3" for="ln">Cardholder's last name:</label>
-            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="ln" name="cln" ng-model="data.paymentMethod.creditCard.cardholderLN" required>
+            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="ln" name="cln" ng-model="data.cardholderLN" required>
             <span ng-show="myForm.cln.$touched && myForm.cln.$invalid" class="text-danger">Cardholder's last name is required.</span>
 
           </div></div>
@@ -188,7 +233,7 @@
 
           <div >
             <label class="control-label col-sm-2" for="cn">Country:</label>
-            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="country" name="country" ng-model="data.country" 
+            <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="country" name="country" ng-model="data.passengerDetails.nationality" 
             uib-typeahead="country for country in country | filter:$viewValue | limitTo:8"
             required>
             <span ng-show="myForm.country.$touched && myForm.country.$invalid" class="text-danger">Choose a valid country.</span>
@@ -200,14 +245,14 @@
 
           <div >
             <label class="control-label col-sm-2" for="ct">City:</label>
-            <input type="text" class="form-control" ng-minlength=2 ng-mouseleave="check();set()" id="ct" name="city" ng-model="data.paymentMethod.creditCard.city" required>
+            <input type="text" class="form-control" ng-minlength=2 ng-mouseleave="check();set()" id="ct" name="city" ng-model="data.passengerDetails.city" required>
             <span ng-show="myForm.city.$touched && myForm.city.$invalid" class="text-danger">Enter a valid city.</span>
 
           </div>
           <br>
           <div  >
             <label class="control-label col-sm-2" for="a1">Address 1:</label>
-            <input type="text" class="form-control" ng-minlength=5 id="a1" name="a1" ng-model="data.paymentMethod.creditCard.address1" required ng-mouseleave="check();set()">
+            <input type="text" class="form-control" ng-minlength=5 id="a1" name="a1" ng-model="data.passengerDetails.address1" required ng-mouseleave="check();set()">
             <span ng-show="myForm.a1.$touched && myForm.a1.$invalid" class="text-danger">Address is required.</span>
 
           </div>
@@ -215,7 +260,7 @@
 
           <div  >
             <label class="control-label col-sm-2" for="a2">Address 2:</label>
-            <input type="text" class="form-control"  id="a2" name="a2" ng-model="data.paymentMethod.creditCard.address2">
+            <input type="text" class="form-control"  id="a2" name="a2" ng-model="data.passengerDetails.address2">
           </div>
 
           <br>
@@ -236,7 +281,7 @@
 
           <div  >
             <label class="control-label col-sm-2" for="ct">Card number:</label>
-            <input type="number"  class="form-control" ng-minlength=10 ng-mouseleave="check();set()" id="CNo" placeholder="Card number" name="CNo" ng-model="data.paymentMethod.creditCard.code" required>
+            <input type="number"  class="form-control" ng-minlength=10 ng-mouseleave="check();set()" id="CNo" placeholder="Card number" name="CNo" ng-model="data.cardCode" required>
             <span ng-show="myForm.CNo.$touched && myForm.CNo.$invalid"  class="text-danger">A valid card number is required.</span>
 
           </div>
@@ -245,7 +290,7 @@
           <div  >
             <label class="control-label col-sm-2" for="ct">CVC code:</label>
 
-            <input type="number" class="form-control" id="CVC" placeholder="CVC code" name="CVC" ng-model="data.paymentMethod.creditCard.CVC" required ng-minlength=3 ng-mouseleave="check();set()">
+            <input type="number" class="form-control" id="CVC" placeholder="CVC code" name="CVC" ng-model="data.CVC" required ng-minlength=3 ng-mouseleave="check();set()">
 
             <img src="../images/CVC.jpg" class="img-rounded" placeholder="CVC code" data-toggle="tooltip" title= 
             "Your security code is the last three numbers located on the back of your card. For American Express cards, it's the four digits located on the right of your card just above the main card number."> 
@@ -265,7 +310,7 @@
               id="ed" 
               name="date" 
               uib-datepicker-popup="{{format}}"
-              ng-model="data.paymentMethod.creditCard.expiryDate"
+              ng-model="data.cardDate"
               ng-mouseleave="check();set()"
               is-open="popup1.opened"
               ng-required="true"

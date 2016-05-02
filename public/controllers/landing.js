@@ -4,7 +4,7 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
   $scope.selected = undefined;
   $scope.states =landingServ;
-  $scope.landing = {paymentMethod : { creditCard : {}}};
+  $scope.landing = {passengerDetails : {}};
 
 
   /*----------- Angular Bootstrap Datepicker -----------*/
@@ -46,10 +46,13 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
 
   $scope.check = function() {
+
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      mainSrv.init();
+      // mainSrv.init();
       mainSrv.setx($scope.landing);
+      // mainSrv.getx().depatutreDate=moment(mainSrv.getx().depatutreDate).format('L');
       mainSrv.process();
+      mainSrv.setx($scope.landing);
       $scope.ref="#single";
     }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       $scope.ref="#2ways";

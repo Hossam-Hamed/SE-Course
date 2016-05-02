@@ -5,11 +5,11 @@
       <h1> flights from {{ from }} to {{ to }} </h1>
       <div class="container">
        <!-- {{ flights }} -->
-        <div ng-repeat="flight in flights" class="row seven-cols-1">
-          <div class="col-md-2">
-            <div class="checkbox">
-              <label>
-                <div>{{ flight.origin }}</div><!-- 
+       <div ng-repeat="flight in flights" class="row seven-cols-1">
+        <div class="col-md-2">
+          <div class="checkbox">
+            <label>
+                <div>From :{{ flight.origin }}</div><!-- 
                 <div>from {{ flight.depatureairport }}</div> 
                 <div>at {{ flight.departuretime }}</div> -->
               </label>
@@ -18,17 +18,22 @@
           <div class="col-md-2">
             <div class="checkbox">
               <label>
-               <div>{{ flight.destination }}</div><!-- 
+               <div>To: {{ flight.destination }}</div>
+               <div>Duration: {{flight.duration}}</div>
+               <div>Date: {{flight.date}}</div>
+
+               <!-- 
               <div>from {{ flight.arrivalairport }}</div> 
-               <div>at {{ flight.arrivaltime }}</div> </label> -->
+              <div>at {{ flight.arrivaltime }}</div> </label> -->
+            
             </div>
           </div>
+        <a href="#/choose">
+        <button type="button" ng-click="choose(flight)" class="btn btn-primary" >choose</button>
+        </a>
         </div>
       </div>
       <h2>
-        <a href="#/choose">
-          <button type="button" class="btn btn-primary" >choose</button>
-        </a>
       </h2>
     </div>
   </div>

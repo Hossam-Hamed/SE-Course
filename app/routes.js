@@ -6,34 +6,9 @@ module.exports = function(app) {
   var moment = require('moment');
   var fs = require('fs');
   var client = require('mongodb').MongoClient;
-
-  // app.use(function(req, res, next) {
-  //   // check header or url parameters or post parameters for token
-  //   var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
-  //   console.log("{{{{ TOKEN }}}} => ", token);
-  //   var jwtSecret = process.env.JWTSECRET;
-  //   // Get JWT contents:
-  //   try 
-  //   {
-  //     var origin = jwt.verify(token, origin);
-  //     var destination = jwt.verify(token,destination);
-  //     var departingDate = jwt.verify(token,departingDate);
-  //     var returningDate = jwt.veriy(token,returningDate);
-  //     var Class = jwt.verify(token,class);
-  //     req.origin = origin;
-  //     req.destination = destination;
-  //     req.departingDate = departingDate;
-  //     req.returningDate = returningDate;
-  //     req.class = Class;
-  //     next();
-  //   } 
-  //   catch (err) 
-  //   {
-  //     console.error('[ERROR]: JWT Error reason:', err);
-  //     //res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
-  //   }
-  // });
-
+  var bodyParser = require('body-parser');
+  var stripe = require('stripe')('sk_test_CVbmlsXC7jPeJGxTMqIPvtyC');
+  //console.log(stripe);
   app.get('/', function(req, res) {
         res.sendFile('index.html');
   });
@@ -114,9 +89,40 @@ module.exports = function(app) {
   //   next();
   // });
 
-  app.get('/api/flights/search/:origin/:destination/:departingDate/:returningDate/:class',function(req,res){
-   mongo.db().collection('Flights').find({'origin':req.origin ,'destination': req.destination,'departingDate' : req.departingDate,'returningDate' : req.returningDate, 'cabin': req.cabin}).toArray().then(function (flights) {
+   //middlewear
+   
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  /*app.use(function(req, res, next) {
+
+       var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
+
+      console.log("{{{{ TOKEN }}}} => ", token);
+
+      var jwtSecret = process.env.JWTSECRET;
+
+      // Get JWT contents:
+      try 
+      {
+        var payload = jwt.verify(token, jwtSecret);
+        req.payload = payload;
+        next();
+      } 
+      catch (err) 
+      {
+        console.error('[ERROR]: JWT Error reason:', err);
+        res.send("balabezoo");
+      //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
+      }
+
+    })*/
+
+   app.get('/api/flights/search/:origin/:destination/:month1/:day1/:year1/:month2/:day2/:year2/:class',function(req,res){
+    var date1 = req.params.month1 + '/' + req.params.day1 + '/' + req.params.year1;
+    var date2 = req.params.month2 + '/' + req.params.day2 + '/' + req.params.year2;
+   mongo.db().collection('Flights').find({'origin':req.params.origin ,'destination': req.params.destination,'date':date1,'date':date2}).toArray().then(function (flights) {
     console.log("heloo");
+    console.log(flights);
     res.send(flights);
     });
   });
@@ -124,6 +130,7 @@ module.exports = function(app) {
   app.get('/api/flights/search/:origin/:destination/:month/:day/:year/:class', function(req,res){
     var date = req.params.month + '/' + req.params.day + '/' + req.params.year
     mongo.db().collection('Flights').find({'origin' :  req.params.origin,'destination' :req.params.destination, 'date' : date}).toArray().then(function (flights){
+      console.log(flights);
       res.send(flights);
     });
   });
@@ -144,6 +151,45 @@ module.exports = function(app) {
       res.send(data); //one random quote
     });
   });
+  //creating token
+  /*stripe.card.createToken({
+  number: $('.card-number').val(),
+  cvc: $('.card-cvc').val(),
+  exp_month: $('.card-expiry-month').val(),
+  exp_year: $('.card-expiry-year').val()
+}, stripeResponseHandler);
+*/
+  //Booking
+   app.post('/booking', function(req, res) {
+    console.log(req.body);
+
+    // retrieve the token
+    var stripeToken = req.body.paymentToken;
+    var flightCost  = req.body.cost;
+
+    // attempt to create a charge using token
+    stripe.charges.create({
+      amount: 100,
+      currency: "usd",
+      source: stripeToken,
+      description: "test"
+    }, function(err, data) {
+    if (err) res.send({ refNum: null, errorMessage: err});
+    else
+       {
+        //putting reservation into db then get mongo_id
+    var reference = mongo.db().collection('reservations').insert({'firstName':req.body.firstName,'lastName':req.body.lastName
+        ,'passportNum':req.body.passportNum,'nationality':req.body.nationality,'birth': req.body.birth
+        ,'email':req.body.email,'class':req.body.class,'outgoingFlightId':req.outgoingFlightId,'returnFlightId':
+        req.returnFlightId,'paymentToken':req.body.paymentToken})._id;
+    //sending mongo id with res
+    console.log("past insertions");
+    res.send({ refNum:reference , errorMessage:null});
+
+       }
+    });
+
+});
 
   exports.seats;
 
