@@ -34,32 +34,32 @@
           </div>
         </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="searchinput" ng-model = "landing.date">Departure Date :</label>
- <div class="row">
-                  <div class="col-md-6">
-                    <p class="input-group">
-                      <input type="text"
-                             class="form-control"
-                             uib-datepicker-popup="{{format}}"
-                             ng-model="landing.depatutreDate"
-                             is-open="popup1.opened"
-                             ng-required="true"
-                             close-text="Close"
-                             name = "hi"
-                             alt-input-formats="altInputFormats" required="" />
-                               <span ng-show="myForm.hi.$touched &&myForm.hi.$invalid " class="text-danger">Enter a valid value.</span>
-                      <span class="input-group-btn">
-                        <button type="button"
-                                class="btn btn-default"
-                                ng-click="open1()" >
-                                <i class="glyphicon glyphicon-calendar"></i>
-                       </button>
-                      </span>
-                    </p>
-                  </div>
-                  </div>
-</div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="searchinput" >Departure Date :</label>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="input-group">
+                <input type="text"
+                class="form-control"
+                uib-datepicker-popup="{{format}}"
+                ng-model = "landing.departureDate"
+                is-open="popup1.opened"
+                ng-required="true"
+                close-text="Close"
+                name = "hi"
+                alt-input-formats="altInputFormats" required="" />
+                <span ng-show="myForm.hi.$touched &&myForm.hi.$invalid " class="text-danger">Enter a valid value.</span>
+                <span class="input-group-btn">
+                  <button type="button"
+                  class="btn btn-default"
+                  ng-click="open1()" >
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
 
 <!-- <div class="form-group" id="1"  ng-show="!showDiv">
   <label class="col-md-4 control-label" for="searchinput" ng-model="landing.returndate" >Return Date :</label>
@@ -91,7 +91,7 @@
       </div> -->
 
       <div class="form-group" id="1"  ng-show="!showDiv">
-        <label class="col-md-4 control-label" for="searchinput" >Return Date :</label>
+        <label class="col-md-4 control-label" for="searchinput" ng-model = "landing.returnDate" >Return Date :</label>
   <!-- <div class="col-md-5">
     <input  name="searchinput" class="form-control input-md" type="text">
   </div> -->
@@ -135,15 +135,15 @@
 </div>
 
 <!-- Button -->
-  <a href={{ref}} >
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label>
-  <div class="col-md-4">
-    <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="check()"> Search
+<a href={{ref}} >
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="singlebutton"></label>
+    <div class="col-md-4">
+      <div id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="check()"> Search
 
+      </div>
     </div>
-  </div>
-</a>
+  </a>
 
 </div>
 </div>

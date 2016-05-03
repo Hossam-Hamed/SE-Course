@@ -8,19 +8,6 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
 
   /*----------- Angular Bootstrap Datepicker -----------*/
-
-  
-  // console.log($scope.landing);
-  // $scope.landing = {
-  //   origin :"",
-  //  destination : "" ,
-  //  depaturedate : "",
-  //  returnDate : "" ,
-  //  cabinet : ""
-
-  // }
-
-  /*----------- Angular Bootstrap Datepicker -----------*/
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
@@ -46,28 +33,32 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
 
   $scope.check = function() {
-    if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      mainSrv.init();
-      mainSrv.setx($scope.landing);
+    mainSrv.init();
+    mainSrv.setx("from",$scope.landing.from);
+    mainSrv.setx("to",$scope.landing.to);
+    var depaturedate = moment($scope.landing.departureDate);
+    var dateStr = depaturedate.format('L');
+    mainSrv.setx("departureDate",dateStr);
+    mainSrv.setx("cabin",$scope.landing.cabin);
+    
+    if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.departureDate){
+    console.log($scope.landing.departureDate);
+
       mainSrv.process();
       $scope.ref="#single";
-    }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
+      console.log(mainSrv.getx());
+
+    }else if($scope.landing.from && $scope.landing.to &&$scope.landing.departureDate&&$scope.landing.returnDate){
+
+      mainSrv.setx("returnDate",$scope.landing.returnDate);
       $scope.ref="#2ways";
       mainSrv.setx($scope.landing);
 
     }else{
+
       alert("you forgot to enter some data");
       $scope.ref="#/team";
+
     }
   };
-  // };
-  // $scope.next = function(){
-  //   mainSrv.setx($scope.landing);
-  // }
-
 });
-
-// .factory("state",function(){
-//   var state =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-//   return state;
-// })

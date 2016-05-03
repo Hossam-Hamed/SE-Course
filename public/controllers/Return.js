@@ -1,4 +1,5 @@
-App.controller('returnctrl',function($scope,mainSrv){
-	$scope.flight =mainSrv.getx();
+App.controller('return',function($scope,mainSrv){
+	console.log(mainSrv.getx().from);
+	$scope.from =mainSrv.getx().from;
 
 })
