@@ -1,14 +1,22 @@
  [
-       {"origin": "Mumbai", "destination": "Delhi", "duration": "2 hours", "capacity": "100",
-        "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Cairo", "destination": "Jeddah", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Hong Kong", "destination": "Taiwan", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Johannesburg", "destination": "Cape Town", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Riyadh", "destination": "Jeddah", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "London Heathrew", "destination": "New York-John F. Kennedy", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Las Vegas", "destination": "Las Angeles", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Las Angeles", "destination": "San Francisco", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Frankfurt", "destination": "Berlin", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804"},
-       {"origin": "Rome", "destination": "Milan", "duration": "2 hours", "capacity": "100", 
-       "aircraft": "Airbus a318", "flightNumber": "SE2804"}
-]
+ {"origin": "BOM", "destination": "DEL", "duration": "2 hours", "capacity": "100",
+ "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"First"},
+ {"origin": "CAI", "destination": "JED", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Economy"},
+ {"origin": "HKJ", "destination": "TPE", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Business"},
+ {"origin": "JNB", "destination": "CPT", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"First"},
+ {"origin": "RUH", "destination": "JED", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Economy"},
+ {"origin": "LHR", "destination": "JFK", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Business"},
+ {"origin": "LCF", "destination": "LAX", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"First"},
+ {"origin": "LAX", "destination": "SFO", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Economy"},
+ {"origin": "FRA", "destination": "TXL", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Business"},
+ {"origin": "FCO", "destination": "LIN", "duration": "2 hours", "capacity": "100", 
+ "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"First"},
+ {"origin": "DEL", "destination": "BOM", "duration": "2 hours", "capacity": "100",
+ "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"First"},
+ {"origin": "JED", "destination": "CAI", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Economy"},
+ {"origin": "TPE", "destination": "HKJ", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Business"},
+ {"origin": "CPT", "destination": "JNB", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"First"},
+ {"origin": "JED", "destination": "RUH", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Economy"},
+ {"origin": "JFK", "destination": "LHR", "duration": "2 hours", "capacity": "100", "aircraft": "Airbus a318", "flightNumber": "SE2804","class":"Business"}
+
+ ]

@@ -1,1 +1,26 @@
-<h> outgoing</h>
+<ion-view view-title="Outgoing flights">
+<ion-content>
+<ion-list>
+<h1> flights from {{ from }} to {{ to }} </h1>
+
+<div class = "container">
+  <div class="row">
+    <div class="col">Flight number</div>
+    <div class="col">Aircraft</div>
+    <div class="col">Duration</div>
+    <div class="col">Cost</div>
+  </div>
+  <div class="row" ng-repeat="flight in flights">
+    <div class="col">{{flight.flightNumber}}</div>
+    <div class="col">{{flight.aircraft}}</div>
+    <div class="col">{{flight.duration}}</div>
+    <div class="col">{{flight.cost}}</div>
+    <div class="col">
+      <button class="button button-positive" >choose</button>
+    </div>
+  </div>
+
+</div>
+</ion-list>
+</ion-content>
+</ion-view>
