@@ -9,13 +9,14 @@
 
           <label class="item item-input item-floating-label">
           <span class="input-label">To</span>
-          <input type="text" placeholder="To"></label>
+          <input type="text" placeholder="To" ng-model="landing.to"></label>
       </div>
+
       <div class="list">
         <label class="item item-input item-select">
           <div class="input-label"></div>
           Cabin:
-          <select>
+          <select ng-model= "landing.cabin">
           <option selected> </option>
           <option>Economy</option>
           <option >Business</option>
@@ -26,20 +27,20 @@
       <div>
         <label class="item item-input">
           <span class="input-label">Depature Date</span>
-          <input type="date">
+          <input type="date"  ng-model="landing.depatutreDate">
         </label>
       </div>
       <div>
         <label class="item item-input">
            <span class="input-label">Return Date:</span>
-           <input type="date">
+           <input type="date" ng-model="landing.returnDate">
         </label>
       </div>
       <ion-list>
-            <ion-checkbox ng-model="filter.blue">one way</ion-checkbox>
+            <ion-checkbox ng-model="OutOnly">one way</ion-checkbox>
       </ion-list>
       <ion-list>
-            <ion-checkbox ng-model="filter.green">search other airlines</ion-checkbox>
+            <ion-checkbox ng-model="filter.green" >search other airlines</ion-checkbox>
       </ion-list>
     <a  href="#/choose" class="button button-block button-positive"  ng-click="check()">search</a>
 

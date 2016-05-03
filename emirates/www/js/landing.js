@@ -6,7 +6,7 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landing
   $scope.selected = undefined;
   $scope.states =landingServ;
   $scope.landing = {paymentMethod : { creditCard : {}}};
-console.log(landing.from);
+// console.log(landing.from);
 
   /*----------- Angular Bootstrap Datepicker -----------*/
 
@@ -47,11 +47,13 @@ console.log(landing.from);
 
 
   $scope.check = function() {
+    console.log("check");
+    console.log($scope.OutOnly , $scope.landing.from , $scope.landing.to ,$scope.landing.depatutreDate)
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       mainSrv.init();
       mainSrv.setx($scope.landing);
       mainSrv.process();
-      console.log(landing.from);
+      console.log("landingCtrl",$scope.landing.from);
       $scope.ref="#single";
     }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       $scope.ref="#2ways";
@@ -60,7 +62,7 @@ console.log(landing.from);
     }else{
       alert("you forgot to enter some data");
       $scope.ref="#/team";
-    }
+    }  
   };
   // $scope.search=function(){
   //   $state.go('../templates/confirmation.html');
