@@ -42,17 +42,17 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
     mainSrv.setx("cabin",$scope.landing.cabin);
     
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.departureDate){
-    console.log($scope.landing.departureDate);
+      console.log($scope.landing.departureDate);
 
       mainSrv.process();
       $scope.ref="#single";
       console.log(mainSrv.getx());
 
     }else if($scope.landing.from && $scope.landing.to &&$scope.landing.departureDate&&$scope.landing.returnDate){
-
-      mainSrv.setx("returnDate",$scope.landing.returnDate);
+      var returnDate = moment($scope.landing.returnDate);
+      var dateStr2 = returnDate.format('L');
+      mainSrv.setx("returnDate",dateStr2);
       $scope.ref="#2ways";
-      mainSrv.setx($scope.landing);
 
     }else{
 

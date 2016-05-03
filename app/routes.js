@@ -24,15 +24,16 @@ module.exports = function(app) {
           for (var i = 1; i <= 46; i++) {
             doc = {
               "flightNumber": flight.flightNumber,
-              "aircraft": flight.aircraft,
-              "capacity": flight.capacity,
+              "aircraftType": flight.aircraft,
+              "aircraftModel"     : "747",
               "date": moment().add(i, 'days').calendar(),
               "duration": flight.duration,
               "origin": _origin,
               "destination": _destination,
               "cost":5000,
               "currency" : "USD",
-              "seatmap": []
+              "class" : flight.class,
+              "Airline":"United"
             };
             mongo.db().collection('Flights').insert(doc, function(err, data) {
               if (err) console.log('error');
