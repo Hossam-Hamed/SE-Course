@@ -30,19 +30,19 @@
           <input type="date"  ng-model="landing.depatutreDate">
         </label>
       </div>
-      <div>
+      <div ng-show = "!showDiv">
         <label class="item item-input">
            <span class="input-label">Return Date:</span>
            <input type="date" ng-model="landing.returnDate">
         </label>
       </div>
       <ion-list>
-            <ion-checkbox ng-model="OutOnly">one way</ion-checkbox>
+            <ion-checkbox ng-init = 'OutOnly=false'ng-click="toggle()">one way</ion-checkbox>
       </ion-list>
       <ion-list>
             <ion-checkbox ng-model="filter.green" >search other airlines</ion-checkbox>
       </ion-list>
-    <a  href="#/choose" class="button button-block button-positive"  ng-click="check()">search</a>
+    <a  href={{ref}} class="button button-block button-positive"  ng-click="check()">search</a>
 
 
  </ion-content>

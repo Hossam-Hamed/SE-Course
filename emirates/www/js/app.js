@@ -72,7 +72,21 @@ App.config(function($stateProvider, $urlRouterProvider) {
     .state('choose', {
       url: '/choose',
       templateUrl: 'templates/confirmation.html',
-      controller: 'confctrl',
+      controller: 'confctrl'
+
+      
+    })
+    .state('single', {
+      url: '/single',
+      templateUrl: 'templates/outgoing.html',
+      controller: 'outgoingctrl'
+
+      
+    })
+    .state('2ways', {
+      url: '/2ways',
+      templateUrl: 'templates/return.html',
+      controller: 'return'
 
       
     })
@@ -85,7 +99,7 @@ App.config(function($stateProvider, $urlRouterProvider) {
         
       }
     }
-  });
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/landing');

@@ -2,7 +2,6 @@
 <ion-content>
 <ion-list>
 
-<div class = "container">
   <h1> flights from {{ from }} to {{ to }} </h1>
   <div class="row">
     <div class="col">Flight number</div>
@@ -15,16 +14,16 @@
     <div class="col">{{flight.aircraft}}</div>
     <div class="col">{{flight.duration}}</div>
     <div class="col">{{flight.cost}}</div>
-    <div class="col">
-      <button class="button button-positive" >choose</button>
     </div>
-  </div>
+    <div class="col">
+    <button class="button button-positive" >choose</button>
+    </div>
+  
 
-</div>
 
 
 
-<div class = "container">
+
   <h1> flights from {{ to }} to {{ from }} </h1>
   <div class="row">
     <div class="col">Flight number</div>
@@ -37,12 +36,12 @@
     <div class="col">{{flight.aircraft}}</div>
     <div class="col">{{flight.duration}}</div>
     <div class="col">{{flight.cost}}</div>
-    <div class="col">
+  </div>
+  <div class="col">
       <button class="button button-positive" >choose</button>
     </div>
-  </div>
 
-</div>
+
 
 </ion-list>
 </ion-content>

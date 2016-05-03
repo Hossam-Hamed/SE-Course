@@ -2,7 +2,7 @@
 angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landingServ) {
  
   mainSrv.init();
-
+  $scope.OutOnly = false;
   $scope.selected = undefined;
   $scope.states =landingServ;
   $scope.landing = {paymentMethod : { creditCard : {}}};
@@ -44,10 +44,14 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landing
   $scope.popup2 = {
     opened: false
   };
-
+  $scope.toggle = function () {
+    $scope.showDiv = !$scope.showDiv;
+    $scope.OutOnly = !$scope.OutOnly; 
+  }
 
   $scope.check = function() {
     console.log("check");
+    debugger;
     console.log($scope.OutOnly , $scope.landing.from , $scope.landing.to ,$scope.landing.depatutreDate)
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       mainSrv.init();
