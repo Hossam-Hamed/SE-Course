@@ -79,8 +79,10 @@ App .controller("summaryCtrl",function($scope,countries,mainSrv,countries2){
        alert(response.error.message);
      }else{
       var x = response;
+      $scope.data.paymentToken=response.id;
       console.log(response);
-      countries2.PostInfo(response.id,$scope.data).success(function(data){
+      countries2.PostInfo($scope.data).success(function(data){
+
        if(data.errorMessage==null){
         alert('Payment succeded');
       }else{
@@ -148,15 +150,19 @@ App .controller("summaryCtrl",function($scope,countries,mainSrv,countries2){
   })
 .factory("countries2",function($http){
   return {
-    PostInfo : function (info,passInfo){
+    PostInfo : function (passInfo){
       return $http.post('/booking',{
-        "paymentToken" : info,
-        "firstName" : passInfo.passengerDetails.firstName,
-        "lastName" : passInfo.passengerDetails.lastName,
-        "passportNum" : passInfo.passengerDetails.passportNum,
-        "birth" : passInfo.passengerDetails.birth,
 
-      }); 
+
+        
+         "paymentToken" : passInfo.paymentToken,
+         "Info" : passInfo,
+        // "firstName" : passInfo.passengerDetails.firstName,
+        // "lastName" : passInfo.passengerDetails.lastName,
+        // "passportNum" : passInfo.passengerDetails.passportNum,
+        // "birth" : passInfo.passengerDetails.birth,
+
+     } ); 
     }
   }
 })

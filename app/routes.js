@@ -165,23 +165,32 @@ module.exports = function(app) {
 
     // retrieve the token
     var stripeToken = req.body.paymentToken;
-    var flightCost  = req.body.cost;
+    // var flightCost  = [110,200,300];
+    var cost;
 
+      if(req.body.Info.class==="First"){
+        cost=300;
+      }else if(req.body.Info.class==="Economy"){
+        cost=100;
+
+      }else if(req.body.Info.class==="Business"){
+                cost=200;
+
+      }
+            console.log(cost);
     // attempt to create a charge using token
     stripe.charges.create({
-      amount: 100,
+      amount: cost,
       currency: "usd",
       source: stripeToken,
       description: "test"
     }, function(err, data) {
-    if (err) res.send({ refNum: null, errorMessage: err});
+    if (err) 
+      res.send({ refNum: null, errorMessage: err});
     else
        {
         //putting reservation into db then get mongo_id
-    var reference = mongo.db().collection('reservations').insert({'firstName':req.body.firstName,'lastName':req.body.lastName
-        ,'passportNum':req.body.passportNum,'nationality':req.body.nationality,'birth': req.body.birth
-        ,'email':req.body.email,'class':req.body.class,'outgoingFlightId':req.outgoingFlightId,'returnFlightId':
-        req.returnFlightId,'paymentToken':req.body.paymentToken})._id;
+    var reference = mongo.db().collection('reservations').insert(req.body.Info)._id;
     //sending mongo id with res
     console.log("past insertions");
     res.send({ refNum:reference , errorMessage:null});
