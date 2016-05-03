@@ -69,15 +69,13 @@ App.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-  //   .state('tab.chat-detail', {
-  //     url: '/chats/:chatId',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/chat-detail.html',
-  //         controller: 'ChatDetailCtrl'
-  //       }
-  //     }
-  //   })
+    .state('choose', {
+      url: '/choose',
+      templateUrl: 'templates/confirmation.html',
+      controller: 'confctrl',
+
+      
+    })
 
   .state('tab.contactUs', {
     url: '/contactUs',

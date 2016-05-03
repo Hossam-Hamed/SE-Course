@@ -5,7 +5,7 @@
       <div class="list">
           <label class="item item-input item-floating-label">
           <span class="input-label">From</span>
-          <input type="text" placeholder="From"></label>
+          <input type="text" placeholder="From" ng-model="landing.from"></label>
 
           <label class="item item-input item-floating-label">
           <span class="input-label">To</span>
@@ -41,7 +41,7 @@
       <ion-list>
             <ion-checkbox ng-model="filter.green">search other airlines</ion-checkbox>
       </ion-list>
-      <button class="button button-positive">search</button> 
+    <a  href="#/choose" class="button button-block button-positive"  ng-click="check()">search</a>
 
 
  </ion-content>
