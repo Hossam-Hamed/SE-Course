@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [
-=======
- [
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
  {"origin": "BOM", "destination": "DEL", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"First","currency":"USD"},
  
  {"origin": "CAI", "destination": "JED", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"Economy","currency":"USD"},
@@ -21,25 +17,7 @@
  
  {"origin": "FRA", "destination": "TXL", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"Business","currency":"USD"},
  
-<<<<<<< HEAD
- {"origin": "FCO", "destination": "LIN", "duration": "2 hours", "capacity": "100",  "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"First","currency":"USD"},
- 
- {"origin": "DEL", "destination": "BOM", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"First","currency":"USD"},
- 
- {"origin": "JED", "destination": "CAI", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"Economy","currency":"USD"},
- 
- {"origin": "TPE", "destination": "HKJ", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"Business","currency":"USD"},
- 
- {"origin": "CPT", "destination": "JNB", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"First","currency":"USD"},
- 
- {"origin": "JED", "destination": "RUH", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"Economy","currency":"USD"},
- 
- {"origin": "JFK", "destination": "LHR", "duration": "2 hours", "capacity": "100", "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"Business","currency":"USD"}
-
- ]
-=======
  {"origin": "FCO", "destination": "LIN", "duration": "2 hours", "capacity": "100",  "aircraftType": "Airbus", "aircraftModel": "a318", "Airline": "Emirates", "flightNumber": "SE2804","class":"First","currency":"USD"}
  
  
  ]
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad

@@ -224,13 +224,10 @@ module.exports = function(app) {
 
     }
     req.body.Info.cost=cost;
-<<<<<<< HEAD
-    console.log(req.body.Info.cost);
-    console.log(req.body);
-=======
+
     // console.log(req.body.Info.cost);
     console.log("req body ====>",req.body);
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
+
 
     // attempt to create a charge using token
     stripe.charges.create({
@@ -243,14 +240,7 @@ module.exports = function(app) {
         res.send({ refNum: null, errorMessage: err});
       else
       {
-<<<<<<< HEAD
-        //putting reservation into db then get mongo_id
-        var reference = mongo.db().collection('reservations').insert(req.body.Info)._id;
-    //sending mongo id with res
-    alert("your reference  no. is "+ reference);
-    console.log("past insertions");
-    res.send({ refNum:reference , errorMessage:null});
-=======
+
         console.log(req.body.Info);
         //putting reservation into db then get mongo_id
         mongo.db().collection('reservations').insert(req.body.Info,function(err,docsInserted){
@@ -262,7 +252,7 @@ module.exports = function(app) {
         // var reference =  mongo.db().collection('reservations').find(req.body.Info)._id;
     //sending mongo id with res
 
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
+
 
   }
 });

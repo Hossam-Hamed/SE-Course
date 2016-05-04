@@ -31,28 +31,7 @@ angular.module('App').factory('mainSrv' , function ($http) {
         var cost;
 
         if(c==="First"){
-<<<<<<< HEAD
-            cost=300;
-        }else if(c==="Economy"){
-          cost=200;
-        }else if (c==="Business"){
-            cost=100;
-        }
-        var xx = this.obj.outgoingFlights;
-          function add (cost,cb){
-              for (var i = 0; i < xx.length; i++) {
-                this.obj.outgoingFlights[i].cost=cost;
-              }
-              cb();
-          }
 
-          function sss(){
-        console.log(this.obj)
-        thisObj.set(this.obj);
-            
-          }
-          add(cost,sss);
-=======
           cost=300;
         }else if(c==="Economy"){
           cost=200;
@@ -74,18 +53,13 @@ angular.module('App').factory('mainSrv' , function ($http) {
 
         }
         add(cost,sss);
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
+
           // set();
 
         // this.obj.cost=cost;
       });
     },
 
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
 
     twoWays: function() {
       var date1 = moment(this.getx().depatutreDate);
@@ -95,51 +69,16 @@ angular.module('App').factory('mainSrv' , function ($http) {
       var c = this.getx().class;
 
       thisObj = this;
-<<<<<<< HEAD
- 
-      $http.get('/api/flights/search/' + this.getx().from + '/' + this.getx().to + '/' + dateStr1+ '/' +dateStr2 + '/'+ this.getx().class).success(function(data){
-        // this.obj = {"data1": out, "data2":ret ,"from": thisObj.getx().from, "to": thisObj.getx().to};
-       
-=======
 
       $http.get('/api/flights/search/' + this.getx().from + '/' + this.getx().to + '/' + dateStr1+ '/' +dateStr2 + '/'+ this.getx().class).success(function(data){
         // this.obj = {"data1": out, "data2":ret ,"from": thisObj.getx().from, "to": thisObj.getx().to};
 
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
         this.obj =data;
         console.log(data);
         var cost;
 
         if(c==="First"){
-<<<<<<< HEAD
-            cost=300;
-        }else if(c==="Economy"){
-          cost=200;
-        }else if (c==="Business"){
-            cost=100;
-        }
-        var xx = this.obj.outgoingFlights;
-        var yy = this.obj.returnFlights;
-          
-          function add (cost,cb){
-              for (var i = 0; i < xx.length; i++) {
-                this.obj.outgoingFlights[i].cost=cost;
-              }
-              for (var i = 0; i < yy.length; i++) {
-                this.obj.returnFlights[i].cost=cost;
-              }
 
-              cb();
-          }
-
-          function sss(){
-        console.log(this.obj)
-        thisObj.set(this.obj);
-            
-          }
-          add(cost,sss);
-     
-=======
           cost=300;
         }else if(c==="Economy"){
           cost=200;
@@ -167,7 +106,6 @@ angular.module('App').factory('mainSrv' , function ($http) {
         }
         add1(cost,sss1);
 
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
       });
 
     },
@@ -211,13 +149,9 @@ angular.module('App').factory('mainSrv' , function ($http) {
         thisObj.set(this.obj)
       });
 
-<<<<<<< HEAD
-    },
 
-
-=======
     }
->>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
+
 
   }
   return object;
