@@ -6,19 +6,25 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
   <!-- Dashboard Tab -->
-  <ion-tab title="booking a flight" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/landing">
+  <ion-tab title="booking a flight" icon-off="ion-jet" icon-on="ion-jet" href="#/tab/landing">
     <ion-nav-view name="tab-landing"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
-  <ion-tab title="history" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
+  <ion-tab title="history" icon-off="ion-ios-paper" icon-on="ion-ios-paper" href="#/tab/history">
+    <ion-nav-view name="history"></ion-nav-view>
   </ion-tab>
 
+    <ion-tab title="offers" icon-off="ion-happy" icon-on="ion-happy" href="#/tab/offers">
+    <ion-nav-view name="offers"></ion-nav-view>
+    </ion-tab>
+
   <!-- Account Tab -->
-  <ion-tab title="contact us" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
+  <ion-tab title="contact us" icon-off="ion-android-contact" icon-on="ion-android-contact" href="#/tab/contactUs">
+    <ion-nav-view name="contactUs"></ion-nav-view>
   </ion-tab>
+
+  
 
 
 </ion-tabs>

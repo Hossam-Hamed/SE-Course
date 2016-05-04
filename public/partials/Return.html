@@ -1,189 +1,65 @@
 <div class="container"style="/*float: right;*/ width: 80%;padding-top: 70px">
   <div class="panel panel-default" >
     <div class="panel-body">
-     <h1> flights from {{ flight.from }} to {{ flight.to }} </h1>
-     <div class="container">
-      <div class="row seven-cols">
-        <div class="col-md-1">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> 4/4/2016 </label>
-            </div>
-          </div>
-          <div class="col-md-1">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> 5/4/2016 </label>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> 6/4/2016 </label>
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 7/4/2016 </label>
-                  </div>
-                </div>
-                <div class="col-md-1">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> 8/4/2016 </label>
-                    </div>
-                  </div>
-                  <div class="col-md-1">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> 9/4/2016 </label>
-                      </div>
-                    </div>
-    <!-- <div class="col-md-1">
-    <div class="checkbox">
-      <label>
-      <input type="checkbox"> 10/4/2016</label>
-    </div></div> -->
+
+      <h1> flights from {{ from }} to {{ to }} </h1>
+      <div class="container" style="overflow: auto;width: 100%">
+       <!-- {{ flights }} -->
+       <table class="table">
+         <td>Flight number</td>
+         <td>Aircraft</td>
+         <td>Duration</td>
+         <td>Cost</td>
+
+       
+       <tr  ng-repeat="flight in flights">
+         <td>{{flight.flightNumber}}</td>
+         <td>{{flight.aircraft}}</td>
+         <td>{{flight.duration}}</td>
+         <td>{{flight.cost}}</td>
+
+         <td>
+          <button type="button" ng-click="choose(flight,0)" class="btn btn-primary" >choose</button>
+        </a></td>
+      </tr>
+
+    </table>
   </div>
-</div>
 
-<div class="container">
-  <div class="row seven-cols-1">
-    <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.from }}</div> 
-         <div>from {{ departureairport }}</div> 
-         <div>at {{ departuretime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.to }}</div> 
-         <div>from {{ arrivalairport }}</div> 
-         <div>at {{ arrivaltime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>STOPS: {{ stops }}</div> 
-         <div>Tranzit {{ tranzit }}</div> 
-       </label>
-     </div>
-   </div>
-   <div class="col-md-2">
-    <div class="checkbox">
-      <label>
-       <button type="button" class="btn btn-link"> more details</button>
-     </label>
-   </div>
- </div>
-</div>
-</div>
-<h2>
-  <a href="#/choose">
-    <button type="button" class="btn btn-primary" >choose</button>
-  </a>
-</h2>
 </div>
 </div>
 </div>
-
-
 
 <div class="container"style="/*float: right;*/ width: 80%;padding-top: 70px">
   <div class="panel panel-default" >
     <div class="panel-body">
-     <h1> flights from {{ flight.to }} to {{ flight.from }} </h1>
-     <div class="container">
-      <div class="row seven-cols">
-        <div class="col-md-1">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> 4/4/2016 </label>
-            </div>
-          </div>
-          <div class="col-md-1">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> 5/8/2016 </label>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> 6/4/2016 </label>
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 7/4/2016 </label>
-                  </div>
-                </div>
-                <div class="col-md-1">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> 8/4/2016 </label>
-                    </div>
-                  </div>
-                  <div class="col-md-1">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> 9/4/2016 </label>
-                      </div>
-                    </div>
-    <!-- <div class="col-md-1">
-    <div class="checkbox">
-      <label>
-      <input type="checkbox"> 10/4/2016</label>
-    </div></div> -->
-  </div>
-</div>
 
-<div class="container">
-  <div class="row seven-cols-1">
-    <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.from }}</div> 
-         <div>from {{ departureairport }}</div> 
-         <div>at {{ departuretime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>{{ flight.to }}</div> 
-         <div>from {{ arrivalairport }}</div> 
-         <div>at {{ arrivaltime }}</div> </label>
-       </div>
-     </div>
-     <div class="col-md-2">
-      <div class="checkbox">
-        <label>
-         <div>STOPS: {{ stops }}</div> 
-         <div>Tranzit {{ tranzit }}</div> 
-       </label>
-     </div>
-   </div>
-   <div class="col-md-2">
-    <div class="checkbox">
-      <label>
-       <button type="button" class="btn btn-link"> more details</button>
-     </label>
-   </div>
- </div>
-</div>
-</div>
-<h2>
-  <a href="#/choose">
-    <button type="button" class="btn btn-primary" >choose</button>
-  </a>
-</h2>
+      <h1> flights from {{ to }} to {{ from }} </h1>
+      <div class="container" style="overflow: auto;width: 100%">
+       <!-- {{ flights }} -->
+       <table class="table">
+         <td>Flight number</td>
+         <td>Aircraft</td>
+         <td>Duration</td>
+         <td>Cost</td>
+
+       <tr  ng-repeat="returnflight in returnflights">
+         <td>{{returnflight.flightNumber}}</td>
+         <td>{{returnflight.aircraft}}</td>
+         <td>{{returnflight.duration}}</td>
+         <td>{{returnflight.cost}}</td>
+
+
+         <td><a href="#/choose">
+          <button type="button" ng-click="choose(returnflight,1)"class="btn btn-primary" >choose</button>
+        </a></td>
+      </tr>
+
+    </table>
+  </div>
+    <a href={{ref}}>
+    <button type"button" ng-click="continue()" class="btn btn-primary"> continue</button></a>
+
 </div>
 </div>
 </div>

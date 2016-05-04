@@ -1,1 +1,107 @@
-<h> payment</h>
+<ion-view view-title="payment">
+<ion-content>
+<ion-list>
+<div class="list list-inset">
+  <h1>Passenger information</h1>
+  <label class="item item-input">
+    <input type="text"ng-mouseleave="check();set()" ng-model="data.firstName" required placeholder="First Name">
+  </label>
+  <label class="item item-input">
+    <input type="text" ng-mouseleave="check();set()"  ng-model="data.lastName" ng-mouseleave="check();set()" placeholder="Last Name" required>
+  </label>
+
+  <label class="item item-input">
+    <input type="text" ng-mouseleave="check();set()" id="email" name="email" ng-model="data.email" required placeholder="Email">
+  </label>
+
+  <label class="item item-input">
+    <input type="text" ng-mouseleave="check();set()" id="no" name="no" ng-model="data.paymentMethod.creditCard.phone" required placeholder="Phone Number">
+  </label>
+</div>
+
+
+
+<div class="list list-inset">
+  <h1>Cardholder's information</h1>
+  <label class="item item-input">
+    <input type="text"ng-mouseleave="check();set()" ng-model="data.paymentMethod.creditCard.cardholderFN" required placeholder="Cardholder's first name">
+  </label>
+  <label class="item item-input">
+    <input type="text" ng-mouseleave="check();set()" ng-mouseleave="check();set()" placeholder="Cardholder's last name">
+  </label>
+
+  <label class="item item-input">
+    <input type="text" placeholder="Email">
+  </label>
+
+  <label class="item item-input">
+    <input type="text" placeholder="Phone Number">
+  </label>
+</div>
+
+
+
+
+
+<div class="list list-inset">
+  <h1>Billing address</h1>
+  <label class="item item-input">
+   <input type="text" class="form-control" ng-minlength=3 ng-mouseleave="check();set()" id="country" name="country" ng-model="data.country" 
+   uib-typeahead="country for country in country | filter:$viewValue | limitTo:8"
+   required placeholder="Country">
+ </label>
+ <label class="item item-input">
+  <input type="text" class="form-control" ng-minlength=2 ng-mouseleave="check();set()" id="ct" name="city" ng-model="data.paymentMethod.creditCard.city" placeholder="City" required>
+</label>
+
+<label class="item item-input">
+  <input type="text" class="form-control" ng-minlength=5 id="a1" name="a1" ng-model="data.paymentMethod.creditCard.address1" required ng-mouseleave="check();set()" placeholder="Address 1">  </label>
+
+  <label class="item item-input">
+   <input type="text" class="form-control"  id="a2" name="a2" ng-model="data.paymentMethod.creditCard.address2" placeholder="Address 2">  </label>
+ </div>
+
+
+
+ <div class="list list-inset">
+  <h1>Card information</h1>
+  <h6>We accept the following cards:</h6>
+  <div class="row">
+    <div class="col">
+      <img src="../img/A.png" class="img-rounded" title="American Express"> 
+    </div>
+    <div class="col">   
+      <img src="../img/V.png" class="img-rounded" title="Visa">   
+    </div>
+    <div class="col">  
+      <img src="../img/VE.png" class="img-rounded" title="Visa electron"> 
+    </div>
+    <div class="col">   
+     <img src="../img/MC.png" class="img-rounded" title="Master Card"> 
+   </div>
+   <div class="col">
+    <img src="../img/A.png" class="img-rounded" title="American Express"> 
+  </div>
+</div>
+<label class="item item-input">
+ <input type="number"  class="form-control" ng-minlength=10 ng-mouseleave="check();set()" id="CNo" placeholder="Card number" name="CNo" ng-model="data.paymentMethod.creditCard.code" required>
+</label>
+
+<label class="item item-input">
+ <input type="number" class="form-control" id="CVC" placeholder="CVC code" name="CVC" ng-model="data.paymentMethod.creditCard.CVC" required ng-minlength=3 ng-mouseleave="check();set()">
+ <img src="../img/CVC.jpg" class="img-rounded" placeholder="CVC code" data-toggle="tooltip" title= 
+ "Your security code is the last three numbers located on the back of your card. For American Express cards, it's the four digits located on the right of your card just above the main card number.">
+</label>
+<label class="item item-input">
+ <span class="input-label">Expiry Date:</span>
+ <input type="date" ng-model="data.paymentMethod.creditCard.expiryDate" ng-mouseleave="check();set()"  ng-minlength=4>
+</label>
+<label class="item item-input">
+  <button class="button button-positive"  ng-mouseleave="check();set()"
+  ng-class="{true:'btn btn-primary col-md-3', false: 'btn btn-warning col-md-3'}[cont]" 
+  ng-click="Cont()" >Continue</button>
+
+</label>
+</div>
+</ion-list>
+</ion-content>

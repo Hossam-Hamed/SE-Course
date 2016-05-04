@@ -4,7 +4,7 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
   $scope.selected = undefined;
   $scope.states =landingServ;
-  $scope.landing = {paymentMethod : { creditCard : {}}};
+  $scope.landing = {passengerDetails : {} };
 
 
   /*----------- Angular Bootstrap Datepicker -----------*/
@@ -45,17 +45,61 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
   };
 
 
-  $scope.check = function() {
-    if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      mainSrv.init();
-      mainSrv.setx($scope.landing);
-      mainSrv.process();
-      $scope.ref="#single";
-    }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      $scope.ref="#2ways";
-      mainSrv.setx($scope.landing);
+  // $scope.twoWays: function() {
+  //   var date1 = moment(this.getx().depatutreDate);
+  //   var dateStr1 = date1.format('L');
+  //    var date2 = moment(this.getx().returnDate);
+  //   var dateStr2= date2.format('L');
+  //     // var x=this.getx()
+  //     // this.getx().depatutreDate=dateStr;
+  //     // this.setx(x);
+  //     // console.log(dateStr);
+  //     // thisObj = this;
+  //     $http.get('/api/flights/search/' + this.getx().from + '/' + this.getx().to + '/' + dateStr + '/'+ this.getx().class).success(function(data){
+  //       this.obj = {"data": data, "from": thisObj.getx().from, "to": thisObj.getx().to}
+  //       thisObj.set(this.obj)
+  //     });
+  //   }
 
-    }else{
+  $scope.check = function() {
+
+    
+    if(!$scope.others&&$scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
+      // mainSrv.init();
+      mainSrv.setx($scope.landing);
+      // console.log($scope.landing);
+      // console.log(mainSrv.getx());
+      // mainSrv.getx().depatutreDate=moment(mainSrv.getx().depatutreDate).format('L');
+      mainSrv.process();
+      mainSrv.setx($scope.landing);
+      $scope.ref="#single";
+      console.log("1")
+    }else if(!$scope.others&&!$scope.OutOnly&&$scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate&&$scope.landing.returnDate){
+
+      mainSrv.setx($scope.landing);
+      mainSrv.twoWays();
+      mainSrv.setx($scope.landing);
+      $scope.ref="#2ways";
+console.log("2")
+    }
+    else  
+       if($scope.others&&$scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
+      // mainSrv.init();
+      mainSrv.setx($scope.landing);
+      // mainSrv.getx().depatutreDate=moment(mainSrv.getx().depatutreDate).format('L');
+      mainSrv.processOthers();
+      mainSrv.setx($scope.landing);
+      $scope.ref="#single";
+      console.log("3")
+    }else if($scope.others&&!$scope.OutOnly&&$scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate&&$scope.landing.returnDate){
+
+      mainSrv.setx($scope.landing);
+      mainSrv.twoWaysOthers();
+      mainSrv.setx($scope.landing);
+      $scope.ref="#2ways";
+
+    }
+    else{
       alert("you forgot to enter some data");
       $scope.ref="#/team";
     }

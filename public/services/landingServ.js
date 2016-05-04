@@ -1,4 +1,37 @@
- App.factory("landingServ",function(){
-  var state =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-  return state;
+//  App.factory("landingServ",function(){
+//   var state =  [	
+//   	"Mumbai",
+// 	"Cairo",
+// 	"Hong Kong",
+// 	"Johannesburg",
+// 	"Riyadh",
+// 	"London Heathrew",
+// 	"Las Vegas",
+// 	"Las Angeles",
+// 	"Frankfurt",
+// 	"Rome",
+// 	"Delhi",
+// 	"Jeddah",
+// 	"Taiwan",
+// 	"Cape Town",
+// 	"New York-John F. Kennedy",
+// 	"San Francisco",
+// 	"Berlin",
+// 	"Milan"
+// ];
+//   return state;
+
+//  });
+
+ App.factory("landingServ",function($http){
+ 	var state = [];
+ 	$http.get('/api/Airports')
+ 	.then(function(response){ 
+ 		// var state= response.data.iata;
+ 		for (var i = response.data.length - 1; i >= 0; i--) {
+ 			state[i]= (response.data)[i].iata;
+
+ 		} 
+ 	});
+ 	return state;
  });

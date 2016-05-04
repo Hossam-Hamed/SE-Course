@@ -1,1 +1,48 @@
-<h>return</h>
+<ion-view view-title="Return flights">
+<ion-content>
+<ion-list>
+
+  <h1> flights from {{ from }} to {{ to }} </h1>
+  <div class="row">
+    <div class="col">Flight number</div>
+    <div class="col">Aircraft</div>
+    <div class="col">Duration</div>
+    <div class="col">Cost</div>
+  </div>
+  <div class="row" ng-repeat="flight in flights">
+    <div class="col">{{flight.flightNumber}}</div>
+    <div class="col">{{flight.aircraft}}</div>
+    <div class="col">{{flight.duration}}</div>
+    <div class="col">{{flight.cost}}</div>
+    </div>
+    <div class="col">
+    <a href= "#choose" class="button button-positive" >choose</a>
+    </div>
+  
+
+
+
+
+
+  <h1> flights from {{ to }} to {{ from }} </h1>
+  <div class="row">
+    <div class="col">Flight number</div>
+    <div class="col">Aircraft</div>
+    <div class="col">Duration</div>
+    <div class="col">Cost</div>
+  </div>
+  <div class="row" ng-repeat="flight in returnflights">
+    <div class="col">{{flight.flightNumber}}</div>
+    <div class="col">{{flight.aircraft}}</div>
+    <div class="col">{{flight.duration}}</div>
+    <div class="col">{{flight.cost}}</div>
+  </div>
+  <div class="col">
+      <a href="#choose" class="button button-positive" >choose</a>
+    </div>
+
+
+
+</ion-list>
+</ion-content>
+</ion-view>

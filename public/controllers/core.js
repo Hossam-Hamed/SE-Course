@@ -1,11 +1,12 @@
-App = angular.module('App',['ui.bootstrap','ngRoute']);
+App = angular.module('App',['ui.bootstrap','ngRoute','angular-stripe']);
 
-App.config(function($routeProvider) {
-	$routeProvider
-   		.when('/', {
+App.config(function($routeProvider,stripeProvider) {
+   stripeProvider.setPublishableKey('pk_test_wGjPwVxJWbBDpyr2ghnqCMXN');
+  $routeProvider
+      .when('/', {
             templateUrl: '../partials/landing.html',
             controller:'landingCtrl'
-   		})
+      })
 
          .when('/home', {
             templateUrl: '../partials/landing.html',
@@ -22,10 +23,10 @@ App.config(function($routeProvider) {
             //controller:'ConfirmationController'
          })
 
-		   .when('/single', {
-			   templateUrl:'../partials/Outgoing.html',
-   			controller:'outgoingctrl'
-   		})
+       .when('/single', {
+         templateUrl:'../partials/Outgoing.html',
+        controller:'outgoingctrl'
+      })
 
          .when('/single2', {
             templateUrl:'../partials/confirmation.html',
@@ -48,14 +49,12 @@ App.config(function($routeProvider) {
             templateUrl:'../partials/summary.html',
             controller:'summaryCtrl'
          })
-
           .when('/2ways', {
-             templateUrl:'../partials/Return.html',
-             controller:'returnctrl'
-         })
+           templateUrl:'../partials/Return.html',
+          controller:'returnctrl'
+}        )
          
          .otherwise({
             redirectTo: '/'
          })
 });
-

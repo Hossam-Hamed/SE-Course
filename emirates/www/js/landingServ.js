@@ -1,5 +1,14 @@
 angular.module('App')
-.factory('landingServ',function(){
-  var state =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-  return state;
+
+.factory("landingServ",function($http){
+ 	var state = [];
+ 	$http.get('http://localhost:3000/api/Airports')
+ 	.then(function(response){ 
+ 		// var state= response.data.iata;
+ 		for (var i = response.data.length - 1; i >= 0; i--) {
+ 			state[i]= (response.data)[i].iata;
+
+ 		} 
+ 	});
+ 	return state;
  });
