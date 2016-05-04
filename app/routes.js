@@ -157,7 +157,7 @@ module.exports = function(app) {
     });
 
     app.get('/api/flights/search/:origin/:destination/:month/:day/:year/:class', function(req,res){
-      var date = req.params.month + '/' + req.params.day + '/' + req.params.year
+      var date = req.params.month + '/' + req.params.day + '/' + req.params.year;
       mongo.db().collection('Flights').find({'origin' :  req.params.origin,'destination' :req.params.destination, 'date' : date}).toArray().then(function (flights){
 
 
