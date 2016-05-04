@@ -1,11 +1,20 @@
 App.controller('confctrl',function($scope , mainSrv){
 
+<<<<<<< HEAD
   $scope.flight =mainSrv.getx();
   console.log($scope.flight);
   $scope.onclick = function(){
+=======
+  $scope.x =mainSrv.getx();
+  console.log($scope.flight);
+>>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
 
-    mainSrv.setx($scope.flight);
-  };
+  $scope.flights=x.Flights;
+
+  // $scope.onclick = function(){
+
+  //   mainSrv.setx($scope.flight);
+  // };
 });
 // var x    = require('routes.js');
 function populate() {     

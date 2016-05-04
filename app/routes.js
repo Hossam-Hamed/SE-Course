@@ -114,9 +114,19 @@ module.exports = function(app) {
    app.use(bodyParser.json());
    app.use(bodyParser.urlencoded({ extended: false }));
   /*app.use(function(req, res, next) {
+<<<<<<< HEAD
        var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
       console.log("{{{{ TOKEN }}}} => ", token);
       var jwtSecret = process.env.JWTSECRET;
+=======
+
+       var token = req.body.wt || req.query.wt || req.headers['x-access-token'];   
+
+      console.log("{{{{ TOKEN }}}} => ", token);
+
+      var jwtSecret = process.env.JWTSECRET;
+
+>>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
       // Get JWT contents:
       try 
       {
@@ -130,35 +140,41 @@ module.exports = function(app) {
         res.send("balabezoo");
       //  res.status(403).sendFile(path.join(__dirname, '../public', '403.html'));
       }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
     })*/
 
     app.get('/api/flights/search/:origin/:destination/:month1/:day1/:year1/:month2/:day2/:year2/:class',function(req,res){
       var date1 = req.params.month1 + '/' + req.params.day1 + '/' + req.params.year1;
       var date2 = req.params.month2 + '/' + req.params.day2 + '/' + req.params.year2;
-      // mongo.db().collection('Flights')
-      // .find({'origin':req.params.origin ,
-      //   'destination': req.params.destination,
-      //   'date':date1}).toArray().then(function (out) {
 
-        console.log("-------------------------------------------------------------------------");
-                   mongo.db().collection('Flights')
-                   .find({'origin':req.params.destination ,
-                    'destination': req.params.origin,
-                    'date':date2}).toArray()
+      mongo.db().collection('Flights')
+      .find({'origin':req.params.origin ,
+        'destination': req.params.destination,
+        'date':date1}).toArray().then(function (out) {
 
-                   .then(function (ret) {
+          console.log("-------------------------------------------------------------------------");
+          mongo.db().collection('Flights')
+          .find({'origin':req.params.destination ,
+            'destination': req.params.origin,
+            'date':date2}).toArray()
 
-                    res.send({outgoingFlights:out,returnFlights:ret});
+          .then(function (ret) {
 
-                  });
+            res.send({outgoingFlights:out,returnFlights:ret});
 
-       // });
+          });
+
+        });
         
-    });
+      });
 
     app.get('/api/flights/search/:origin/:destination/:month/:day/:year/:class', function(req,res){
-      var date = req.params.month + '/' + req.params.day + '/' + req.params.year;
+      var date = req.params.month + '/' + req.params.day + '/' + req.params.year
       mongo.db().collection('Flights').find({'origin' :  req.params.origin,'destination' :req.params.destination, 'date' : date}).toArray().then(function (flights){
+
 
 
         var outgoingFlights= {outgoingFlights:flights}
@@ -208,8 +224,13 @@ module.exports = function(app) {
 
     }
     req.body.Info.cost=cost;
+<<<<<<< HEAD
     console.log(req.body.Info.cost);
     console.log(req.body);
+=======
+    // console.log(req.body.Info.cost);
+    console.log("req body ====>",req.body);
+>>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
 
     // attempt to create a charge using token
     stripe.charges.create({
@@ -222,12 +243,26 @@ module.exports = function(app) {
         res.send({ refNum: null, errorMessage: err});
       else
       {
+<<<<<<< HEAD
         //putting reservation into db then get mongo_id
         var reference = mongo.db().collection('reservations').insert(req.body.Info)._id;
     //sending mongo id with res
     alert("your reference  no. is "+ reference);
     console.log("past insertions");
     res.send({ refNum:reference , errorMessage:null});
+=======
+        console.log(req.body.Info);
+        //putting reservation into db then get mongo_id
+        mongo.db().collection('reservations').insert(req.body.Info,function(err,docsInserted){
+          var reference = docsInserted;
+          console.log("INSERTED DOCUMENT ==> ",reference.ops[0]._id);
+          console.log("past insertions");
+          res.send({ refNum: reference.ops[0]._id , errorMessage:null});
+        });
+        // var reference =  mongo.db().collection('reservations').find(req.body.Info)._id;
+    //sending mongo id with res
+
+>>>>>>> 0fa3658778194b7467203403bcb397907b2881ad
 
   }
 });
