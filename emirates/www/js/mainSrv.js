@@ -1,8 +1,8 @@
 angular.module('App').factory('mainSrv' , function ($http) {
 
   var object = {
-    setx : function(attribute,newVal){
-      this.x[attribute]= newVal;
+    setx : function(newVal){
+      this.x = newVal;
     },
     getx : function(){
       return this.x;

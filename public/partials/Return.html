@@ -11,17 +11,16 @@
          <td>Duration</td>
          <td>Cost</td>
 
-       </br></br>
+       
        <tr  ng-repeat="flight in flights">
          <td>{{flight.flightNumber}}</td>
-         <td>{{flight.aircraftType}}</td>
+         <td>{{flight.aircraft}}</td>
          <td>{{flight.duration}}</td>
          <td>{{flight.cost}}</td>
 
-         <td><a href="#/choose">
-          <button type="button" class="btn btn-primary" >choose</button>
+         <td>
+          <button type="button" ng-click="choose(flight,0)" class="btn btn-primary" >choose</button>
         </a></td>
-        <br></br>
       </tr>
 
     </table>
@@ -44,21 +43,22 @@
          <td>Duration</td>
          <td>Cost</td>
 
-       </br></br>
        <tr  ng-repeat="returnflight in returnflights">
          <td>{{returnflight.flightNumber}}</td>
-         <td>{{returnflight.aircraftType}}</td>
+         <td>{{returnflight.aircraft}}</td>
          <td>{{returnflight.duration}}</td>
          <td>{{returnflight.cost}}</td>
 
+
          <td><a href="#/choose">
-          <button type="button" class="btn btn-primary" >choose</button>
+          <button type="button" ng-click="choose(returnflight,1)"class="btn btn-primary" >choose</button>
         </a></td>
-        <br></br>
       </tr>
 
     </table>
   </div>
+    <a href={{ref}}>
+    <button type"button" ng-click="continue()" class="btn btn-primary"> continue</button></a>
 
 </div>
 </div>

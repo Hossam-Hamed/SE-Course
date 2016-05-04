@@ -1,5 +1,5 @@
 
-angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landingServ) {
+angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landingServ, $location) {
  
   mainSrv.init();
   $scope.OutOnly = false;
@@ -51,17 +51,21 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landing
 
   $scope.check = function() {
     console.log("check");
-    debugger;
     console.log($scope.OutOnly , $scope.landing.from , $scope.landing.to ,$scope.landing.depatutreDate)
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       mainSrv.init();
+      console.log($scope.landing);
       mainSrv.setx($scope.landing);
       mainSrv.process();
       console.log("landingCtrl",$scope.landing.from);
       $scope.ref="#single";
+      console.log(mainSrv.getx());
+
+      $location.path('/single');
     }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      $scope.ref="#2ways";
+      $scope.ref="#2mainSrv.getx(ways";
       mainSrv.setx($scope.landing);
+      $location.path('/2ways');
 
     }else{
       alert("you forgot to enter some data");

@@ -1,14 +1,30 @@
-App.controller('outgoingctrl', function($scope, mainSrv,$http){
+App.controller('outgoingctrl', function($scope, mainSrv){
+	x= mainSrv.getx();
+	temp = mainSrv.get();
+	x.depatutreDate=moment(x.depatutreDate).format('L');
+	$scope.flights = temp.outgoingFlights;
+	console.log($scope.flights);
+	$scope.from = x.from;
+	$scope.to = x.to;
 	
-	console.log(mainSrv.getx().from);
-	$scope.from = mainSrv.getx().from;
-	$scope.to = mainSrv.getx().to;
 
-	$http.get('/api/flights/search/'+mainSrv.getx().from+'/'+mainSrv.getx().to+'/'+mainSrv.getx().departureDate+'/'+mainSrv.getx().cabin)
-	.then(function(response){
-		console.log('/api/flights/search/'+mainSrv.getx().from+'/'+mainSrv.getx().to+'/'+mainSrv.getx().departureDate+'/'+mainSrv.getx().cabin);
-		$scope.flights = response.data;
-		console.log(response.data);
-	});
+	
+	$scope.choose=function(flight){
 
+		//get cost 
+		// x.cost=flight.cost;
+		x.outgoingFlightId=flight._id;
+		x.aircraftType=flight.aircraftType;
+		x.aircraftModel=flight.aircraftModel;
+		x.duration=flight.duration;
+		x.cost= flight.cost;
+		
+		x.flightNumber=flight.flightNumber;
+		console.log(mainSrv.getx());
+		//get OutgoingId
+		//set them in mainSrv
+	}
+
+
+	
 });
