@@ -1,6 +1,8 @@
-App.controller("summaryCtrl",function($scope,countries,mainSrv,countries2){
+App .controller("summaryCtrl",function($scope,countries,mainSrv,countries2){
 
   $scope.data = mainSrv.getx();
+  $scope.flights = $scope.data.Flights;
+  console.log($scope.data.Flights);
   
 
   // mainSrv.init(function(){
@@ -82,9 +84,11 @@ App.controller("summaryCtrl",function($scope,countries,mainSrv,countries2){
       $scope.data.paymentToken=response.id;
       console.log(response);
       countries2.PostInfo($scope.data).success(function(data){
-
        if(data.errorMessage==null){
         alert('Payment succeded');
+        console.log(data);
+        alert("your reference  no. is "+ data.refNum);
+
       }else{
         //console.log(data);
         alert(data.errorMessage.message);
@@ -151,14 +155,13 @@ App.controller("summaryCtrl",function($scope,countries,mainSrv,countries2){
   return {
     PostInfo : function (passInfo){
       return $http.post('/booking',{
-        
-         "paymentToken" : passInfo.paymentToken,
-         "Info" : passInfo,
+       "paymentToken" : passInfo.paymentToken,
+       "Info" : passInfo,
         // "firstName" : passInfo.passengerDetails.firstName,
         // "lastName" : passInfo.passengerDetails.lastName,
         // "passportNum" : passInfo.passengerDetails.passportNum,
         // "birth" : passInfo.passengerDetails.birth,
-     } ); 
+      } ); 
     }
   }
 })

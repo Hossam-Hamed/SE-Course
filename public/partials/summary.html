@@ -34,7 +34,7 @@
   Trip summary
 </button>
 
-<div uib-collapse="isActive1">
+<div ng-repeat= "flight in flights" uib-collapse="isActive1">
   <div>
 
 
@@ -46,17 +46,23 @@
           <br>
           <br>
           <p class="text-center">
-           <strong>From </strong> <em> {{data.from}}</em> <strong>to</strong> <em>{{data.to}}</em>
+           <strong>From </strong> <em> {{flight.origin}}</em> <strong>to</strong> <em>{{flight.destination}}</em>
            <br>
-           <strong>Flight number: </strong><em> {{data.flightNumber}}</em>
+
+           <strong>Flight number: </strong><em> {{flight.flightNumber}}</em>
+
            <br>
-           <strong>Flight date: </strong><em>{{data.depatutreDate}}</em>
+           <strong>Flight date: </strong><em>{{flight.date}}</em>
            <br>
-           <strong>Plane: </strong><em>{{data.aircraftType}} {{data.aircraftModel}}</em>
+
+           <strong>Plane: </strong><em>{{flight.aircraftType}} {{flight.aircraftModel}}</em>
              <br>
              <strong>Class: </strong><em>{{data.class}}</em>
                <br>
-               <strong>seat: </strong><em>{{data.seatNumber}}</em>
+               <strong>seat: </strong><em>{{flight.seatNumber}}</em>
+                 <br>
+                 <strong>Airline: </strong><em>{{flight.Airline}}</em>
+
                  <br>
 
 
@@ -149,6 +155,7 @@
           <input type="text" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="passport" name="passport" ng-model="data.passengerDetails.passportNum" required>
           <span ng-show="myForm.passport.$touched && myForm.passport.$invalid" class="text-danger">Enter a vaild Passport number </span>
 
+
         </div>
         <br>
       <!--   <div  >
@@ -189,6 +196,47 @@
 
       </div>
 
+
+        </div>
+        <br>
+      <!--   <div  >
+          <label class="control-label col-sm-2" for="birth">Date of birth:</label>
+          <input type="text" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="birth" name="birth" ng-model="data.birth" required>
+          <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild date of birth </span>
+
+<<<<<<< HEAD
+        </div> -->
+
+          <div class="row">
+          <div class="col-sm-2"><label class="control-label " for="dob">Date of birth:</label></div>
+           <div class="col-md-4"></div>
+           <div class="col-md-3">
+            <p class="input-group">
+              <input type="text"
+              class="form-control"
+              id="dob" 
+              name="dob" 
+              uib-datepicker-popup="{{format}}"
+              ng-model="data.passengerDetails.birth"
+              ng-mouseleave="check();set()"
+              is-open="popup2.opened"
+              ng-required="true"
+              close-text="Close"
+              alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button"
+                class="btn btn-default"
+                ng-click="open2()"
+               ng-minlength=4
+                ng-mouseleave="check();set()">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <span ng-show="myForm.dob.$touched && myForm.dob.$invalid" class="text-danger">Date is required.</span>
+
+      </div>
 
         <br>
         <div  >

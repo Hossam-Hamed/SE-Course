@@ -2,8 +2,10 @@ App = angular.module('App',['ui.bootstrap','ngRoute','angular-stripe']);
 
 App.config(function($routeProvider,stripeProvider) {
    stripeProvider.setPublishableKey('pk_test_wGjPwVxJWbBDpyr2ghnqCMXN');
-  $routeProvider
-      .when('/', {
+
+	$routeProvider
+   		.when('/', {
+
             templateUrl: '../partials/landing.html',
             controller:'landingCtrl'
       })

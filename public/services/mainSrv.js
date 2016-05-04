@@ -31,33 +31,35 @@ angular.module('App').factory('mainSrv' , function ($http) {
         var cost;
 
         if(c==="First"){
-            cost=300;
+
+          cost=300;
         }else if(c==="Economy"){
           cost=200;
         }else if (c==="Business"){
-            cost=100;
+          cost=100;
         }
         var xx = this.obj.outgoingFlights;
-          function add (cost,cb){
-              for (var i = 0; i < xx.length; i++) {
-                this.obj.outgoingFlights[i].cost=cost;
-              }
-              cb();
+        
+        function add (cost,cb){
+          for (var i = 0; i < xx.length; i++) {
+            this.obj.outgoingFlights[i].cost=cost;
           }
+          cb();
+        }
 
-          function sss(){
-        console.log(this.obj)
-        thisObj.set(this.obj);
-            
-          }
-          add(cost,sss);
+        function sss(){
+          thisObj.set(this.obj);
+          console.log(this.obj);
+
+        }
+        add(cost,sss);
+
           // set();
 
         // this.obj.cost=cost;
       });
     },
 
-  
 
     twoWays: function() {
       var date1 = moment(this.getx().depatutreDate);
@@ -67,42 +69,43 @@ angular.module('App').factory('mainSrv' , function ($http) {
       var c = this.getx().class;
 
       thisObj = this;
- 
+
       $http.get('/api/flights/search/' + this.getx().from + '/' + this.getx().to + '/' + dateStr1+ '/' +dateStr2 + '/'+ this.getx().class).success(function(data){
         // this.obj = {"data1": out, "data2":ret ,"from": thisObj.getx().from, "to": thisObj.getx().to};
-       
+
         this.obj =data;
         console.log(data);
         var cost;
 
         if(c==="First"){
-            cost=300;
+
+          cost=300;
         }else if(c==="Economy"){
           cost=200;
         }else if (c==="Business"){
-            cost=100;
+          cost=100;
         }
         var xx = this.obj.outgoingFlights;
         var yy = this.obj.returnFlights;
-          
-          function add (cost,cb){
-              for (var i = 0; i < xx.length; i++) {
-                this.obj.outgoingFlights[i].cost=cost;
-              }
-              for (var i = 0; i < yy.length; i++) {
-                this.obj.returnFlights[i].cost=cost;
-              }
 
-              cb();
+        function add1 (cost,cb){
+          for (var i = 0; i < xx.length; i++) {
+            this.obj.outgoingFlights[i].cost=cost;
+          }
+          for (var i = 0; i < yy.length; i++) {
+            this.obj.returnFlights[i].cost=cost;
           }
 
-          function sss(){
-        console.log(this.obj)
-        thisObj.set(this.obj);
-            
-          }
-          add(cost,sss);
-     
+          cb();
+        }
+
+        function sss1(){
+          console.log(this.obj)
+          thisObj.set(this.obj);
+
+        }
+        add1(cost,sss1);
+
       });
 
     },
@@ -146,8 +149,8 @@ angular.module('App').factory('mainSrv' , function ($http) {
         thisObj.set(this.obj)
       });
 
-    },
 
+    }
 
 
   }

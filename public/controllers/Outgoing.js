@@ -6,6 +6,9 @@ App.controller('outgoingctrl', function($scope, mainSrv){
 	console.log($scope.flights);
 	$scope.from = x.from;
 	$scope.to = x.to;
+
+	$scope.array=[];
+
 	
 
 	
@@ -14,12 +17,16 @@ App.controller('outgoingctrl', function($scope, mainSrv){
 		//get cost 
 		// x.cost=flight.cost;
 		x.outgoingFlightId=flight._id;
-		x.aircraftType=flight.aircraftType;
-		x.aircraftModel=flight.aircraftModel;
-		x.duration=flight.duration;
-		x.cost= flight.cost;
+
+		$scope.array[0]=flight;
+		// x.aircraftType=flight.aircraftType;
+		// x.aircraftModel=flight.aircraftModel;
+		// x.duration=flight.duration;
+		// x.cost= flight.cost;
 		
-		x.flightNumber=flight.flightNumber;
+		// x.flightNumber=flight.flightNumber;
+		x.Flights=$scope.array;
+
 		console.log(mainSrv.getx());
 		//get OutgoingId
 		//set them in mainSrv
