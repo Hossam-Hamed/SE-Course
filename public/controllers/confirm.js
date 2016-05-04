@@ -1,6 +1,7 @@
 App.controller('confctrl',function($scope , mainSrv){
 
   $scope.flight =mainSrv.getx();
+  console.log($scope.flight);
   $scope.onclick = function(){
 
     mainSrv.setx($scope.flight);

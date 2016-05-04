@@ -1,21 +1,49 @@
-<ion-view view-title="book a flight">
+<ion-view view-title="Emirates airlines">
   <ion-content class="padding">
   <body ng-controller="landingCtrl">
-    <p>
+      <h1> Book your flight </h1>
+      <div class="list">
+          <label class="item item-input item-floating-label">
+          <span class="input-label">From</span>
+          <input type="text" placeholder="From" ng-model="landing.from"></label>
 
-    
-     <h2>Welcome to Ionic</h2>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-    If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
-    </p>
-    </body>
-  </ion-content>
+          <label class="item item-input item-floating-label">
+          <span class="input-label">To</span>
+          <input type="text" placeholder="To" ng-model="landing.to"></label>
+      </div>
+
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label"></div>
+          Cabin:
+          <select ng-model= "landing.cabin">
+          <option selected> </option>
+          <option>Economy</option>
+          <option >Business</option>
+          <option>First</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label class="item item-input">
+          <span class="input-label">Depature Date</span>
+          <input type="date"  ng-model="landing.depatutreDate">
+        </label>
+      </div>
+      <div ng-show = "!showDiv">
+        <label class="item item-input">
+           <span class="input-label">Return Date:</span>
+           <input type="date" ng-model="landing.returnDate">
+        </label>
+      </div>
+      <ion-list>
+            <ion-checkbox ng-init = 'OutOnly=false'ng-click="toggle()">one way</ion-checkbox>
+      </ion-list>
+      <ion-list>
+            <ion-checkbox ng-model="filter.green" >search other airlines</ion-checkbox>
+      </ion-list>
+    <button  class="button button-block button-positive"  ng-click="check()">search</button>
+
+
+ </ion-content>
 </ion-view>

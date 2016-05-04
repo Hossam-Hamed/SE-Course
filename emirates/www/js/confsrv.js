@@ -1,4 +1,5 @@
 angular.module('App')
+
 .factory('confsrv' , function ($http) {
 	return{
 		set : function(landing){
@@ -11,4 +12,4 @@ angular.module('App')
 		},
 	}
 	
-})
+});

@@ -1,12 +1,12 @@
 
-angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landingServ) {
-  console.log("hii");
+angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landingServ, $location) {
+ 
   mainSrv.init();
-
+  $scope.OutOnly = false;
   $scope.selected = undefined;
   $scope.states =landingServ;
   $scope.landing = {paymentMethod : { creditCard : {}}};
-
+// console.log(landing.from);
 
   /*----------- Angular Bootstrap Datepicker -----------*/
 
@@ -44,23 +44,37 @@ angular.module('App').controller('landingCtrl', function($scope ,mainSrv,landing
   $scope.popup2 = {
     opened: false
   };
-
+  $scope.toggle = function () {
+    $scope.showDiv = !$scope.showDiv;
+    $scope.OutOnly = !$scope.OutOnly; 
+  }
 
   $scope.check = function() {
+    console.log("check");
+    console.log($scope.OutOnly , $scope.landing.from , $scope.landing.to ,$scope.landing.depatutreDate)
     if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       mainSrv.init();
+      console.log($scope.landing);
       mainSrv.setx($scope.landing);
       mainSrv.process();
+      console.log("landingCtrl",$scope.landing.from);
       $scope.ref="#single";
+      console.log(mainSrv.getx());
+
+      $location.path('/single');
     }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
-      $scope.ref="#2ways";
+      $scope.ref="#2mainSrv.getx(ways";
       mainSrv.setx($scope.landing);
+      $location.path('/2ways');
 
     }else{
       alert("you forgot to enter some data");
       $scope.ref="#/team";
-    }
+    }  
   };
+  // $scope.search=function(){
+  //   $state.go('../templates/confirmation.html');
+  // }
   // };
   // $scope.next = function(){
   //   mainSrv.setx($scope.landing);

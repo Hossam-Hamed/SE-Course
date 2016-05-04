@@ -47,36 +47,67 @@ App.config(function($stateProvider, $urlRouterProvider) {
         controller: 'landingCtrl'
       }
     }
-  });
+  })
 
-  // .state('tab.chats', {
-  //     url: '/chats',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/tab-chats.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
-  //   .state('tab.chat-detail', {
-  //     url: '/chats/:chatId',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/chat-detail.html',
-  //         controller: 'ChatDetailCtrl'
-  //       }
-  //     }
-  //   })
+  .state('tab.history', {
+      url: '/history',
+      views: {
+        'history': {
+          templateUrl: 'templates/history.html',
+          // controller: 'ChatsCtrl'
+        }
+      }
+    })
 
-  // .state('tab.account', {
-  //   url: '/account',
-  //   views: {
-  //     'tab-account': {
-  //       templateUrl: 'templates/tab-account.html',
-  //       controller: 'AccountCtrl'
-  //     }
-  //   }
-  // });
+
+  .state('tab.offers', {
+      url: '/offers',
+      views: {
+        'offers': {
+          templateUrl: 'templates/offers.html',
+          // controller: 'ChatsCtrl'
+        }
+      }
+    })
+    .state('choose', {
+      url: '/choose',
+      templateUrl: 'templates/confirmation.html',
+      controller: 'confctrl'
+
+      
+    })
+     .state('pay', {
+      url: '/pay',
+      templateUrl: 'templates/payment.html',
+      controller: 'summaryCtrl'
+
+      
+    })
+  
+    .state('single', {
+      url: '/single',
+      templateUrl: 'templates/outgoing.html',
+      controller: 'outgoingctrl'
+
+      
+    })
+    .state('2ways', {
+      url: '/2ways',
+      templateUrl: 'templates/return.html',
+      controller: 'return'
+
+      
+    })
+
+  .state('tab.contactUs', {
+    url: '/contactUs',
+    views: {
+      'contactUs': {
+        templateUrl: 'templates/contuctus.html',
+        
+      }
+    }
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/landing');

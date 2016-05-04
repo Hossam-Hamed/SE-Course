@@ -4,6 +4,9 @@ var bodyparse = require('body-parser');
 var db = require('./db.js');
 
 app.use(express.static('public'));
+
+app.use(require('cors')());
+
 require('dotenv').load();
 require('./routes')(app);
 
