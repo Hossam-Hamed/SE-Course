@@ -2,8 +2,8 @@ App.controller('outgoingctrl', function($scope, mainSrv){
 	x= mainSrv.getx();
 	temp = mainSrv.get();
 	x.depatutreDate=moment(x.depatutreDate).format('L');
-	console.log(temp.data);
-	$scope.flights = temp.data;
+	$scope.flights = temp.outgoingFlights;
+	console.log($scope.flights);
 	$scope.from = x.from;
 	$scope.to = x.to;
 	
@@ -14,8 +14,11 @@ App.controller('outgoingctrl', function($scope, mainSrv){
 		//get cost 
 		// x.cost=flight.cost;
 		x.outgoingFlightId=flight._id;
-		x.aircraft=flight.aircraft;
+		x.aircraftType=flight.aircraftType;
+		x.aircraftModel=flight.aircraftModel;
 		x.duration=flight.duration;
+		x.cost= flight.cost;
+		
 		x.flightNumber=flight.flightNumber;
 		console.log(mainSrv.getx());
 		//get OutgoingId

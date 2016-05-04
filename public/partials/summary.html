@@ -52,7 +52,7 @@
            <br>
            <strong>Flight date: </strong><em>{{data.depatutreDate}}</em>
            <br>
-           <strong>Plane: </strong><em>{{data.aircraft}}</em>
+           <strong>Plane: </strong><em>{{data.aircraftType}} {{data.aircraftModel}}</em>
              <br>
              <strong>Class: </strong><em>{{data.class}}</em>
                <br>
@@ -147,7 +147,7 @@
 <div  >
           <label class="control-label col-sm-2" for="passport">Passport:</label>
           <input type="text" class="form-control" ng-minlength=6 ng-mouseleave="check();set()" id="passport" name="passport" ng-model="data.passengerDetails.passportNum" required>
-          <span ng-show="myForm.email.$touched && myForm.email.$invalid" class="text-danger">Enter a vaild Passport number </span>
+          <span ng-show="myForm.passport.$touched && myForm.passport.$invalid" class="text-danger">Enter a vaild Passport number </span>
 
         </div>
         <br>

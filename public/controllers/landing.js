@@ -4,7 +4,7 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
   $scope.selected = undefined;
   $scope.states =landingServ;
-  $scope.landing = {passengerDetails : {}};
+  $scope.landing = {passengerDetails : {} };
 
 
   /*----------- Angular Bootstrap Datepicker -----------*/
@@ -61,23 +61,45 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
   //     });
   //   }
 
-      $scope.check = function() {
+  $scope.check = function() {
 
-        if($scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
+    
+    if(!$scope.others&&$scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
       // mainSrv.init();
       mainSrv.setx($scope.landing);
+      // console.log($scope.landing);
+      // console.log(mainSrv.getx());
       // mainSrv.getx().depatutreDate=moment(mainSrv.getx().depatutreDate).format('L');
       mainSrv.process();
       mainSrv.setx($scope.landing);
       $scope.ref="#single";
-    }else if($scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
+      console.log("1")
+    }else if(!$scope.others&&!$scope.OutOnly&&$scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate&&$scope.landing.returnDate){
 
       mainSrv.setx($scope.landing);
       mainSrv.twoWays();
       mainSrv.setx($scope.landing);
       $scope.ref="#2ways";
+console.log("2")
+    }
+    else  
+       if($scope.others&&$scope.OutOnly && $scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate){
+      // mainSrv.init();
+      mainSrv.setx($scope.landing);
+      // mainSrv.getx().depatutreDate=moment(mainSrv.getx().depatutreDate).format('L');
+      mainSrv.processOthers();
+      mainSrv.setx($scope.landing);
+      $scope.ref="#single";
+      console.log("3")
+    }else if($scope.others&&!$scope.OutOnly&&$scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate&&$scope.landing.returnDate){
 
-    }else{
+      mainSrv.setx($scope.landing);
+      mainSrv.twoWaysOthers();
+      mainSrv.setx($scope.landing);
+      $scope.ref="#2ways";
+
+    }
+    else{
       alert("you forgot to enter some data");
       $scope.ref="#/team";
     }
