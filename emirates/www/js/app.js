@@ -76,6 +76,13 @@ App.config(function($stateProvider, $urlRouterProvider) {
 
       
     })
+     .state('pay', {
+      url: '/pay',
+      templateUrl: 'templates/payment.html',
+      controller: 'summaryCtrl'
+
+      
+    })
   
     .state('single', {
       url: '/single',
