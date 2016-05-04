@@ -1,11 +1,14 @@
 App.controller('confctrl',function($scope , mainSrv){
 
-  $scope.flight =mainSrv.getx();
+  $scope.x =mainSrv.getx();
   console.log($scope.flight);
-  $scope.onclick = function(){
 
-    mainSrv.setx($scope.flight);
-  };
+  $scope.flights=x.Flights;
+
+  // $scope.onclick = function(){
+
+  //   mainSrv.setx($scope.flight);
+  // };
 });
 // var x    = require('routes.js');
 function populate() {     

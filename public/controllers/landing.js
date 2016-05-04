@@ -4,7 +4,7 @@ App.controller('landingCtrl',function($scope ,mainSrv,landingServ)
 
   $scope.selected = undefined;
   $scope.states =landingServ;
-  $scope.landing = {passengerDetails : {} };
+  $scope.landing = {passengerDetails : {}, Flights:[] };
 
 
   /*----------- Angular Bootstrap Datepicker -----------*/
@@ -90,7 +90,7 @@ console.log("2")
       mainSrv.processOthers();
       mainSrv.setx($scope.landing);
       $scope.ref="#single";
-      console.log("3")
+      console.log("1")
     }else if($scope.others&&!$scope.OutOnly&&$scope.landing.from && $scope.landing.to &&$scope.landing.depatutreDate&&$scope.landing.returnDate){
 
       mainSrv.setx($scope.landing);

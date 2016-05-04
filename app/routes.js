@@ -140,26 +140,26 @@ module.exports = function(app) {
     app.get('/api/flights/search/:origin/:destination/:month1/:day1/:year1/:month2/:day2/:year2/:class',function(req,res){
       var date1 = req.params.month1 + '/' + req.params.day1 + '/' + req.params.year1;
       var date2 = req.params.month2 + '/' + req.params.day2 + '/' + req.params.year2;
-      // mongo.db().collection('Flights')
-      // .find({'origin':req.params.origin ,
-      //   'destination': req.params.destination,
-      //   'date':date1}).toArray().then(function (out) {
+      mongo.db().collection('Flights')
+      .find({'origin':req.params.origin ,
+        'destination': req.params.destination,
+        'date':date1}).toArray().then(function (out) {
 
-        console.log("-------------------------------------------------------------------------");
-                   mongo.db().collection('Flights')
-                   .find({'origin':req.params.destination ,
-                    'destination': req.params.origin,
-                    'date':date2}).toArray()
+          console.log("-------------------------------------------------------------------------");
+          mongo.db().collection('Flights')
+          .find({'origin':req.params.destination ,
+            'destination': req.params.origin,
+            'date':date2}).toArray()
 
-                   .then(function (ret) {
+          .then(function (ret) {
 
-                    res.send({outgoingFlights:out,returnFlights:ret});
+            res.send({outgoingFlights:out,returnFlights:ret});
 
-                  });
+          });
 
-       // });
+        });
         
-    });
+      });
 
     app.get('/api/flights/search/:origin/:destination/:month/:day/:year/:class', function(req,res){
       var date = req.params.month + '/' + req.params.day + '/' + req.params.year
@@ -228,11 +228,13 @@ module.exports = function(app) {
       else
       {
         //putting reservation into db then get mongo_id
-        var reference = mongo.db().collection('reservations').insert(req.body.Info)._id;
+        mongo.db().collection('reservations').insert(req.body.Info);
+            var reference =  mongo.db().collection('reservations').find(req.body.Info)._id;
     //sending mongo id with res
-    alert("your reference  no. is "+ reference);
+        console.log(reference);
+
     console.log("past insertions");
-    res.send({ refNum:reference , errorMessage:null});
+    res.send({ refNum: " "+reference , errorMessage:null});
 
   }
 });

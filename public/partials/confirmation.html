@@ -1,21 +1,21 @@
 <div class="container" style="padding-top: 100px;" >
-  <h3>{{flight.from}} - {{flight.to}}</h3>            
-  <table class="table" class="well">
+  <h3>{{x.from}} - {{x.to}}</h3>            
+  <table ng-repeat="flight in flights" class="table" class="well">
     <thead>
        <tr>
-        <th>Emirates airline</th>
+        <th>{{flight.Airline}}</th>
     </tr>
 </thead>
 <thead>
    <tr>
     <td>Date</td>
-    <td>{{ flight.depatutreDate }}</td>
+    <td>{{ flight.date }}</td>
 </tr>
 </thead>
 <tbody>
     <tr>
         <td>From</td>
-        <td>{{ flight.from }}</td>
+        <td>{{ flight.origin }}</td>
     </tr>
 
       <!-- <tr>
@@ -25,7 +25,7 @@
 
     <tr>
         <td>To</td>
-        <td>{{ flight.to }}</td>
+        <td>{{ flight.destination }}</td>
     </tr>
     <tr>
       <td>Estimated Time</td>
@@ -34,7 +34,7 @@
   <tr>
     <td>Seat</td>
     <td><div class="dropdown"<st>
-      <button onclick="populate()" class="dropbtn">Dropdown</button>
+      <button  class="dropbtn">Dropdown</button>
       <div id="myDropdown" class="dropdown-content">
           <a> </a>
       </div>

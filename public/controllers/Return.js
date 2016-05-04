@@ -2,8 +2,8 @@ App.controller('returnctrl',function($scope,mainSrv){
 	$scope.flight =mainSrv.getx();
 	x= mainSrv.getx();
 	temp = mainSrv.get();
+	console.log(temp);
 	x.depatutreDate=moment(x.depatutreDate).format('L');
-	console.log(temp.returnFlights);
 	$scope.flights = temp.outgoingFlights;
 	$scope.returnflights = temp.returnFlights;
 	$scope.from = x.from;
@@ -11,26 +11,22 @@ App.controller('returnctrl',function($scope,mainSrv){
 	$scope.flag1=false;
 	$scope.flag2=false;
 	$scope.ref;
-
+	$scope.array=[];
 	$scope.choose=function(flight,n){
-		if (n==0) {
+		if (n==='0') {
 
 			x.outgoingFlightId=flight._id;
-			x.flights[0].aircraft=flight.aircraft;
-			x.flights[0].duration=flight.duration;
-			x.flights[0].flightNumber=flight.flightNumber;
+				$scope.array[0]=flight;
 			$scope.flag1=true;
 		// console.log(mainSrv.getx());
 
-	} else if(n==1){
+	} else if(n==='1'){
 
 		//get cost 
 		//get returnId
 		//set them in mainSrv
-		x.flights[1].returnFlightId=flight._id;
-		x.flights[1].aircraft=flight.aircraft;
-		x.flights[1].duration=flight.duration;
-		x.flights[1].flightNumber=flight.flightNumber;
+		x.returnFlightId=flight._id;
+		$scope.array[1]=flight;
 		$scope.flag2=true;
 		console.log(mainSrv.getx());
 
@@ -39,16 +35,19 @@ App.controller('returnctrl',function($scope,mainSrv){
 }
 
 
-		$scope.continue= function(){
-		
-		if ($scope.flag2&&$scope.flag1) {
-				$scope.ref="#/choose";
-		}
-		else{
-			alert("choose ur 2 flights correctly ya 7abibi albi :/");
-		}
+$scope.continue= function(){
 
-		}
+	if ($scope.flag2&&$scope.flag1) {
+		x.Flights=$scope.array;
+		console.log
+		$scope.ref="#/choose";
+	}
+	else{
+		$scope.ref="#2ways";
+		alert("choose ur 2 flights correctly ya 7abibi albi :/");
+	}
+
+}
 
 })
 

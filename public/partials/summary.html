@@ -34,7 +34,7 @@
   Trip summary
 </button>
 
-<div uib-collapse="isActive1">
+<div ng-repeat= "flight in flights" uib-collapse="isActive1">
   <div>
 
 
@@ -46,17 +46,19 @@
           <br>
           <br>
           <p class="text-center">
-           <strong>From </strong> <em> {{data.from}}</em> <strong>to</strong> <em>{{data.to}}</em>
+           <strong>From </strong> <em> {{flight.origin}}</em> <strong>to</strong> <em>{{flight.destination}}</em>
            <br>
-           <strong>Flight number: </strong><em> {{data.flightNumber}}</em>
+           <strong>Flight number: </strong><em> {{flight.flightNumber}}</em>
            <br>
-           <strong>Flight date: </strong><em>{{data.depatutreDate}}</em>
+           <strong>Flight date: </strong><em>{{flight.date}}</em>
            <br>
-           <strong>Plane: </strong><em>{{data.aircraftType}} {{data.aircraftModel}}</em>
+           <strong>Plane: </strong><em>{{flight.aircraftType}} {{flight.aircraftModel}}</em>
              <br>
              <strong>Class: </strong><em>{{data.class}}</em>
                <br>
-               <strong>seat: </strong><em>{{data.seatNumber}}</em>
+               <strong>seat: </strong><em>{{flight.seatNumber}}</em>
+                 <br>
+                 <strong>Airline: </strong><em>{{flight.Airline}}</em>
                  <br>
 
 
