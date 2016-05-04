@@ -76,6 +76,13 @@ App.config(function($stateProvider, $urlRouterProvider) {
 
       
     })
+    .state('confirm', {
+      url: '/confirm',
+      templateUrl: 'templates/confirmation.html',
+      controller: 'confctrl'
+
+      
+    })
     .state('single', {
       url: '/single',
       templateUrl: 'templates/outgoing.html',
